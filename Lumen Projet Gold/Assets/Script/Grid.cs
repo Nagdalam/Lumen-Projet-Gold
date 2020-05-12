@@ -10,6 +10,9 @@ public class Grid
     private int[,] gridArray;
     private float cellSize;
     private TextMesh[,] debugTextArray;
+    private bool isBilateral = true;
+    private bool isBasic = false;
+    private bool isTower = false;
 
 
     public Grid(int width, int height, float cellSize)
@@ -59,7 +62,37 @@ public class Grid
     {
         int x, y;
         GetXY(worldPosition, out x, out y);
-        SetValue(x, y, value);
+        //start crysto basic
+        if (isBasic == true)
+        {
+            SetValue(x+1, y, value);
+            SetValue(x-1, y, value);
+            SetValue(x , y+1, value);
+            SetValue(x , y-1, value);
+        }
+        //end crysto basic
+
+        //tower crytal
+        if (isTower == true)
+        {
+            SetValue(x , y + 1, value);
+            SetValue(x , y + 2, value);
+            SetValue(x , y + 3, value);
+        }
+        //end tower crytal
+        //bilateral crytal X
+        if (isBilateral == true)
+        {
+            SetValue(x + 1, y, value);
+            SetValue(x + 2, y, value);
+            SetValue(x - 1, y, value);
+            SetValue(x - 2, y, value);
+        }
+      
+
+
+
+
     }
 
     public int GetValue(int x, int y)
