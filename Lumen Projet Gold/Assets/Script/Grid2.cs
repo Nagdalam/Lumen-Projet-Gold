@@ -69,9 +69,17 @@ public class Grid2
     {
         if (x >= 0 && y >= 0 && x < width && y < height)
         {
-            gridArray[x, y].value = value;
-            gridArray[x, y].isIlluminated = true;
-            debugTextArray[x, y].text = gridArray[x, y].value.ToString();
+            if (gridArray[x, y].isCrystal == false)
+            {
+                gridArray[x, y].value = value;
+                gridArray[x, y].isIlluminated = true;
+                debugTextArray[x, y].text = gridArray[x, y].value.ToString();
+            }
+            else if (gridArray[x, y].isCrystal == true)
+            {
+                gridArray[x, y].value = 555;
+                debugTextArray[x, y].text = gridArray[x, y].value.ToString();
+            }
         }
     }
 
@@ -98,76 +106,85 @@ public class Grid2
         SetValue(x, y, 876);
     }
 
-    public void ActivateDark()
+    public void ActivateDark(int x, int y)
     {
+        if (x >= 0 && y >= 0 && x < width && y < height)
+        {
+            if (gridArray[x, y].isIlluminated == true && gridArray[x, y].isCrystal == false)
+            {
+                gridArray[x, y].value = 00;
+                gridArray[x, y].isIlluminated = false;
+                debugTextArray[x, y].text = gridArray[x, y].value.ToString();
+                GameManager.numberOfLights--;
+            }
+        }
+    }
 
+    public void ActivateDark(Vector3 worldPosition)
+    {
+        int x, y;
+        GetXY(worldPosition, out x, out y);
+        ActivateDark(x, y);
     }
 
     public void UseBasicCrystal(Vector3 worldPosition, int value)
     {
         int x, y;
         GetXY(worldPosition, out x, out y);
+        if (gridArray[x, y].usageCount <= 1 && GameManager.intensificationAllowed == true || gridArray[x, y].usageCount == 0 && GameManager.intensificationAllowed == false)
+        {
+            if (gridArray[x, y].isCrystal == true && gridArray[x, y].typeCrystal == crystalType.BASIC)
+            {
+                GameManager.numberOfLights--;
+                if (gridArray[x, y].usageCount == 0)
+                {
+                    SetValue(x + 1, y, value);
+                    SetValue(x - 1, y, value);
+                    SetValue(x, y + 1, value);
+                    SetValue(x, y - 1, value);
+                }
+                else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
+                {
+                    SetValue(x + 2, y, value);
+                    SetValue(x - 2, y, value);
+                    SetValue(x, y + 2, value);
+                    SetValue(x, y - 2, value);
+                }
 
-        if (gridArray[x, y].isCrystal == true && gridArray[x, y].typeCrystal == crystalType.BASIC)
-        {
-            GameManager.numberOfLights--;
-            if (gridArray[x, y].usageCount == 0)
-            {
-                SetValue(x + 1, y, value);
-                SetValue(x - 1, y, value);
-                SetValue(x, y + 1, value);
-                SetValue(x, y - 1, value);
             }
-            else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
+            else if (gridArray[x, y].isCrystal == true && gridArray[x, y].typeCrystal == crystalType.TOWER)
             {
-                SetValue(x + 2, y, value);
-                SetValue(x - 2, y, value);
-                SetValue(x, y + 2, value);
-                SetValue(x, y - 2, value);
+                if (gridArray[x, y].usageCount == 0)
+                {
+                    SetValue(x, y + 1, value);
+                    SetValue(x, y + 2, value);
+                    SetValue(x, y + 3, value);
+                }
+                else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
+                {
+                    SetValue(x, y + 4, value);
+                }
             }
+            else if (gridArray[x, y].isCrystal == true && gridArray[x, y].typeCrystal == crystalType.BILATERAL)
+            {
+                if (gridArray[x, y].usageCount == 0)
+                {
+                    SetValue(x + 1, y, value);
+                    SetValue(x + 2, y, value);
+                    SetValue(x - 1, y, value);
+                    SetValue(x - 2, y, value);
+                }
 
+                else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
+                {
+                    SetValue(x + 3, y, value);
+                    SetValue(x - 3, y, value);
+                }
+            }
+            gridArray[x, y].usageCount++;
         }
-        else if (gridArray[x, y].isCrystal == true && gridArray[x, y].typeCrystal == crystalType.TOWER)
-        {
-            if (gridArray[x, y].usageCount == 0)
-            {
-                SetValue(x, y + 1, value);
-                SetValue(x, y + 2, value);
-                SetValue(x, y + 3, value);
-            }
-            else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
-            {
-                SetValue(x, y + 4, value);
-            }
-        }
-        else if (gridArray[x, y].isCrystal == true && gridArray[x, y].typeCrystal == crystalType.BILATERAL)
-        {
-            if (gridArray[x, y].usageCount == 0)
-            {
-                SetValue(x + 1, y, value);
-                SetValue(x + 2, y, value);
-                SetValue(x - 1, y, value);
-                SetValue(x - 2, y, value);
-            }
 
-            else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
-            {
-                SetValue(x + 3, y, value);
-                SetValue(x - 3, y, value);
-            }
-        }
-        gridArray[x, y].usageCount++;
-        if (GameManager.intensificationAllowed == true)
-        {
-            if (gridArray[x, y].usageCount > 1)
-            {
-                gridArray[x, y].isCrystal = false;
-            }
-        }
-        else
-        {
-            gridArray[x, y].isCrystal = false;
-        }
+
 
     }
 

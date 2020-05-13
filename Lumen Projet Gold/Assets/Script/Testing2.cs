@@ -6,8 +6,9 @@ using UnityEngine;
 public class Testing2 : MonoBehaviour
 {
     private Grid2 grid;
+    public bool intensificationAllowed;
+    public bool isDarkTilesAllowed;
     public int gridLength;
-
     public int gridHeight;
     public int numberOfCrystals;
     public int[] crystalXArray = new int[1];
@@ -17,8 +18,7 @@ public class Testing2 : MonoBehaviour
     public int luoYPosition;
     public int goalXPosition, goalYPosition;
     public int numberOfLights;
-    public bool intensificationAllowed;
-    public bool isDarkTilesAllowed;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +43,7 @@ public class Testing2 : MonoBehaviour
         {
             if (GameManager.numberOfLights > 0) {
             grid.UseBasicCrystal(GameManager.GetMouseWorldPosition(),56);
-            
+                grid.ActivateDark(GameManager.GetMouseWorldPosition());
             }
             
         }
