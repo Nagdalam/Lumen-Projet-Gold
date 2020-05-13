@@ -13,7 +13,7 @@ public class Grid
     private bool isBilateral = true;
     private bool isBasic = false;
     private bool isTower = false;
-
+    
 
     public Grid(int width, int height, float cellSize)
     {

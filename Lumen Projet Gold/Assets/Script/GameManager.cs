@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
         if (color == null) color = Color.white;
         return CreateWorldText(parent, text, localPosition, fontSize, (Color)color, textAnchor, textAlignment, sortingOrder);
     }
+    public static int numberOfLights;
+    public static bool intensificationAllowed;
+    public static bool isDarkTilesAllowed;
 
     // Create Text in the World
     public static TextMesh CreateWorldText(Transform parent, string text, Vector3 localPosition, int fontSize, Color color, TextAnchor textAnchor, TextAlignment textAlignment, int sortingOrder)

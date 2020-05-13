@@ -186,6 +186,7 @@ MonoBehaviour:
   numberOfCrystals: 5
   crystalXArray: 04000000060000000400000006000000
   crystalYArray: 01000000020000000300000004000000
+  crystalTypeArray: 00000000000000000000000000000000
   luoXPosition: 5
   luoYPosition: 0
   goalXPosition: 5

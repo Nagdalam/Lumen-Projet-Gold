@@ -12,11 +12,13 @@ public class Testing2 : MonoBehaviour
     public int numberOfCrystals;
     public int[] crystalXArray = new int[1];
     public int[] crystalYArray = new int[1];
-    
+    public crystalType[] crystalTypeArray = new crystalType[1];
     public int luoXPosition;
     public int luoYPosition;
     public int goalXPosition, goalYPosition;
     public int numberOfLights;
+    public bool intensificationAllowed;
+    public bool isDarkTilesAllowed;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +27,11 @@ public class Testing2 : MonoBehaviour
         grid.SetGoal(goalXPosition, goalYPosition);
         for (int i = 0; i < numberOfCrystals; i++)
         {
-            grid.SetCrystal(crystalXArray[i], crystalYArray[i]);
-            
+            grid.SetCrystal(crystalXArray[i], crystalYArray[i], crystalTypeArray[i]);
         }
+        GameManager.numberOfLights = numberOfLights;
+        GameManager.intensificationAllowed = intensificationAllowed;
+        GameManager.isDarkTilesAllowed = isDarkTilesAllowed;
     }
 
     // Update is called once per frame
@@ -37,14 +41,14 @@ public class Testing2 : MonoBehaviour
         
         if (Input.GetMouseButtonDown(0))
         {
-            if (numberOfLights > 0) {
+            if (GameManager.numberOfLights > 0) {
             grid.UseBasicCrystal(GameManager.GetMouseWorldPosition(),56);
-                numberOfLights--;
+            
             }
             
         }
 
-        if (numberOfLights <=0)
+        if (GameManager.numberOfLights <=0)
         {
             grid.Pathfinder(gridHeight, gridLength);
         }
