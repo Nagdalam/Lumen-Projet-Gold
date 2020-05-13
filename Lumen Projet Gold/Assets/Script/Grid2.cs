@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 //Fait par Benjamin
 public enum directionFaced { UP, DOWN, LEFT, RIGHT, }
 public class Grid2
@@ -23,6 +23,8 @@ public class Grid2
         public bool isIlluminated;
         public int value;
         public bool hasLuo;
+        public bool isCrystal;
+        public bool isGoal;
     }
     public Grid2(int width, int height, float cellSize, Vector3 originPosition)
     {
@@ -78,21 +80,42 @@ public class Grid2
 
     }
 
+    public void SetCrystal (int x, int y)
+    {
+        Debug.Log("CrystalSet");
+        gridArray[x, y].isCrystal = true;
+        SetValue(x, y, 555);
+    }
+
+    public void SetGoal(int x, int y)
+    {
+        gridArray[x, y].isGoal = true;
+        SetValue(x, y, 876);
+    }
+
+    public void UseBasicCrystal(Vector3 worldPosition, int value)
+    {
+        int x, y;
+        GetXY(worldPosition, out x, out y);
+        if (gridArray[x, y].isCrystal == true)
+        {
+            SetValue(x + 1, y, value);
+            SetValue(x - 1, y, value);
+            SetValue(x, y + 1, value);
+            SetValue(x, y - 1, value);
+        }
+    }
+
     public void SetLuo(int x, int y)
     {
         if (x >= 0 && y >= 0 && x < width && y < height)
         {
             gridArray[x, y].hasLuo = true;
+            SetValue(x, y, 12);
         }
     }
 
-    public void SetLuo(Vector3 worldPosition, int value)
-    {
-        int x, y;
-        GetXY(worldPosition, out x, out y);
-        SetLuo(x, y);
-
-    }
+   
 
 
 
@@ -121,11 +144,12 @@ public class Grid2
         {
             for (int i = 0; i < gridLength; i++)
             {
-                if (gridArray[i, j].value == 12 && direction == directionFaced.UP)
+                if(gridArray[i, j].isGoal == true){
+                    Debug.Log("Niveau terminé");
+                }
+                if (gridArray[i, j].value == 12 && direction == directionFaced.UP && gridArray[i, j].isGoal == false)
                 {
-                    Debug.Log("Luo est aux coordonnées" + j + "," + i);
-                    GameManager.canLuoMove = false;
-                    if (gridArray[i, j + 1].value == 56 && j + 1 < gridHeight && i < gridLength && j > 0 && i > 0)
+                    if (gridArray[i, j + 1].value == 56/* && j + 1 < gridHeight && i < gridLength && j > 0 && i > 0*/)
                     {
                         Debug.Log("Haut");
                         direction = directionFaced.UP;
@@ -146,7 +170,7 @@ public class Grid2
 
                     //    SetValue(i, j - 1, 12);
                     //}
-                    else if (gridArray[i + 1, j].value == 56 && j < gridHeight && i + 1 < gridLength && j > 0 && i > 0)
+                    else if (gridArray[i + 1, j].value == 56/* && j < gridHeight && i + 1 < gridLength && j > 0 && i > 0*/)
                     {
                         Debug.Log("Droite");
                         direction = directionFaced.RIGHT;
@@ -157,7 +181,7 @@ public class Grid2
 
                         SetValue(i + 1, j, 12);
                     }
-                    else if (gridArray[i - 1, j].value == 56 && j < gridHeight && i < gridLength && j > 0 && i - 1 > 0)
+                    else if (gridArray[i - 1, j].value == 56/* && j < gridHeight && i < gridLength && j > 0 && i - 1 > 0*/)
                     {
                         Debug.Log("Gauche");
                         direction = directionFaced.LEFT;
@@ -170,7 +194,7 @@ public class Grid2
                     }
                 }
 
-                if (gridArray[i, j].value == 12 && direction == directionFaced.DOWN)
+                if (gridArray[i, j].value == 12 && direction == directionFaced.DOWN && gridArray[i, j].isGoal == false)
                 {
                     //    Debug.Log("Luo est aux coordonnées" + j + "," + i);
                     //    GameManager.canLuoMove = false;
@@ -219,7 +243,7 @@ public class Grid2
                     }
                 }
 
-                if (gridArray[i, j].value == 12 && direction == directionFaced.LEFT)
+                if (gridArray[i, j].value == 12 && direction == directionFaced.LEFT && gridArray[i, j].isGoal == false)
                 {
 
                     Debug.Log("Luo est aux coordonnées" + j + "," + i);
@@ -271,7 +295,7 @@ public class Grid2
                     
                 }
 
-                if (gridArray[i, j].value == 12 && direction == directionFaced.RIGHT)
+                if (gridArray[i, j].value == 12 && direction == directionFaced.RIGHT && gridArray[i, j].isGoal == false)
                 {
 
                     Debug.Log("Luo est aux coordonnées" + j + "," + i);

@@ -183,6 +183,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridLength: 10
   gridHeight: 6
+  crystalXArray: 01000000
+  crystalYArray: 01000000
+  numberOfCrystals: 1
+  luoXPosition: 0
+  luoYPosition: 0
+  numberOfLights: 1
 --- !u!4 &366543782
 Transform:
   m_ObjectHideFlags: 0
