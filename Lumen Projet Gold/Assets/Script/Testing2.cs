@@ -50,10 +50,19 @@ public class Testing2 : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             if (GameManager.numberOfLights > 0) {
-            grid.UseBasicCrystal(GameManager.GetMouseWorldPosition(),56);
+            //grid.UseBasicCrystal(GameManager.GetMouseWorldPosition(),56);
                 grid.ActivateDark(GameManager.GetMouseWorldPosition());
             }
             
+        }
+
+        if (GameManager.objectGrabbed == true)
+        {
+            if (GameManager.numberOfLights > 0)
+            {
+                grid.UseBasicCrystal(GameManager.GetMouseWorldPosition(), 56);
+            }
+
         }
 
         if (GameManager.numberOfLights <=0)
