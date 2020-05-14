@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -181,6 +181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eab256b151028154582bb0440928715b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intensificationAllowed: 0
+  isDarkTilesAllowed: 0
   gridLength: 11
   gridHeight: 7
   numberOfCrystals: 12

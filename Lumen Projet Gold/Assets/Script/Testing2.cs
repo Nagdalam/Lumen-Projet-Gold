@@ -13,6 +13,9 @@ public class Testing2 : MonoBehaviour
     public int numberOfCrystals;
     public int[] crystalXArray = new int[1];
     public int[] crystalYArray = new int[1];
+    public int numberOfDarksTiles;
+    public int[] darkTileXArray = new int[1];
+    public int[] darkTileYArray = new int[1];
     public crystalType[] crystalTypeArray = new crystalType[1];
     public int luoXPosition;
     public int luoYPosition;
@@ -28,6 +31,11 @@ public class Testing2 : MonoBehaviour
         for (int i = 0; i < numberOfCrystals; i++)
         {
             grid.SetCrystal(crystalXArray[i], crystalYArray[i], crystalTypeArray[i]);
+        }
+        
+        for (int i = 0; i < numberOfDarksTiles; i++)
+        {
+            grid.SetDark(darkTileXArray[i], darkTileYArray[i]);
         }
         GameManager.numberOfLights = numberOfLights;
         GameManager.intensificationAllowed = intensificationAllowed;
