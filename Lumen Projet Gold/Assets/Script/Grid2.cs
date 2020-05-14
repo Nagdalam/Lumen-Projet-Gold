@@ -116,7 +116,7 @@ public class Grid2
     {
         if (x >= 0 && y >= 0 && x < width && y < height)
         {
-            if (gridArray[x, y].isIlluminated == true && gridArray[x, y].isCrystal == false)
+            if (gridArray[x, y].isIlluminated == true && gridArray[x, y].isCrystal == false && gridArray[x,y].hasLuo == false)
             {
                 gridArray[x, y].value = 00;
                 gridArray[x, y].isIlluminated = false;
@@ -130,6 +130,14 @@ public class Grid2
     {
         int x, y;
         GetXY(worldPosition, out x, out y);
+        if(gridArray[x,y].hasLuo == true && GameManager.inDarkMode == false)
+        {
+            GameManager.inDarkMode = true;
+        }
+        else if (gridArray[x, y].hasLuo == true && GameManager.inDarkMode == true)
+        {
+            GameManager.inDarkMode = false;
+        }
         ActivateDark(x, y);
     }
 
@@ -499,5 +507,9 @@ public class Grid2
         }
     }
 
+    public void DebugFunction(int i, int j)
+    {
+        Debug.Log(gridArray[i, j].isCrystal);
+    }
 
 }

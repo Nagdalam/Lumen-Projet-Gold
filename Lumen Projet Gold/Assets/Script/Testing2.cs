@@ -45,8 +45,9 @@ public class Testing2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
+
+        grid.DebugFunction(3, 3);
+
         if (Input.GetMouseButtonDown(0))
         {
             if (GameManager.numberOfLights > 0) {
