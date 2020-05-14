@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 //Fait par Benjamin
 public enum directionFaced { UP, DOWN, LEFT, RIGHT, }
-public enum crystalType { BASIC, TOWER, BILATERAL }
+public enum crystalType { BASIC, TOWERNORTH, TOWERSOUTH, TOWEREAST, TOWERWEST, BILATERALVERTICAL, BILATERALHORIZONTAL }
 public class Grid2
 {
     public directionFaced direction;
@@ -152,7 +152,7 @@ public class Grid2
                 }
 
             }
-            else if (gridArray[x, y].isCrystal == true && gridArray[x, y].typeCrystal == crystalType.TOWER)
+            else if (gridArray[x, y].isCrystal == true && gridArray[x, y].typeCrystal == crystalType.TOWERNORTH)
             {
                 if (gridArray[x, y].usageCount == 0)
                 {
@@ -165,7 +165,51 @@ public class Grid2
                     SetValue(x, y + 4, value);
                 }
             }
-            else if (gridArray[x, y].isCrystal == true && gridArray[x, y].typeCrystal == crystalType.BILATERAL)
+            else if (gridArray[x, y].isCrystal == true && gridArray[x, y].typeCrystal == crystalType.TOWERSOUTH)
+            {
+                if (gridArray[x, y].usageCount == 0)
+                {
+                    SetValue(x, y - 1, value);
+                    SetValue(x, y - 2, value);
+                    SetValue(x, y - 3, value);
+                }
+                else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
+                {
+                    SetValue(x, y - 4, value);
+                }
+            }
+
+            else if (gridArray[x, y].isCrystal == true && gridArray[x, y].typeCrystal == crystalType.TOWERWEST)
+            {
+                if (gridArray[x, y].usageCount == 0)
+                {
+                    SetValue(x - 1,y , value);
+                    SetValue(x - 2, y, value);
+                    SetValue(x - 3, y, value);
+                }
+                else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
+                {
+                    SetValue(x - 4, y, value);
+                }
+            }
+            
+            else if (gridArray[x, y].isCrystal == true && gridArray[x, y].typeCrystal == crystalType.TOWEREAST)
+            {
+                if (gridArray[x, y].usageCount == 0)
+                {
+                    SetValue(x + 1,y , value);
+                    SetValue(x + 2, y, value);
+                    SetValue(x + 3, y, value);
+                }
+                else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
+                {
+                    SetValue(x + 4, y, value);
+                }
+            }
+
+
+
+            else if (gridArray[x, y].isCrystal == true && gridArray[x, y].typeCrystal == crystalType.BILATERALHORIZONTAL)
             {
                 if (gridArray[x, y].usageCount == 0)
                 {
@@ -179,6 +223,23 @@ public class Grid2
                 {
                     SetValue(x + 3, y, value);
                     SetValue(x - 3, y, value);
+                }
+            }
+
+            else if (gridArray[x, y].isCrystal == true && gridArray[x, y].typeCrystal == crystalType.BILATERALVERTICAL)
+            {
+                if (gridArray[x, y].usageCount == 0)
+                {
+                    SetValue(x, y +1, value);
+                    SetValue(x, y + 2, value);
+                    SetValue(x, y - 1, value);
+                    SetValue(x, y - 2, value);
+                }
+
+                else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
+                {
+                    SetValue(x, y + 3, value);
+                    SetValue(x, y - 3, value);
                 }
             }
             gridArray[x, y].usageCount++;

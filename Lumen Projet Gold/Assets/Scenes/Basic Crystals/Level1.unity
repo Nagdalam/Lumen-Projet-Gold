@@ -181,6 +181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eab256b151028154582bb0440928715b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intensificationAllowed: 0
+  isDarkTilesAllowed: 0
   gridLength: 4
   gridHeight: 4
   numberOfCrystals: 2
