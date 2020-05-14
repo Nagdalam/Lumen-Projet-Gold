@@ -137,7 +137,7 @@ public class Grid2
     {
         int x, y;
         GetXY(worldPosition, out x, out y);
-        if (gridArray[x, y].usageCount <= 1 && GameManager.intensificationAllowed == true || gridArray[x, y].usageCount == 0 && GameManager.intensificationAllowed == false && gridArray[x, y].isDark == false)
+        if (gridArray[x, y].usageCount <= 1 && GameManager.intensificationAllowed == true || gridArray[x, y].usageCount == 0 && GameManager.intensificationAllowed == false && gridArray[x, y].isDark == false && gridArray[x,y].isCrystal==true)
         {
             if (gridArray[x, y].isCrystal == true && gridArray[x, y].typeCrystal == crystalType.BASIC)
             {
@@ -249,9 +249,8 @@ public class Grid2
                 }
             }
             gridArray[x, y].usageCount++;
+            GameManager.objectGrabbed = false;
         }
-
-
 
     }
 
