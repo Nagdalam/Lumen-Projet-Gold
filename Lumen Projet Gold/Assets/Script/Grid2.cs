@@ -79,7 +79,34 @@ public class Grid2
             }
             else if (gridArray[x, y].isCrystal == true)
             {
-                gridArray[x, y].value = 555;
+                if (gridArray[x,y].typeCrystal == crystalType.BASIC)
+                {
+                    gridArray[x, y].value = 101;
+                }
+                if (gridArray[x, y].typeCrystal == crystalType.BILATERALVERTICAL)
+                {
+                    gridArray[x, y].value = 201;
+                }
+                if (gridArray[x, y].typeCrystal == crystalType.BILATERALHORIZONTAL)
+                {
+                    gridArray[x, y].value = 202;
+                }
+                if (gridArray[x, y].typeCrystal == crystalType.TOWERNORTH)
+                {
+                    gridArray[x, y].value = 301;
+                }
+                if (gridArray[x, y].typeCrystal == crystalType.TOWEREAST)
+                {
+                    gridArray[x, y].value = 302;
+                }
+                if (gridArray[x, y].typeCrystal == crystalType.TOWERSOUTH)
+                {
+                    gridArray[x, y].value = 303;
+                }
+                if (gridArray[x, y].typeCrystal == crystalType.TOWERWEST)
+                {
+                    gridArray[x, y].value = 304;
+                }
                 debugTextArray[x, y].text = gridArray[x, y].value.ToString();
             }
         }
@@ -98,7 +125,10 @@ public class Grid2
         Debug.Log("CrystalSet");
         gridArray[x, y].isCrystal = true;
         gridArray[x, y].typeCrystal = crystal;
-        SetValue(x, y, 555);
+         
+        SetValue(x, y, 100);
+        
+        
     }
 
 
