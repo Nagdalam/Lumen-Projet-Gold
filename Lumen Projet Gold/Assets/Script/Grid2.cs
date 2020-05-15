@@ -34,9 +34,10 @@ public class Grid2
     {
         this.width = width;
         this.height = height;
+        
         this.cellSize = cellSize;
         this.originPosition = originPosition;
-
+        
         gridArray = new cellContent[width, height];
         debugTextArray = new TextMesh[width, height];
 
@@ -306,7 +307,7 @@ public class Grid2
                 }
                 if (gridArray[i, j].value == 12 && direction == directionFaced.UP && gridArray[i, j].isGoal == false)
                 {
-                    if (gridArray[i, j + 1].isIlluminated == true/* && j + 1 < gridHeight && i < gridLength && j > 0 && i > 0*/)
+                    if (gridArray[i, j + 1].isIlluminated == true)
                     {
                         Debug.Log("Haut");
                         direction = directionFaced.UP;
@@ -317,17 +318,8 @@ public class Grid2
 
                         SetValue(i, j + 1, 12);
                     }
-                    //else if(gridArray[i, j - 1].value == 56 && j < gridHeight && i < gridLength && j - 1 >0 && i >0)
-                    //{
-                    //    Debug.Log("Bas");
-                    //    gridArray[i, j - 1].value = 12;
-                    //    gridArray[i, j].hasLuo = false;
-                    //    SetValue(i, j, 0);
-                    //    gridArray[i, j - 1].hasLuo = true;
-
-                    //    SetValue(i, j - 1, 12);
-                    //}
-                    else if (gridArray[i + 1, j].isIlluminated == true/* && j < gridHeight && i + 1 < gridLength && j > 0 && i > 0*/)
+                    
+                    else if (gridArray[i + 1, j].isIlluminated == true)
                     {
                         Debug.Log("Droite");
                         direction = directionFaced.RIGHT;
@@ -338,7 +330,7 @@ public class Grid2
 
                         SetValue(i + 1, j, 12);
                     }
-                    else if (gridArray[i - 1, j].isIlluminated == true/* && j < gridHeight && i < gridLength && j > 0 && i - 1 > 0*/)
+                    else if (gridArray[i - 1, j].isIlluminated == true)
                     {
                         Debug.Log("Gauche");
                         direction = directionFaced.LEFT;
@@ -353,19 +345,7 @@ public class Grid2
 
                 if (gridArray[i, j].value == 12 && direction == directionFaced.DOWN && gridArray[i, j].isGoal == false)
                 {
-                    //    Debug.Log("Luo est aux coordonnées" + j + "," + i);
-                    //    GameManager.canLuoMove = false;
-                    //    if (gridArray[i, j + 1].value == 56 && j + 1 < gridHeight && i < gridLength && j > 0 && i > 0)
-                    //    {
-                    //        Debug.Log("Haut");
-                    //        gridArray[i, j + 1].value = 12;
-                    //        gridArray[i, j].hasLuo = false;
-                    //        SetValue(i, j, 0);
-                    //        gridArray[i, j + 1].hasLuo = true;
-
-                    //        SetValue(i, j + 1, 12);
-                    //    }
-                    if (gridArray[i, j - 1].isIlluminated == true/* && j < gridHeight && i < gridLength && j - 1 > 0 && i > 0*/)
+                    if (gridArray[i, j - 1].isIlluminated == true)
                     {
                         Debug.Log("Bas");
                         direction = directionFaced.DOWN;
@@ -376,7 +356,7 @@ public class Grid2
 
                         SetValue(i, j - 1, 12);
                     }
-                    else if (gridArray[i + 1, j].isIlluminated == true /*&& j < gridHeight && i + 1 < gridLength && j > 0 && i > 0*/)
+                    else if (gridArray[i + 1, j].isIlluminated == true )
                     {
                         Debug.Log("Droite");
                         direction = directionFaced.RIGHT;
@@ -387,7 +367,7 @@ public class Grid2
 
                         SetValue(i + 1, j, 12);
                     }
-                    else if (gridArray[i - 1, j].isIlluminated == true /*&& j < gridHeight && i < gridLength && j > 0 && i - 1 > 0*/)
+                    else if (gridArray[i - 1, j].isIlluminated == true)
                     {
                         Debug.Log("Gauche");
                         direction = directionFaced.LEFT;
@@ -406,7 +386,7 @@ public class Grid2
                     Debug.Log("Luo est aux coordonnées" + j + "," + i);
                     GameManager.canLuoMove = false;
 
-                    if (gridArray[i - 1, j].isIlluminated == true/* && j < gridHeight && i < gridLength && j > 0 && i - 1 > 0*/)
+                    if (gridArray[i - 1, j].isIlluminated == true)
                     {
                         Debug.Log("Gauche");
                         direction = directionFaced.LEFT;
@@ -417,7 +397,7 @@ public class Grid2
 
                         SetValue(i - 1, j, 12);
                     }
-                    else if (gridArray[i, j + 1].isIlluminated == true/* && j + 1 < gridHeight && i < gridLength && j > 0 && i > 0*/)
+                    else if (gridArray[i, j + 1].isIlluminated == true)
                     {
                         Debug.Log("Haut");
                         direction = directionFaced.UP;
@@ -428,7 +408,7 @@ public class Grid2
 
                         SetValue(i, j + 1, 12);
                     }
-                    else if (gridArray[i, j - 1].isIlluminated == true /*&& j < gridHeight && i < gridLength && j - 1 > 0 && i > 0*/)
+                    else if (gridArray[i, j - 1].isIlluminated == true )
                     {
                         Debug.Log("Bas");
                         direction = directionFaced.DOWN;
@@ -439,17 +419,7 @@ public class Grid2
 
                         SetValue(i, j - 1, 12);
                     }
-                    //else if (gridArray[i + 1, j].value == 56 && j < gridHeight && i + 1 < gridLength && j > 0 && i > 0)
-                    //{
-                    //    Debug.Log("Droite");
-                    //    gridArray[i + 1, j].value = 12;
-                    //    gridArray[i, j].hasLuo = false;
-                    //    SetValue(i, j, 0);
-                    //    gridArray[i + 1, j].hasLuo = true;
-
-                    //    SetValue(i + 1, j, 12);
-                    //}
-
+                    
                 }
 
                 if (gridArray[i, j].value == 12 && direction == directionFaced.RIGHT && gridArray[i, j].isGoal == false)
@@ -457,7 +427,7 @@ public class Grid2
 
                     Debug.Log("Luo est aux coordonnées" + j + "," + i);
                     GameManager.canLuoMove = false;
-                    if (gridArray[i + 1, j].isIlluminated == true/* && j < gridHeight && i + 1 < gridLength && j > 0 && i > 0*/)
+                    if (gridArray[i + 1, j].isIlluminated == true)
                     {
                         Debug.Log("Droite");
                         direction = directionFaced.RIGHT;
@@ -468,7 +438,7 @@ public class Grid2
 
                         SetValue(i + 1, j, 12);
                     }
-                    else if (gridArray[i, j + 1].isIlluminated == true/* && j + 1 < gridHeight && i < gridLength && j > 0 && i > 0*/)
+                    else if (gridArray[i, j + 1].isIlluminated == true)
                     {
                         Debug.Log("Haut");
                         direction = directionFaced.UP;
@@ -479,7 +449,7 @@ public class Grid2
 
                         SetValue(i, j + 1, 12);
                     }
-                    else if (gridArray[i, j - 1].isIlluminated == true /*&& j < gridHeight && i < gridLength && j - 1 > 0 && i > 0*/)
+                    else if (gridArray[i, j - 1].isIlluminated == true)
                     {
                         Debug.Log("Bas");
                         direction = directionFaced.DOWN;
@@ -491,25 +461,15 @@ public class Grid2
                         SetValue(i, j - 1, 12);
                     }
 
-                    //else if (gridArray[i - 1, j].value == 56 && j < gridHeight && i < gridLength && j > 0 && i - 1 > 0)
-                    //{
-                    //    Debug.Log("Gauche");
-                    //    gridArray[i - 1, j].value = 12;
-                    //    gridArray[i, j].hasLuo = false;
-                    //    SetValue(i, j, 0);
-                    //    gridArray[i - 1, j].hasLuo = true;
-
-                    //    SetValue(i - 1, j, 12);
-                    //}
                 }
 
             }
         }
     }
 
-    public void DebugFunction(int i, int j)
-    {
-        Debug.Log(gridArray[i, j].isCrystal);
-    }
+    //public void DebugFunction(int i, int j)
+    //{
+    //    Debug.Log(gridArray[i, j].isCrystal);
+    //}
 
 }

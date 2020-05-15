@@ -25,7 +25,7 @@ public class Testing2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        grid = new Grid2(gridLength, gridHeight,25f, new Vector3(-110, -58, 0)) ;
+        grid = new Grid2(gridLength, gridHeight,32f, new Vector3(-87, -75, 0)) ;
         grid.SetLuo(luoXPosition, luoYPosition);
         grid.SetGoal(goalXPosition, goalYPosition);
         for (int i = 0; i < numberOfCrystals; i++)
@@ -46,12 +46,11 @@ public class Testing2 : MonoBehaviour
     void Update()
     {
 
-        grid.DebugFunction(3, 3);
 
         if (Input.GetMouseButtonDown(0))
         {
             if (GameManager.numberOfLights > 0) {
-            //grid.UseBasicCrystal(GameManager.GetMouseWorldPosition(),56);
+                grid.UseBasicCrystal(GameManager.GetMouseWorldPosition(), 56);
                 grid.ActivateDark(GameManager.GetMouseWorldPosition());
             }
             
