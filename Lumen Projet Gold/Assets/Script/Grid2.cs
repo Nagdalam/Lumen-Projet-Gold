@@ -13,7 +13,8 @@ public class Grid2
     private cellContent[,] gridArray;
     private float cellSize;
     private TextMesh[,] debugTextArray;
-    private Vector3 originPosition;
+    public Vector3 originPosition;
+    public int numberSize;
 
     void Start()
     {
@@ -45,7 +46,7 @@ public class Grid2
         {
             for (int j = 0; j < gridArray.GetLength(1); j++)
             {
-                debugTextArray[i, j] = GameManager.CreateWorldText(gridArray[i, j].value.ToString(), null, GetWorldPosition(i, j) + new Vector3(cellSize, cellSize) * 0.5f, 100, Color.white, TextAnchor.MiddleCenter);
+                debugTextArray[i, j] = GameManager.CreateWorldText(gridArray[i, j].value.ToString(), null, GetWorldPosition(i, j) + new Vector3(cellSize, cellSize) * 0.5f, numberSize, Color.white, TextAnchor.MiddleCenter);
                 Debug.DrawLine(GetWorldPosition(i, j), GetWorldPosition(i, j + 1), Color.white, 100f);
                 Debug.DrawLine(GetWorldPosition(i, j), GetWorldPosition(i + 1, j), Color.white, 100f);
             }
