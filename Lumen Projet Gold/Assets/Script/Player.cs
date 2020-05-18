@@ -16,13 +16,32 @@ public class Player : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
-        if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) ==1f)
+        //if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) ==1f)
+        //{
+        //    movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f);
+        //}
+        //if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
+        //{
+        //    movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
+        //}
+        if (Input.GetKeyDown(KeyCode.Z))
         {
-            movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f);
+            movePoint.position += new Vector3(0f, 8, 0f);
         }
-        if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
+
+        else if (Input.GetKeyDown(KeyCode.Q))
         {
-            movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
+            movePoint.position += new Vector3(-8, 0f, 0f);
+        }
+
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+            movePoint.position += new Vector3(8, 0f, 0f);
+        }
+
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            movePoint.position += new Vector3(0f, -8, 0f);
         }
     }
        

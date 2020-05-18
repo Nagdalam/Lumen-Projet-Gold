@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5322200794696748918}
   - component: {fileID: 5322200794696748917}
   m_Layer: 0
-  m_Name: GridManager 1
+  m_Name: Grid2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,3 +59,9 @@ MonoBehaviour:
   goalXPosition: 0
   goalYPosition: 3
   numberOfLights: 4
+  cellSize: 8
+  originX: -87
+  originY: -75
+  numberSize: 100
+  movePoint: {fileID: 0}
+  luoDirection: 0

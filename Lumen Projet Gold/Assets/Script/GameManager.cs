@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public static bool canLuoMove = false;
     public static bool objectGrabbed;
     public static bool inDarkMode;
+    public static int width;
+    public static int height;
     public static TextMesh CreateWorldText(string text, Transform parent = null, Vector3 localPosition = default(Vector3), int fontSize = 40, Color? color = null, TextAnchor textAnchor = TextAnchor.UpperLeft, TextAlignment textAlignment = TextAlignment.Left, int sortingOrder = sortingOrderDefault)
     {
         if (color == null) color = Color.white;
@@ -19,6 +21,7 @@ public class GameManager : MonoBehaviour
     public static bool intensificationAllowed;
     public static bool isDarkTilesAllowed;
 
+   
     // Create Text in the World
     public static TextMesh CreateWorldText(Transform parent, string text, Vector3 localPosition, int fontSize, Color color, TextAnchor textAnchor, TextAlignment textAlignment, int sortingOrder)
     {
