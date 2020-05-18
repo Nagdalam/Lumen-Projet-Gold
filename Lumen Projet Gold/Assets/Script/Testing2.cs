@@ -83,9 +83,10 @@ public class Testing2 : MonoBehaviour
 
         if (GameManager.numberOfLights <=0)
         {
-            if(isWaiting == false) { 
-
-            grid.Pathfinder(gridHeight, gridLength, movePoint, isWaiting);
+            
+            if(isWaiting == false) {
+                
+                grid.Pathfinder(gridHeight, gridLength, movePoint, isWaiting);
             StartCoroutine(WaitASecond(1f));
             }
 
