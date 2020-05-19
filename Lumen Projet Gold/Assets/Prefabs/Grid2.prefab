@@ -59,7 +59,7 @@ MonoBehaviour:
   goalXPosition: 0
   goalYPosition: 3
   numberOfLights: 4
-  cellSize: 8
+  cellSize: 8.9
   originX: -87
   originY: -75
   numberSize: 100

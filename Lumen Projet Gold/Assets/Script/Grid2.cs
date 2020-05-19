@@ -15,7 +15,7 @@ public class Grid2
     private TextMesh[,] debugTextArray;
     public Vector3 originPosition;
     public int numberSize;
-
+    int move = 0;
     void Start()
     {
         direction = directionFaced.UP;
@@ -137,6 +137,7 @@ public class Grid2
     {
         gridArray[x, y].isGoal = true;
         SetValue(x, y, 876);
+        gridArray[x, y].isIlluminated = true;
     }
     public void SetDark(int x, int y)
     {
@@ -352,13 +353,14 @@ public class Grid2
             {
                 for (int i = 0; i < gridLength; i++)
                 {
-                    if (gridArray[i, j].isGoal == true && gridArray[i,j].hasLuo==true || gridArray[i+1,j].isGoal==true && gridArray[i, j].hasLuo == true)
+                    if (gridArray[i, j].isGoal == true && gridArray[i,j].hasLuo==true )
                     {
                         Debug.Log("Niveau terminé");
                     }
+                    
                     if (gridArray[i, j].hasLuo == true && direction == directionFaced.UP && gridArray[i, j].isGoal == false && foundGoal == false)
                     {
-                        if (gridArray[i, j + 1].isIlluminated == true && i < GameManager.width && j < GameManager.height)
+                        if (gridArray[i, j + 1].isIlluminated == true && i < GameManager.width && j < GameManager.height && gridArray[i, j + 1].isDark == false)
                         {
                             //Debug.Log("Haut");
                             direction = directionFaced.UP;
@@ -366,7 +368,7 @@ public class Grid2
                             gridArray[i, j].hasLuo = false;
                             SetValue(i, j, 0);
                             gridArray[i, j + 1].hasLuo = true;
-                            playerTransform.position += new Vector3(0f, 8, 0f);
+                            playerTransform.position += new Vector3(0f, 8.9f, 0f);
                         foundGoal = true;
                         SetValue(i, j + 1, 12);
                         
@@ -381,7 +383,7 @@ public class Grid2
                             gridArray[i, j].hasLuo = false;
                             SetValue(i, j, 0);
                             gridArray[i + 1, j].hasLuo = true;
-                        playerTransform.position += new Vector3(8f, 0f, 0f);
+                        playerTransform.position += new Vector3(8.9f, 0f, 0f);
                         foundGoal = true;
                         SetValue(i + 1, j, 12);
                         }
@@ -393,7 +395,7 @@ public class Grid2
                             gridArray[i, j].hasLuo = false;
                             SetValue(i, j, 0);
                             gridArray[i - 1, j].hasLuo = true;
-                        playerTransform.position += new Vector3(-8f, 0f, 0f);
+                        playerTransform.position += new Vector3(-8.9f, 0f, 0f);
                         foundGoal = true;
                         SetValue(i - 1, j, 12);
                         }
@@ -410,7 +412,7 @@ public class Grid2
                             gridArray[i, j].hasLuo = false;
                             SetValue(i, j, 0);
                             gridArray[i, j - 1].hasLuo = true;
-                        playerTransform.position += new Vector3(0f, -8, 0f);
+                        playerTransform.position += new Vector3(0f, -8.9f, 0f);
                         foundGoal = true;
                         SetValue(i, j - 1, 12);
                         }
@@ -422,7 +424,7 @@ public class Grid2
                             gridArray[i, j].hasLuo = false;
                             SetValue(i, j, 0);
                             gridArray[i + 1, j].hasLuo = true;
-                        playerTransform.position += new Vector3(8f, 0f, 0f);
+                        playerTransform.position += new Vector3(8.9f, 0f, 0f);
                         foundGoal = true;
                         SetValue(i + 1, j, 12);
                         }
@@ -434,7 +436,7 @@ public class Grid2
                             gridArray[i, j].hasLuo = false;
                             SetValue(i, j, 0);
                             gridArray[i - 1, j].hasLuo = true;
-                        playerTransform.position += new Vector3(-8f, 0f, 0f);
+                        playerTransform.position += new Vector3(-8.9f, 0f, 0f);
                         foundGoal = true;
                         SetValue(i - 1, j, 12);
                         }
@@ -443,18 +445,18 @@ public class Grid2
                     if (gridArray[i, j].hasLuo == true && direction == directionFaced.LEFT && gridArray[i, j].isGoal == false && foundGoal == false)
                     {
 
-                        if (gridArray[i - 1, j].isIlluminated == true)
+                        if (gridArray[i - 1, j].isIlluminated == true && gridArray[i-1, j].isDark == false)
                         {
                             direction = directionFaced.LEFT;
                             gridArray[i - 1, j].value = 12;
                             gridArray[i, j].hasLuo = false;
                             SetValue(i, j, 0);
                             gridArray[i - 1, j].hasLuo = true;
-                        playerTransform.position += new Vector3(-8f, 0f, 0f);
+                        playerTransform.position += new Vector3(-8.9f, 0f, 0f);
                         foundGoal = true;
                         SetValue(i - 1, j, 12);
                         }
-                        else if (gridArray[i, j + 1].isIlluminated == true)
+                        else if (gridArray[i, j + 1].isIlluminated == true && gridArray[i, j + 1].isDark == false)
                         {
                             //Debug.Log("Haut");
                             direction = directionFaced.UP;
@@ -462,7 +464,7 @@ public class Grid2
                             gridArray[i, j].hasLuo = false;
                             SetValue(i, j, 0);
                             gridArray[i, j + 1].hasLuo = true;
-                        playerTransform.position += new Vector3(0f, 8, 0f);
+                        playerTransform.position += new Vector3(0f, 8.9f, 0f);
                         foundGoal = true;
                         SetValue(i, j + 1, 12);
                         }
@@ -474,7 +476,7 @@ public class Grid2
                             gridArray[i, j].hasLuo = false;
                             SetValue(i, j, 0);
                             gridArray[i, j - 1].hasLuo = true;
-                        playerTransform.position += new Vector3(0f, -8, 0f);
+                        playerTransform.position += new Vector3(0f, -8.9f, 0f);
                         foundGoal = true;
                         SetValue(i, j - 1, 12);
                         }
@@ -493,7 +495,7 @@ public class Grid2
                             gridArray[i, j].hasLuo = false;
                             SetValue(i, j, 0);
                             gridArray[i + 1, j].hasLuo = true;
-                        playerTransform.position += new Vector3(8f, 0f, 0f);
+                        playerTransform.position += new Vector3(8.9f, 0f, 0f);
                         foundGoal = true;
                         SetValue(i + 1, j, 12);
                         }
@@ -505,7 +507,7 @@ public class Grid2
                             gridArray[i, j].hasLuo = false;
                             SetValue(i, j, 0);
                             gridArray[i, j + 1].hasLuo = true;
-                        playerTransform.position += new Vector3(0f, 8, 0f);
+                        playerTransform.position += new Vector3(0f, 8.9f, 0f);
                         foundGoal = true;
                         SetValue(i, j + 1, 12);
                         }
@@ -517,7 +519,7 @@ public class Grid2
                             gridArray[i, j].hasLuo = false;
                             SetValue(i, j, 0);
                             gridArray[i, j - 1].hasLuo = true;
-                        playerTransform.position += new Vector3(0f, -8, 0f);
+                        playerTransform.position += new Vector3(0f, -8.9f, 0f);
                         foundGoal = true;
                         SetValue(i, j - 1, 12);
                         }
