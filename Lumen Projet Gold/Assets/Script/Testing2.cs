@@ -28,6 +28,7 @@ public class Testing2 : MonoBehaviour
     public Transform movePoint;
     bool isWaiting = false;
     public int luoDirection;
+    public GameObject lightPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -64,7 +65,7 @@ public class Testing2 : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             if (GameManager.numberOfLights > 0) {
-                grid.UseBasicCrystal(GameManager.GetMouseWorldPosition(), 56);
+                grid.UseBasicCrystal(GameManager.GetMouseWorldPosition(), 56, lightPrefab, originX, originY);
                 if (GameManager.isDarkTilesAllowed) { 
                 grid.ActivateDark(GameManager.GetMouseWorldPosition());
                 }
@@ -76,7 +77,7 @@ public class Testing2 : MonoBehaviour
         {
             if (GameManager.numberOfLights > 0)
             {
-                grid.UseBasicCrystal(GameManager.GetMouseWorldPosition(), 56);
+                grid.UseBasicCrystal(GameManager.GetMouseWorldPosition(), 56, lightPrefab, originX, originY);
             }
 
         }
