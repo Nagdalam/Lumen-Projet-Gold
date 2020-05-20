@@ -171,7 +171,7 @@ PrefabInstance:
     - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
         type: 3}
       propertyPath: numberOfCrystals
-      value: 25
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
         type: 3}
@@ -824,6 +824,12 @@ PrefabInstance:
       propertyPath: cellSize
       value: 8.9
       objectReference: {fileID: 0}
+    - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
+        type: 3}
+      propertyPath: lightPrefab
+      value: 
+      objectReference: {fileID: 3955325565066051717, guid: e91f1db286ff11344962b2221b47fed5,
+        type: 3}
     - target: {fileID: 5322200794696748918, guid: 271c5c146d285e54aa02f45a9695fd05,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1170,7 +1176,7 @@ PrefabInstance:
     - target: {fileID: 3955325565066051716, guid: 99478d68d4ec3544b9000d81d9cb1660,
         type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3955325565066051716, guid: 99478d68d4ec3544b9000d81d9cb1660,
         type: 3}

@@ -16,7 +16,8 @@ public class Grid2
     public Vector3 originPosition;
     public int numberSize;
     int move = 0;
-    
+
+
     void Start()
     {
         direction = directionFaced.UP;
@@ -47,13 +48,13 @@ public class Grid2
         {
             for (int j = 0; j < gridArray.GetLength(1); j++)
             {
-                debugTextArray[i, j] = GameManager.CreateWorldText(gridArray[i, j].value.ToString(), null, GetWorldPosition(i, j) + new Vector3(cellSize, cellSize) * 0.5f, 1, Color.grey, TextAnchor.MiddleCenter);
-                //Debug.DrawLine(GetWorldPosition(i, j), GetWorldPosition(i, j + 1), Color.white, 100f);
-                //Debug.DrawLine(GetWorldPosition(i, j), GetWorldPosition(i + 1, j), Color.white, 100f);
+                debugTextArray[i, j] = GameManager.CreateWorldText(gridArray[i, j].value.ToString(), null, GetWorldPosition(i, j) + new Vector3(cellSize, cellSize) * 0.5f, 25, Color.grey, TextAnchor.MiddleCenter);
+                Debug.DrawLine(GetWorldPosition(i, j), GetWorldPosition(i, j + 1), Color.white, 100f);
+                Debug.DrawLine(GetWorldPosition(i, j), GetWorldPosition(i + 1, j), Color.white, 100f);
             }
         }
-        //Debug.DrawLine(GetWorldPosition(0, height), GetWorldPosition(width, height), Color.white, 100f);
-        //Debug.DrawLine(GetWorldPosition(width, 0), GetWorldPosition(width, height), Color.white, 100f);
+        Debug.DrawLine(GetWorldPosition(0, height), GetWorldPosition(width, height), Color.white, 100f);
+        Debug.DrawLine(GetWorldPosition(width, 0), GetWorldPosition(width, height), Color.white, 100f);
 
         SetValue(2, 1, 0);
     }
@@ -186,16 +187,16 @@ public class Grid2
             GameManager.numberOfLights--;
             if (gridArray[x, y].isCrystal == true && gridArray[x, y].typeCrystal == crystalType.BASIC)
             {
-                
+
                 if (gridArray[x, y].usageCount == 0)
                 {
-                    
+
                     SetValue(x + 1, y, value);
-                    GameObject instancedObj1 = GameObject.Instantiate(lightPrefab, new Vector3((originX- (cellSize/2) )+ ((x+1)+1)*cellSize, ((originY-(cellSize/2))+(y+1)*cellSize), 0), Quaternion.identity) as GameObject;
+                    GameObject instancedObj1 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1) + 1) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
                     SetValue(x - 1, y, value);
                     GameObject instancedObj2 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1) - 1) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x, y + 1, value);
-                    GameObject instancedObj3 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1)+1) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj3 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) + 1) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x, y - 1, value);
                     GameObject instancedObj4 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 1) * cellSize), -2), Quaternion.identity) as GameObject;
                 }
@@ -343,18 +344,19 @@ public class Grid2
         if (x >= 0 && y >= 0 && x < width && y < height)
         {
             gridArray[x, y].hasLuo = true;
-            if(initialDirection == 1) {
+            if (initialDirection == 1)
+            {
                 direction = directionFaced.UP;
-                    }
-            else if(initialDirection == 2)
+            }
+            else if (initialDirection == 2)
             {
                 direction = directionFaced.RIGHT;
             }
-            else if(initialDirection == 3)
+            else if (initialDirection == 3)
             {
                 direction = directionFaced.DOWN;
             }
-            else if(initialDirection == 4)
+            else if (initialDirection == 4)
             {
                 direction = directionFaced.LEFT;
             }
@@ -387,192 +389,207 @@ public class Grid2
 
     public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform, bool isWaiting)
     {
-        
+
         bool foundGoal = false;
-            for (int j = 0; j < gridHeight; j++)
+        for (int j = 0; j < gridHeight; j++)
+        {
+            for (int i = 0; i < gridLength; i++)
             {
-                for (int i = 0; i < gridLength; i++)
+                if (gridArray[i, j].isGoal == true && gridArray[i, j].hasLuo == true)
                 {
-                    if (gridArray[i, j].isGoal == true && gridArray[i,j].hasLuo==true )
+                    Debug.Log("Niveau terminé");
+                }
+
+                if (gridArray[i, j].hasLuo == true && direction == directionFaced.UP && gridArray[i, j].isGoal == false && foundGoal == false)
+                {
+                    if (gridArray[i, j + 1].isIlluminated == true && i < GameManager.width && j < GameManager.height && gridArray[i, j + 1].isDark == false)
                     {
-                        Debug.Log("Niveau terminé");
-                    }
-                    
-                    if (gridArray[i, j].hasLuo == true && direction == directionFaced.UP && gridArray[i, j].isGoal == false && foundGoal == false)
-                    {
-                        if (gridArray[i, j + 1].isIlluminated == true && i < GameManager.width && j < GameManager.height && gridArray[i, j + 1].isDark == false)
-                        {
-                            //Debug.Log("Haut");
-                            direction = directionFaced.UP;
-                            gridArray[i, j + 1].value = 12;
-                            gridArray[i, j].hasLuo = false;
-                            SetValue(i, j, 0);
-                            gridArray[i, j + 1].hasLuo = true;
-                            playerTransform.position += new Vector3(0f, 8.9f, 0f);
+                        //Debug.Log("Haut");
+                        LerpManager.startLerping = true;
+                        direction = directionFaced.UP;
+                        gridArray[i, j + 1].value = 12;
+                        gridArray[i, j].hasLuo = false;
+                        SetValue(i, j, 0);
+                        gridArray[i, j + 1].hasLuo = true;
+                        playerTransform.position += new Vector3(0f, 8.9f, 0f);
                         foundGoal = true;
                         SetValue(i, j + 1, 12);
-                        
-                        
-                        }
 
-                        else if (gridArray[i + 1, j].isIlluminated == true)
-                        {
-                            //Debug.Log("Droite");
-                            direction = directionFaced.RIGHT;
-                            gridArray[i + 1, j].value = 12;
-                            gridArray[i, j].hasLuo = false;
-                            SetValue(i, j, 0);
-                            gridArray[i + 1, j].hasLuo = true;
+
+
+                    }
+
+                    else if (gridArray[i + 1, j].isIlluminated == true)
+                    {
+                        //Debug.Log("Droite");
+                        LerpManager.startLerping = true;
+                        direction = directionFaced.RIGHT;
+                        gridArray[i + 1, j].value = 12;
+                        gridArray[i, j].hasLuo = false;
+                        SetValue(i, j, 0);
+                        gridArray[i + 1, j].hasLuo = true;
                         playerTransform.position += new Vector3(8.9f, 0f, 0f);
                         foundGoal = true;
                         SetValue(i + 1, j, 12);
-                        }
-                        else if (gridArray[i - 1, j].isIlluminated == true)
-                        {
-                            //Debug.Log("Gauche");
-                            direction = directionFaced.LEFT;
-                            gridArray[i - 1, j].value = 12;
-                            gridArray[i, j].hasLuo = false;
-                            SetValue(i, j, 0);
-                            gridArray[i - 1, j].hasLuo = true;
+                    }
+                    else if (gridArray[i - 1, j].isIlluminated == true)
+                    {
+                        LerpManager.startLerping = true;
+                        //Debug.Log("Gauche");
+                        direction = directionFaced.LEFT;
+                        gridArray[i - 1, j].value = 12;
+                        gridArray[i, j].hasLuo = false;
+                        SetValue(i, j, 0);
+                        gridArray[i - 1, j].hasLuo = true;
                         playerTransform.position += new Vector3(-8.9f, 0f, 0f);
                         foundGoal = true;
                         SetValue(i - 1, j, 12);
-                        }
                     }
+                }
 
-                    if (gridArray[i, j].hasLuo==true && direction == directionFaced.DOWN && gridArray[i, j].isGoal == false && foundGoal == false)
-                    {
+                if (gridArray[i, j].hasLuo == true && direction == directionFaced.DOWN && gridArray[i, j].isGoal == false && foundGoal == false)
+                {
                     Debug.Log("Luo descend");
-                        if (gridArray[i, j - 1].isIlluminated == true && gridArray[i,j-1].isDark == false)
-                        {
-                        
-                            direction = directionFaced.DOWN;
-                            gridArray[i, j - 1].value = 12;
-                            gridArray[i, j].hasLuo = false;
-                            SetValue(i, j, 0);
-                            gridArray[i, j - 1].hasLuo = true;
+                    if (gridArray[i, j - 1].isIlluminated == true && gridArray[i, j - 1].isDark == false)
+                    {
+                        LerpManager.startLerping = true;
+
+                        direction = directionFaced.DOWN;
+                        gridArray[i, j - 1].value = 12;
+                        gridArray[i, j].hasLuo = false;
+                        SetValue(i, j, 0);
+                        gridArray[i, j - 1].hasLuo = true;
                         playerTransform.position += new Vector3(0f, -8.9f, 0f);
                         foundGoal = true;
                         SetValue(i, j - 1, 12);
-                        }
-                        else if (gridArray[i + 1, j].isIlluminated == true)
-                        {
-                            Debug.Log("Droite");
-                            direction = directionFaced.RIGHT;
-                            gridArray[i + 1, j].value = 12;
-                            gridArray[i, j].hasLuo = false;
-                            SetValue(i, j, 0);
-                            gridArray[i + 1, j].hasLuo = true;
+                    }
+                    else if (gridArray[i + 1, j].isIlluminated == true)
+                    {
+                        LerpManager.startLerping = true;
+                        Debug.Log("Droite");
+                        direction = directionFaced.RIGHT;
+                        gridArray[i + 1, j].value = 12;
+                        gridArray[i, j].hasLuo = false;
+                        SetValue(i, j, 0);
+                        gridArray[i + 1, j].hasLuo = true;
                         playerTransform.position += new Vector3(8.9f, 0f, 0f);
                         foundGoal = true;
                         SetValue(i + 1, j, 12);
-                        }
-                        else if (gridArray[i - 1, j].isIlluminated == true)
-                        {
-                            //Debug.Log("Gauche");
-                            direction = directionFaced.LEFT;
-                            gridArray[i - 1, j].value = 12;
-                            gridArray[i, j].hasLuo = false;
-                            SetValue(i, j, 0);
-                            gridArray[i - 1, j].hasLuo = true;
+                    }
+                    else if (gridArray[i - 1, j].isIlluminated == true)
+                    {
+                        LerpManager.startLerping = true;
+                        //Debug.Log("Gauche");
+                        direction = directionFaced.LEFT;
+                        gridArray[i - 1, j].value = 12;
+                        gridArray[i, j].hasLuo = false;
+                        SetValue(i, j, 0);
+                        gridArray[i - 1, j].hasLuo = true;
                         playerTransform.position += new Vector3(-8.9f, 0f, 0f);
                         foundGoal = true;
                         SetValue(i - 1, j, 12);
-                        }
                     }
+                }
 
-                    if (gridArray[i, j].hasLuo == true && direction == directionFaced.LEFT && gridArray[i, j].isGoal == false && foundGoal == false)
+                if (gridArray[i, j].hasLuo == true && direction == directionFaced.LEFT && gridArray[i, j].isGoal == false && foundGoal == false)
+                {
+
+                    if (gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].isDark == false)
                     {
-
-                        if (gridArray[i - 1, j].isIlluminated == true && gridArray[i-1, j].isDark == false)
-                        {
-                            direction = directionFaced.LEFT;
-                            gridArray[i - 1, j].value = 12;
-                            gridArray[i, j].hasLuo = false;
-                            SetValue(i, j, 0);
-                            gridArray[i - 1, j].hasLuo = true;
+                        LerpManager.startLerping = true;
+                        direction = directionFaced.LEFT;
+                        gridArray[i - 1, j].value = 12;
+                        gridArray[i, j].hasLuo = false;
+                        SetValue(i, j, 0);
+                        gridArray[i - 1, j].hasLuo = true;
                         playerTransform.position += new Vector3(-8.9f, 0f, 0f);
                         foundGoal = true;
                         SetValue(i - 1, j, 12);
-                        }
-                        else if (gridArray[i, j + 1].isIlluminated == true && gridArray[i, j + 1].isDark == false)
-                        {
-                            //Debug.Log("Haut");
-                            direction = directionFaced.UP;
-                            gridArray[i, j + 1].value = 12;
-                            gridArray[i, j].hasLuo = false;
-                            SetValue(i, j, 0);
-                            gridArray[i, j + 1].hasLuo = true;
-                        playerTransform.position += new Vector3(0f, 8.9f, 0f);
-                        foundGoal = true;
-                        SetValue(i, j + 1, 12);
-                        }
-                        else if (gridArray[i, j - 1].isIlluminated == true)
-                        {
-                            //Debug.Log("Bas");
-                            direction = directionFaced.DOWN;
-                            gridArray[i, j - 1].value = 12;
-                            gridArray[i, j].hasLuo = false;
-                            SetValue(i, j, 0);
-                            gridArray[i, j - 1].hasLuo = true;
-                        playerTransform.position += new Vector3(0f, -8.9f, 0f);
-                        foundGoal = true;
-                        SetValue(i, j - 1, 12);
-                        }
-
                     }
-
-                    if (gridArray[i, j].value == 12 && direction == directionFaced.RIGHT && gridArray[i, j].isGoal == false && foundGoal == false)
+                    else if (gridArray[i, j + 1].isIlluminated == true && gridArray[i, j + 1].isDark == false)
                     {
-
-                        GameManager.canLuoMove = false;
-                        if (gridArray[i + 1, j].isIlluminated == true)
-                        {
-                            //Debug.Log("Droite");
-                            direction = directionFaced.RIGHT;
-                            gridArray[i + 1, j].value = 12;
-                            gridArray[i, j].hasLuo = false;
-                            SetValue(i, j, 0);
-                            gridArray[i + 1, j].hasLuo = true;
-                        playerTransform.position += new Vector3(8.9f, 0f, 0f);
-                        foundGoal = true;
-                        SetValue(i + 1, j, 12);
-                        }
-                        else if (gridArray[i, j + 1].isIlluminated == true)
-                        {
-                            //Debug.Log("Haut");
-                            direction = directionFaced.UP;
-                            gridArray[i, j + 1].value = 12;
-                            gridArray[i, j].hasLuo = false;
-                            SetValue(i, j, 0);
-                            gridArray[i, j + 1].hasLuo = true;
+                        LerpManager.startLerping = true;
+                        //Debug.Log("Haut");
+                        direction = directionFaced.UP;
+                        gridArray[i, j + 1].value = 12;
+                        gridArray[i, j].hasLuo = false;
+                        SetValue(i, j, 0);
+                        gridArray[i, j + 1].hasLuo = true;
                         playerTransform.position += new Vector3(0f, 8.9f, 0f);
                         foundGoal = true;
                         SetValue(i, j + 1, 12);
-                        }
-                        else if (gridArray[i, j - 1].isIlluminated == true)
-                        {
-                            //Debug.Log("Bas");
-                            direction = directionFaced.DOWN;
-                            gridArray[i, j - 1].value = 12;
-                            gridArray[i, j].hasLuo = false;
-                            SetValue(i, j, 0);
-                            gridArray[i, j - 1].hasLuo = true;
+                    }
+                    else if (gridArray[i, j - 1].isIlluminated == true)
+                    {
+                        LerpManager.startLerping = true;
+                        //Debug.Log("Bas");
+                        direction = directionFaced.DOWN;
+                        gridArray[i, j - 1].value = 12;
+                        gridArray[i, j].hasLuo = false;
+                        SetValue(i, j, 0);
+                        gridArray[i, j - 1].hasLuo = true;
                         playerTransform.position += new Vector3(0f, -8.9f, 0f);
                         foundGoal = true;
                         SetValue(i, j - 1, 12);
-                        }
-
                     }
 
                 }
-            
+
+                if (gridArray[i, j].value == 12 && direction == directionFaced.RIGHT && gridArray[i, j].isGoal == false && foundGoal == false)
+                {
+
+                    GameManager.canLuoMove = false;
+                    if (gridArray[i + 1, j].isIlluminated == true)
+                    {
+                        LerpManager.startLerping = true;
+                        //Debug.Log("Droite");
+                        direction = directionFaced.RIGHT;
+                        gridArray[i + 1, j].value = 12;
+                        gridArray[i, j].hasLuo = false;
+                        SetValue(i, j, 0);
+                        gridArray[i + 1, j].hasLuo = true;
+                        playerTransform.position += new Vector3(8.9f, 0f, 0f);
+                        foundGoal = true;
+                        SetValue(i + 1, j, 12);
+                    }
+                    else if (gridArray[i, j + 1].isIlluminated == true)
+                    {
+                        LerpManager.startLerping = true;
+                        //Debug.Log("Haut");
+                        direction = directionFaced.UP;
+                        gridArray[i, j + 1].value = 12;
+                        gridArray[i, j].hasLuo = false;
+                        SetValue(i, j, 0);
+                        gridArray[i, j + 1].hasLuo = true;
+                        playerTransform.position += new Vector3(0f, 8.9f, 0f);
+                        foundGoal = true;
+                        SetValue(i, j + 1, 12);
+                    }
+                    else if (gridArray[i, j - 1].isIlluminated == true)
+                    {
+                        LerpManager.startLerping = true;
+                        //Debug.Log("Bas");
+                        direction = directionFaced.DOWN;
+                        gridArray[i, j - 1].value = 12;
+                        gridArray[i, j].hasLuo = false;
+                        SetValue(i, j, 0);
+                        gridArray[i, j - 1].hasLuo = true;
+                        playerTransform.position += new Vector3(0f, -8.9f, 0f);
+                        foundGoal = true;
+                        SetValue(i, j - 1, 12);
+                    }
+
+                }
+
+            }
+
 
         }
     }
 
-    
+
+
+
     //public void DebugFunction(int i, int j)
     //{
     //    Debug.Log(gridArray[i, j].isCrystal);

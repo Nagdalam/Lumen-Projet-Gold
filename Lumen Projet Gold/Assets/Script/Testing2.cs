@@ -98,6 +98,8 @@ public class Testing2 : MonoBehaviour
             isWaiting = true;
             yield return new WaitForSeconds(waitTime);
             isWaiting = false;
+            LerpManager.startLerping = false;
+
         }
 
         //if (Input.GetMouseButtonDown(1))
