@@ -48,13 +48,13 @@ public class Grid2
         {
             for (int j = 0; j < gridArray.GetLength(1); j++)
             {
-                debugTextArray[i, j] = GameManager.CreateWorldText(gridArray[i, j].value.ToString(), null, GetWorldPosition(i, j) + new Vector3(cellSize, cellSize) * 0.5f, 25, Color.grey, TextAnchor.MiddleCenter);
-                Debug.DrawLine(GetWorldPosition(i, j), GetWorldPosition(i, j + 1), Color.white, 100f);
-                Debug.DrawLine(GetWorldPosition(i, j), GetWorldPosition(i + 1, j), Color.white, 100f);
+                debugTextArray[i, j] = GameManager.CreateWorldText(gridArray[i, j].value.ToString(), null, GetWorldPosition(i, j) + new Vector3(cellSize, cellSize) * 0.5f, 1, Color.grey, TextAnchor.MiddleCenter);
+                //Debug.DrawLine(GetWorldPosition(i, j), GetWorldPosition(i, j + 1), Color.white, 100f);
+                //Debug.DrawLine(GetWorldPosition(i, j), GetWorldPosition(i + 1, j), Color.white, 100f);
             }
         }
-        Debug.DrawLine(GetWorldPosition(0, height), GetWorldPosition(width, height), Color.white, 100f);
-        Debug.DrawLine(GetWorldPosition(width, 0), GetWorldPosition(width, height), Color.white, 100f);
+        //Debug.DrawLine(GetWorldPosition(0, height), GetWorldPosition(width, height), Color.white, 100f);
+        //Debug.DrawLine(GetWorldPosition(width, 0), GetWorldPosition(width, height), Color.white, 100f);
 
         SetValue(2, 1, 0);
     }
@@ -178,7 +178,7 @@ public class Grid2
         ActivateDark(x, y);
     }
 
-    public void UseBasicCrystal(Vector3 worldPosition, int value, GameObject lightPrefab, int originX, int originY)
+    public void UseBasicCrystal(Vector3 worldPosition, int value, GameObject lightPrefabBasic,GameObject lightPrefabBilateral, GameObject lightPrefabTower ,int originX, int originY)
     {
         int x, y;
         GetXY(worldPosition, out x, out y);
@@ -192,24 +192,24 @@ public class Grid2
                 {
 
                     SetValue(x + 1, y, value);
-                    GameObject instancedObj1 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1) + 1) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
+                    GameObject instancedObj1 = GameObject.Instantiate(lightPrefabBasic, new Vector3((originX - (cellSize / 2)) + ((x + 1) + 1) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
                     SetValue(x - 1, y, value);
-                    GameObject instancedObj2 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1) - 1) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj2 = GameObject.Instantiate(lightPrefabBasic, new Vector3((originX - (cellSize / 2)) + ((x + 1) - 1) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x, y + 1, value);
-                    GameObject instancedObj3 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) + 1) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj3 = GameObject.Instantiate(lightPrefabBasic, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) + 1) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x, y - 1, value);
-                    GameObject instancedObj4 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 1) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj4 = GameObject.Instantiate(lightPrefabBasic, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 1) * cellSize), -2), Quaternion.identity) as GameObject;
                 }
                 else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
                 {
                     SetValue(x + 2, y, value);
-                    GameObject instancedObj1 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1) + 2) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj1 = GameObject.Instantiate(lightPrefabBasic, new Vector3((originX - (cellSize / 2)) + ((x + 1) + 2) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x - 2, y, value);
-                    GameObject instancedObj2 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1) - 2) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj2 = GameObject.Instantiate(lightPrefabBasic, new Vector3((originX - (cellSize / 2)) + ((x + 1) - 2) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x, y + 2, value);
-                    GameObject instancedObj3 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 2) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj3 = GameObject.Instantiate(lightPrefabBasic, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 2) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x, y - 2, value);
-                    GameObject instancedObj4 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 2) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj4 = GameObject.Instantiate(lightPrefabBasic, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 2) * cellSize), -2), Quaternion.identity) as GameObject;
                 }
 
             }
@@ -218,17 +218,17 @@ public class Grid2
                 if (gridArray[x, y].usageCount == 0)
                 {
                     SetValue(x, y + 1, value);
-                    GameObject instancedObj1 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) + 1) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj1 = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) + 1) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x, y + 2, value);
-                    GameObject instancedObj2 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) + 2) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj2 = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) + 2) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x, y + 3, value);
-                    GameObject instancedObj3 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) + 3) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj3 = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) + 3) * cellSize), -2), Quaternion.identity) as GameObject;
 
                 }
                 else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
                 {
                     SetValue(x, y + 4, value);
-                    GameObject instancedObj4 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) + 4) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj4 = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) + 4) * cellSize), -2), Quaternion.identity) as GameObject;
 
                 }
             }
@@ -237,16 +237,16 @@ public class Grid2
                 if (gridArray[x, y].usageCount == 0)
                 {
                     SetValue(x, y - 1, value);
-                    GameObject instancedObj1 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 1) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj1 = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 1) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x, y - 2, value);
-                    GameObject instancedObj2 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 2) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj2 = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 2) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x, y - 3, value);
-                    GameObject instancedObj3 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 3) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj3 = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 3) * cellSize), -2), Quaternion.identity) as GameObject;
                 }
                 else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
                 {
                     SetValue(x, y - 4, value);
-                    GameObject instancedObj4 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 4) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj4 = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 4) * cellSize), -2), Quaternion.identity) as GameObject;
                 }
             }
 
@@ -255,15 +255,15 @@ public class Grid2
                 if (gridArray[x, y].usageCount == 0)
                 {
                     SetValue(x - 1, y, value);
-                    GameObject instancedObj1 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1) - 1) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj1 = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + ((x + 1) - 1) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x - 2, y, value);
-                    GameObject instancedObj2 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1) - 2) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj2 = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + ((x + 1) - 2) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x - 3, y, value);
-                    GameObject instancedObj3 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1) - 3) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj3 = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + ((x + 1) - 3) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), -2), Quaternion.identity) as GameObject;
                 }
                 else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
                 {
-                    GameObject instancedObj4 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1) - 4) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj4 = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + ((x + 1) - 4) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x - 4, y, value);
                 }
             }
@@ -273,16 +273,16 @@ public class Grid2
                 if (gridArray[x, y].usageCount == 0)
                 {
                     SetValue(x + 1, y, value);
-                    GameObject instancedObj1 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1) + 1) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
+                    GameObject instancedObj1 = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + ((x + 1) + 1) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
                     SetValue(x + 2, y, value);
-                    GameObject instancedObj2 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1) + 2) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
+                    GameObject instancedObj2 = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + ((x + 1) + 2) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
                     SetValue(x + 3, y, value);
-                    GameObject instancedObj3 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1) + 3) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
+                    GameObject instancedObj3 = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + ((x + 1) + 3) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
                 }
                 else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
                 {
                     SetValue(x + 4, y, value);
-                    GameObject instancedObj4 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1) + 4) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
+                    GameObject instancedObj4 = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + ((x + 1) + 4) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
                 }
             }
 
@@ -293,21 +293,21 @@ public class Grid2
                 if (gridArray[x, y].usageCount == 0)
                 {
                     SetValue(x + 1, y, value);
-                    GameObject instancedObj1 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1) + 1) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
+                    GameObject instancedObj1 = GameObject.Instantiate(lightPrefabBilateral, new Vector3((originX - (cellSize / 2)) + ((x + 1) + 1) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
                     SetValue(x + 2, y, value);
-                    GameObject instancedObj2 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1) + 2) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
+                    GameObject instancedObj2 = GameObject.Instantiate(lightPrefabBilateral, new Vector3((originX - (cellSize / 2)) + ((x + 1) + 2) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
                     SetValue(x - 1, y, value);
-                    GameObject instancedObj3 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1) - 1) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
+                    GameObject instancedObj3 = GameObject.Instantiate(lightPrefabBilateral, new Vector3((originX - (cellSize / 2)) + ((x + 1) - 1) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
                     SetValue(x - 2, y, value);
-                    GameObject instancedObj4 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1) - 2) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
+                    GameObject instancedObj4 = GameObject.Instantiate(lightPrefabBilateral, new Vector3((originX - (cellSize / 2)) + ((x + 1) - 2) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
                 }
 
                 else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
                 {
                     SetValue(x + 3, y, value);
-                    GameObject instancedObj5 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1) + 3) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
+                    GameObject instancedObj5 = GameObject.Instantiate(lightPrefabBilateral, new Vector3((originX - (cellSize / 2)) + ((x + 1) + 3) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
                     SetValue(x - 3, y, value);
-                    GameObject instancedObj6 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1) - 3) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
+                    GameObject instancedObj6 = GameObject.Instantiate(lightPrefabBilateral, new Vector3((originX - (cellSize / 2)) + ((x + 1) - 3) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
                 }
             }
 
@@ -316,21 +316,21 @@ public class Grid2
                 if (gridArray[x, y].usageCount == 0)
                 {
                     SetValue(x, y + 1, value);
-                    GameObject instancedObj1 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) + 1) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj1 = GameObject.Instantiate(lightPrefabBilateral, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) + 1) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x, y + 2, value);
-                    GameObject instancedObj2 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) + 2) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj2 = GameObject.Instantiate(lightPrefabBilateral, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) + 2) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x, y - 1, value);
-                    GameObject instancedObj3 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 1) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj3 = GameObject.Instantiate(lightPrefabBilateral, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 1) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x, y - 2, value);
-                    GameObject instancedObj4 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 2) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj4 = GameObject.Instantiate(lightPrefabBilateral, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 2) * cellSize), -2), Quaternion.identity) as GameObject;
                 }
 
                 else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
                 {
                     SetValue(x, y + 3, value);
-                    GameObject instancedObj5 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) + 3) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj5 = GameObject.Instantiate(lightPrefabBilateral, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) + 3) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x, y - 3, value);
-                    GameObject instancedObj6 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 3) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj6 = GameObject.Instantiate(lightPrefabBilateral, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 3) * cellSize), -2), Quaternion.identity) as GameObject;
                 }
             }
             gridArray[x, y].usageCount++;
@@ -387,7 +387,7 @@ public class Grid2
         return GetValue(x, y);
     }
 
-    public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform, bool isWaiting)
+    public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform, bool isWaiting, int lvlID)
     {
 
         bool foundGoal = false;
@@ -398,6 +398,7 @@ public class Grid2
                 if (gridArray[i, j].isGoal == true && gridArray[i, j].hasLuo == true)
                 {
                     Debug.Log("Niveau terminé");
+                    PlayerPrefs.SetInt("LevelsAvailable", lvlID);
                 }
 
                 if (gridArray[i, j].hasLuo == true && direction == directionFaced.UP && gridArray[i, j].isGoal == false && foundGoal == false)

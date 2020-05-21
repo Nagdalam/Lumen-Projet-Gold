@@ -65,5 +65,9 @@ MonoBehaviour:
   numberSize: 100
   movePoint: {fileID: 0}
   luoDirection: 0
-  lightPrefab: {fileID: 3955325565066051717, guid: e91f1db286ff11344962b2221b47fed5,
+  lightPrefabBasic: {fileID: 5266825931898364668, guid: b2b975aa0d0a1fd4b90fa314658438a6,
+    type: 3}
+  lightPrefabBilateral: {fileID: 5266825931898364668, guid: 8bab418af57d74443be658b60a9c33d1,
+    type: 3}
+  lightPrefabTower: {fileID: 5266825931898364668, guid: 795ce36bac30ce64eae03766f2320407,
     type: 3}

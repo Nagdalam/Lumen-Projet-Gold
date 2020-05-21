@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Basic Crystals/TestSpawn.unity
+    guid: 7b68ac48b5d6cc04d8a79be2f40babb8
+  - enabled: 1
     path: Assets/Scenes/Basic Crystals/Level1.unity
     guid: c91b368102102514fb3013a95995da13
   - enabled: 1

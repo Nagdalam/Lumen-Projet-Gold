@@ -10,6 +10,7 @@ public class LerpManager : MonoBehaviour
     bool shouldLerp;
     public static bool startLerping;
     public Transform target;
+    
     // Start is called before the first frame update
     void Start()
     {
