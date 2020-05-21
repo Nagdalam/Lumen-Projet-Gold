@@ -159,6 +159,7 @@ public class Grid2
                 debugTextArray[x, y].text = gridArray[x, y].value.ToString();
                 GameManager.numberOfLights--;
                 Debug.Log(GameManager.numberOfLights);
+
             }
         }
     }
@@ -178,7 +179,7 @@ public class Grid2
         ActivateDark(x, y);
     }
 
-    public void UseBasicCrystal(Vector3 worldPosition, int value, GameObject lightPrefabBasic, GameObject lightPrefabTower,GameObject lightPrefabBilateral ,int originX, int originY)
+    public void UseBasicCrystal(Vector3 worldPosition, int value, GameObject lightPrefabBasic, GameObject lightPrefabTower,GameObject lightPrefabBilateral ,int originX, int originY )
     {
         int x, y;
         GetXY(worldPosition, out x, out y);
@@ -399,6 +400,7 @@ public class Grid2
                 {
                     Debug.Log("Niveau terminé");
                     PlayerPrefs.SetInt("LevelsAvailable", lvlID);
+                    SceneManager.LoadScene(lvlID + 1);
                 }
 
                 if (gridArray[i, j].hasLuo == true && direction == directionFaced.UP && gridArray[i, j].isGoal == false && foundGoal == false)
@@ -446,6 +448,10 @@ public class Grid2
                         foundGoal = true;
                         SetValue(i - 1, j, 12);
                     }
+                    else
+                    {
+                        SceneManager.LoadScene(lvlID);
+                    }
                 }
 
                 if (gridArray[i, j].hasLuo == true && direction == directionFaced.DOWN && gridArray[i, j].isGoal == false && foundGoal == false)
@@ -490,6 +496,10 @@ public class Grid2
                         foundGoal = true;
                         SetValue(i - 1, j, 12);
                     }
+                    else
+                    {
+                        SceneManager.LoadScene(lvlID);
+                    }
                 }
 
                 if (gridArray[i, j].hasLuo == true && direction == directionFaced.LEFT && gridArray[i, j].isGoal == false && foundGoal == false)
@@ -532,6 +542,10 @@ public class Grid2
                         playerTransform.position += new Vector3(0f, -8.9f, 0f);
                         foundGoal = true;
                         SetValue(i, j - 1, 12);
+                    }
+                    else
+                    {
+                        SceneManager.LoadScene(lvlID);
                     }
 
                 }
@@ -578,6 +592,10 @@ public class Grid2
                         playerTransform.position += new Vector3(0f, -8.9f, 0f);
                         foundGoal = true;
                         SetValue(i, j - 1, 12);
+                    }
+                    else
+                    {
+                        SceneManager.LoadScene(lvlID);
                     }
 
                 }

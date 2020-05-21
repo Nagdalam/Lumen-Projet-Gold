@@ -7603,6 +7603,11 @@ PrefabInstance:
       propertyPath: luoDirection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
+        type: 3}
+      propertyPath: lvlID
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5322200794696748918, guid: 271c5c146d285e54aa02f45a9695fd05,
         type: 3}
       propertyPath: m_LocalPosition.x

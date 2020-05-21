@@ -28,8 +28,9 @@ public class Testing2 : MonoBehaviour
     public Transform movePoint;
     bool isWaiting = false;
     public int luoDirection;
-    public GameObject lightPrefabBasic, lightPrefabBilateral, lightPrefabTower;
+    public GameObject lightPrefabBasic, lightPrefabBilateral, lightPrefabTower, darkTile;
     public int lvlID;
+    
 
     // Start is called before the first frame update
     void Start()

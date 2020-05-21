@@ -4394,7 +4394,7 @@ MonoBehaviour:
     type: 3}
   lightPrefabTower: {fileID: 5266825931898364668, guid: 795ce36bac30ce64eae03766f2320407,
     type: 3}
-  lvlID: 0
+  lvlID: 1
 --- !u!4 &366543782
 Transform:
   m_ObjectHideFlags: 0
@@ -4524,7 +4524,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 25.692167
+  orthographic size: 26.8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
