@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class LerpManager : MonoBehaviour
 {
-    public float timeStartedLerping, lerpTime;
     public static Vector2 endPosition;
-    public Vector2 startPosition;
     bool shouldLerp;
     public static bool startLerping;
     public Transform target;
@@ -16,7 +14,6 @@ public class LerpManager : MonoBehaviour
     {
         startLerping = false;
         shouldLerp = false;
-        endPosition = startPosition;
 
     }
 
@@ -25,8 +22,6 @@ public class LerpManager : MonoBehaviour
     {
         if(startLerping == true)
         {
-            Debug.Log("Prout");
-            timeStartedLerping = Time.time;
             shouldLerp = true;
         }
         if(startLerping == false)

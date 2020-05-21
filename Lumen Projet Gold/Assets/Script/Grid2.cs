@@ -48,7 +48,7 @@ public class Grid2
         {
             for (int j = 0; j < gridArray.GetLength(1); j++)
             {
-                debugTextArray[i, j] = GameManager.CreateWorldText(gridArray[i, j].value.ToString(), null, GetWorldPosition(i, j) + new Vector3(cellSize, cellSize) * 0.5f, 1, Color.grey, TextAnchor.MiddleCenter);
+                debugTextArray[i, j] = GameManager.CreateWorldText(gridArray[i, j].value.ToString(), null, GetWorldPosition(i, j) + new Vector3(cellSize, cellSize) * 0.5f, 25, Color.grey, TextAnchor.MiddleCenter);
                 //Debug.DrawLine(GetWorldPosition(i, j), GetWorldPosition(i, j + 1), Color.white, 100f);
                 //Debug.DrawLine(GetWorldPosition(i, j), GetWorldPosition(i + 1, j), Color.white, 100f);
             }
@@ -178,7 +178,7 @@ public class Grid2
         ActivateDark(x, y);
     }
 
-    public void UseBasicCrystal(Vector3 worldPosition, int value, GameObject lightPrefabBasic,GameObject lightPrefabBilateral, GameObject lightPrefabTower ,int originX, int originY)
+    public void UseBasicCrystal(Vector3 worldPosition, int value, GameObject lightPrefabBasic, GameObject lightPrefabTower,GameObject lightPrefabBilateral ,int originX, int originY)
     {
         int x, y;
         GetXY(worldPosition, out x, out y);
@@ -207,7 +207,7 @@ public class Grid2
                     SetValue(x - 2, y, value);
                     GameObject instancedObj2 = GameObject.Instantiate(lightPrefabBasic, new Vector3((originX - (cellSize / 2)) + ((x + 1) - 2) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x, y + 2, value);
-                    GameObject instancedObj3 = GameObject.Instantiate(lightPrefabBasic, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 2) * cellSize), -2), Quaternion.identity) as GameObject;
+                    GameObject instancedObj3 = GameObject.Instantiate(lightPrefabBasic, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) + 2) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x, y - 2, value);
                     GameObject instancedObj4 = GameObject.Instantiate(lightPrefabBasic, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 2) * cellSize), -2), Quaternion.identity) as GameObject;
                 }
@@ -420,7 +420,7 @@ public class Grid2
 
                     }
 
-                    else if (gridArray[i + 1, j].isIlluminated == true)
+                    else if (gridArray[i + 1, j].isIlluminated == true && gridArray[i + 1, j].isDark == false)
                     {
                         //Debug.Log("Droite");
                         LerpManager.startLerping = true;
@@ -433,7 +433,7 @@ public class Grid2
                         foundGoal = true;
                         SetValue(i + 1, j, 12);
                     }
-                    else if (gridArray[i - 1, j].isIlluminated == true)
+                    else if (gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false)
                     {
                         LerpManager.startLerping = true;
                         //Debug.Log("Gauche");
@@ -495,7 +495,7 @@ public class Grid2
                 if (gridArray[i, j].hasLuo == true && direction == directionFaced.LEFT && gridArray[i, j].isGoal == false && foundGoal == false)
                 {
 
-                    if (gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].isDark == false)
+                    if (gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false)
                     {
                         LerpManager.startLerping = true;
                         direction = directionFaced.LEFT;
