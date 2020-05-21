@@ -62,4 +62,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Master all/Master all 1.unity
     guid: 453702770bc1c5643b0e48d786bd3bf0
+  - enabled: 1
+    path: Assets/Scenes/Master all/Master all 2.unity
+    guid: fc5300c3e70939045a3960cd22e53104
   m_configObjects: {}

@@ -69,7 +69,7 @@ public class Testing2 : MonoBehaviour
             if (GameManager.numberOfLights > 0) {
                 grid.UseBasicCrystal(GameManager.GetMouseWorldPosition(), 56, lightPrefabBasic, lightPrefabTower, lightPrefabBilateral, originX, originY);
                 if (GameManager.isDarkTilesAllowed) { 
-                grid.ActivateDark(GameManager.GetMouseWorldPosition());
+                grid.ActivateDark(GameManager.GetMouseWorldPosition(), darkTile, originX, originY);
                 }
             }
             

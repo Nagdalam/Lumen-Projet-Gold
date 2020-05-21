@@ -148,7 +148,7 @@ public class Grid2
         SetValue(x, y, 000);
     }
 
-    public void ActivateDark(int x, int y)
+    public void ActivateDark(int x, int y, GameObject darkTile, int originX, int originY)
     {
         if (x >= 0 && y >= 0)
         {
@@ -158,13 +158,14 @@ public class Grid2
                 gridArray[x, y].isIlluminated = false;
                 debugTextArray[x, y].text = gridArray[x, y].value.ToString();
                 GameManager.numberOfLights--;
+                GameObject instancedObj1 = GameObject.Instantiate(darkTile, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
                 Debug.Log(GameManager.numberOfLights);
 
             }
         }
     }
 
-    public void ActivateDark(Vector3 worldPosition)
+    public void ActivateDark(Vector3 worldPosition, GameObject darkTile, int originX, int originY)
     {
         int x, y;
         GetXY(worldPosition, out x, out y);
@@ -176,7 +177,7 @@ public class Grid2
         {
             GameManager.inDarkMode = false;
         }
-        ActivateDark(x, y);
+        ActivateDark(x, y, darkTile, originX, originY);
     }
 
     public void UseBasicCrystal(Vector3 worldPosition, int value, GameObject lightPrefabBasic, GameObject lightPrefabTower,GameObject lightPrefabBilateral ,int originX, int originY )
