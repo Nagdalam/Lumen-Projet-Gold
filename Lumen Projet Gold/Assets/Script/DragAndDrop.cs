@@ -18,9 +18,12 @@ public class DragAndDrop : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && selected == true)
         {
             selected = false;
+            GameManager.isDropped = true;
+            StartCoroutine(WaitASecond());
+            
         }
     }
 
@@ -31,6 +34,15 @@ public class DragAndDrop : MonoBehaviour
             selected = true;
             GameManager.objectGrabbed = true;
         }
+    }
+
+    IEnumerator WaitASecond()
+    {
+        
+        yield return new WaitForSeconds(.1f);
+        GameManager.isDropped = false;
+        Destroy(gameObject);
+
     }
 
 }

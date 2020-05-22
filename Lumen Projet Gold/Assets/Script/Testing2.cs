@@ -28,6 +28,9 @@ public class Testing2 : MonoBehaviour
     public Transform movePoint;
     bool isWaiting = false;
     public int luoDirection;
+    public GameObject lightPrefabBasic, lightPrefabBilateral, lightPrefabTower, darkTile;
+    public int lvlID;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -64,19 +67,19 @@ public class Testing2 : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             if (GameManager.numberOfLights > 0) {
-                grid.UseBasicCrystal(GameManager.GetMouseWorldPosition(), 56);
+                grid.UseBasicCrystal(GameManager.GetMouseWorldPosition(), 56, lightPrefabBasic, lightPrefabTower, lightPrefabBilateral, originX, originY);
                 if (GameManager.isDarkTilesAllowed) { 
-                grid.ActivateDark(GameManager.GetMouseWorldPosition());
+                grid.ActivateDark(GameManager.GetMouseWorldPosition(), darkTile, originX, originY);
                 }
             }
             
         }
 
-        if (GameManager.objectGrabbed == true)
+        if (GameManager.isDropped == true)
         {
             if (GameManager.numberOfLights > 0)
             {
-                grid.UseBasicCrystal(GameManager.GetMouseWorldPosition(), 56);
+                grid.UseBasicCrystal(GameManager.GetMouseWorldPosition(), 56, lightPrefabBasic, lightPrefabTower, lightPrefabBilateral, originX, originY);
             }
 
         }
@@ -86,7 +89,7 @@ public class Testing2 : MonoBehaviour
             
             if(isWaiting == false) {
                 
-                grid.Pathfinder(gridHeight, gridLength, movePoint, isWaiting);
+                grid.Pathfinder(gridHeight, gridLength, movePoint, isWaiting, lvlID);
             StartCoroutine(WaitASecond(1f));
             }
 
@@ -97,6 +100,8 @@ public class Testing2 : MonoBehaviour
             isWaiting = true;
             yield return new WaitForSeconds(waitTime);
             isWaiting = false;
+            LerpManager.startLerping = false;
+
         }
 
         //if (Input.GetMouseButtonDown(1))

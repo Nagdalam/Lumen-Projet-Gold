@@ -65,3 +65,12 @@ MonoBehaviour:
   numberSize: 100
   movePoint: {fileID: 0}
   luoDirection: 0
+  lightPrefabBasic: {fileID: 5266825931898364668, guid: b2b975aa0d0a1fd4b90fa314658438a6,
+    type: 3}
+  lightPrefabBilateral: {fileID: 5266825931898364668, guid: 8bab418af57d74443be658b60a9c33d1,
+    type: 3}
+  lightPrefabTower: {fileID: 5266825931898364668, guid: 795ce36bac30ce64eae03766f2320407,
+    type: 3}
+  darkTile: {fileID: 2218594554418905248, guid: a60b6229654407445a97bc7e585a35a1,
+    type: 3}
+  lvlID: 0

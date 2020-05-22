@@ -4,8 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //Fait par Benjamin
+
+
+
 public class GameManager : MonoBehaviour
 {
+    public static bool isDropped = false;
+    void Start()
+    {
+        if (PlayerPrefs.GetInt("LevelsAvailable") == 0)
+        {
+            PlayerPrefs.SetInt("LevelsAvailable", 1);
+            Debug.Log(PlayerPrefs.GetInt("LevelsAvailable"));
+        }
+        
+
+    }
     public const int sortingOrderDefault = 5000;
     public static bool canLuoMove = false;
     public static bool objectGrabbed;
@@ -58,5 +72,8 @@ public class GameManager : MonoBehaviour
         Vector3 worldPosition = worldCamera.ScreenToWorldPoint(screenPosition);
         return worldPosition;
     }
+
+    
+
 
 }
