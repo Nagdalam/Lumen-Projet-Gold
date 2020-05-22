@@ -484,7 +484,7 @@ public class Grid2
                         foundGoal = true;
                         SetValue(i + 1, j, 12);
                     }
-                    else if (gridArray[i - 1, j].isIlluminated == true)
+                    else if (gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false)
                     {
                         LerpManager.startLerping = true;
                         //Debug.Log("Gauche");
