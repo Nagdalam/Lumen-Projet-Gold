@@ -9,7 +9,9 @@ public class mainMenu : MonoBehaviour
    
     public void PlayGame (int Id)
     {
+        Debug.Log("ifuckyourwife");
         SceneManager.LoadScene(Id);
+        
 
     } 
     //public void PlaySelector ()
