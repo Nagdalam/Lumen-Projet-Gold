@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public static bool isDropped = false;
     void Start()
     {
         if (PlayerPrefs.GetInt("LevelsAvailable") == 0)
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("LevelsAvailable", 1);
             Debug.Log(PlayerPrefs.GetInt("LevelsAvailable"));
         }
+        
 
     }
     public const int sortingOrderDefault = 5000;

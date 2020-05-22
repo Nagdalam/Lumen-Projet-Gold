@@ -75,7 +75,7 @@ public class Testing2 : MonoBehaviour
             
         }
 
-        if (GameManager.objectGrabbed == true)
+        if (GameManager.isDropped == true)
         {
             if (GameManager.numberOfLights > 0)
             {

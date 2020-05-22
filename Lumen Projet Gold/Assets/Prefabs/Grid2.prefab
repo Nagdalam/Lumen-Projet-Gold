@@ -71,3 +71,6 @@ MonoBehaviour:
     type: 3}
   lightPrefabTower: {fileID: 5266825931898364668, guid: 795ce36bac30ce64eae03766f2320407,
     type: 3}
+  darkTile: {fileID: 2218594554418905248, guid: a60b6229654407445a97bc7e585a35a1,
+    type: 3}
+  lvlID: 0

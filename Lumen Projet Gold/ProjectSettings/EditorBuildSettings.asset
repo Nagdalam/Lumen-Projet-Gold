@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Menu/LevelSelector.unity
-    guid: 9c0da46c1ef2fff4d9d67d484b3791c3
+    path: Assets/Scenes/Menu/Menu.unity
+    guid: e82676c99b48c654e8fef333dcdb4c33
   - enabled: 1
     path: Assets/Scenes/Basic Crystals/Level1.unity
     guid: c91b368102102514fb3013a95995da13
@@ -51,6 +54,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Amplification/tuto 3.unity
     guid: b797ea1de41b9494ebb07de5040fd2f6
   - enabled: 1
+    path: Assets/Scenes/Amplification/Master.unity
+    guid: f25da74748d5ee04e91c6a99e10f7437
+  - enabled: 1
     path: Assets/Scenes/Lumiere noir/tuto 1.unity
     guid: 9980afc2ce0d95d46bca831bc57b9619
   - enabled: 1
@@ -65,4 +71,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Master all/Master all 2.unity
     guid: fc5300c3e70939045a3960cd22e53104
+  - enabled: 1
+    path: Assets/Scenes/Menu/LevelSelector.unity
+    guid: 6c683dc1057f76745babe5bedd8f1ec7
   m_configObjects: {}
