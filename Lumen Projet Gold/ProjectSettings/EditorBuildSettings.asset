@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/Menu.unity
     guid: e82676c99b48c654e8fef333dcdb4c33
   - enabled: 1
+    path: Assets/Scenes/Menu/Menu.unity
+    guid: e82676c99b48c654e8fef333dcdb4c33
+  - enabled: 1
     path: Assets/Scenes/Basic Crystals/Level1.unity
     guid: c91b368102102514fb3013a95995da13
   - enabled: 1

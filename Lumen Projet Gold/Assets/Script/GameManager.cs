@@ -10,16 +10,20 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static bool isDropped = false;
+    public static bool canSpawn = false;
     void Start()
     {
         if (PlayerPrefs.GetInt("LevelsAvailable") == 0)
         {
             PlayerPrefs.SetInt("LevelsAvailable", 1);
             Debug.Log(PlayerPrefs.GetInt("LevelsAvailable"));
+            
+            
         }
         
 
     }
+    public GameObject lightPrefab;
     public const int sortingOrderDefault = 5000;
     public static bool canLuoMove = false;
     public static bool objectGrabbed;
@@ -73,6 +77,19 @@ public class GameManager : MonoBehaviour
         return worldPosition;
     }
 
+    private void Update()
+    {
+        if(canSpawn == true)
+        {
+            SpawnLight();
+            canSpawn = false;
+        }
+    }
+
+    public void SpawnLight()
+    {
+        Instantiate(lightPrefab, transform.position, Quaternion.identity);
+    }
     
 
 

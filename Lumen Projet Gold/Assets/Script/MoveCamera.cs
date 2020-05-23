@@ -14,7 +14,7 @@ public class MoveCamera : MonoBehaviour
     {
         if ( chapterid > 1)
         {
-            movePoint.position += new Vector3(-4.15f, 0f, 0f);
+            movePoint.position += new Vector3(-4.3f, 0f, 0f);
             chapterid--;
         }
        
@@ -24,7 +24,7 @@ public class MoveCamera : MonoBehaviour
     {
         if (chapterid < max)
         {
-            movePoint.position += new Vector3(4.15f, 0f, 0f);
+            movePoint.position += new Vector3(4.3f, 0f, 0f);
             chapterid++;
         }
         

@@ -30,6 +30,7 @@ public class Testing2 : MonoBehaviour
     public int luoDirection;
     public GameObject lightPrefabBasic, lightPrefabBilateral, lightPrefabTower, darkTile;
     public int lvlID;
+    public Animator luoAnim;
     
 
     // Start is called before the first frame update
@@ -66,12 +67,12 @@ public class Testing2 : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (GameManager.numberOfLights > 0) {
-                grid.UseBasicCrystal(GameManager.GetMouseWorldPosition(), 56, lightPrefabBasic, lightPrefabTower, lightPrefabBilateral, originX, originY);
-                if (GameManager.isDarkTilesAllowed) { 
-                grid.ActivateDark(GameManager.GetMouseWorldPosition(), darkTile, originX, originY);
+            //if (GameManager.numberOfLights > 0) {
+            //    grid.UseBasicCrystal(GameManager.GetMouseWorldPosition(), 56, lightPrefabBasic, lightPrefabTower, lightPrefabBilateral, originX, originY);
+                if (GameManager.isDarkTilesAllowed) {
+                    grid.SwitchMode(GameManager.GetMouseWorldPosition(), darkTile, originX, originY);
                 }
-            }
+            //}
             
         }
 
@@ -79,8 +80,19 @@ public class Testing2 : MonoBehaviour
         {
             if (GameManager.numberOfLights > 0)
             {
-                grid.UseBasicCrystal(GameManager.GetMouseWorldPosition(), 56, lightPrefabBasic, lightPrefabTower, lightPrefabBilateral, originX, originY);
+                if (GameManager.inDarkMode == false)
+                {
+                    grid.UseBasicCrystal(GameManager.GetMouseWorldPosition(), 56, lightPrefabBasic, lightPrefabTower, lightPrefabBilateral, originX, originY);
+
+                }
+                
+                else if(GameManager.inDarkMode == true)
+                {
+                    grid.ActivateDark(GameManager.GetMouseWorldPosition(), darkTile, originX, originY);
+                    
+                }
             }
+            
 
         }
 
@@ -88,8 +100,8 @@ public class Testing2 : MonoBehaviour
         {
             
             if(isWaiting == false) {
-                
-                grid.Pathfinder(gridHeight, gridLength, movePoint, isWaiting, lvlID);
+
+            grid.Pathfinder(gridHeight, gridLength, movePoint, isWaiting, lvlID, luoAnim) ;
             StartCoroutine(WaitASecond(1f));
             }
 
