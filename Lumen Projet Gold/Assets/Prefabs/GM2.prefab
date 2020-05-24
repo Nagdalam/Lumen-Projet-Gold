@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2533013339277400251}
   - component: {fileID: 2533013339277400252}
   m_Layer: 0
-  m_Name: GameManager 1
+  m_Name: GM2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,3 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5585a6c26e09f414784ea6197b9585de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lightPrefab: {fileID: 2865994613763481109, guid: dc3983950b7f149439178247d7d24eb0,
+    type: 3}

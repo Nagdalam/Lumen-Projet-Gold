@@ -148,7 +148,7 @@ public class Grid2
         SetValue(x, y, 000);
     }
 
-    public void ActivateDark(int x, int y, GameObject darkTile, int originX, int originY)
+    public void ActivateDark(int x, int y, GameObject darkTile, int originX, int originY, AudioSource audioSource)
     {
         if (x >= 0 && y >= 0)
         {
@@ -166,12 +166,12 @@ public class Grid2
         }
     }
 
-    public void ActivateDark(Vector3 worldPosition, GameObject darkTile, int originX, int originY)
+    public void ActivateDark(Vector3 worldPosition, GameObject darkTile, int originX, int originY, AudioSource audioSource)
     {
         int x, y;
         GetXY(worldPosition, out x, out y);
         
-        ActivateDark(x, y, darkTile, originX, originY);
+        ActivateDark(x, y, darkTile, originX, originY, audioSource);
     }
 
     public void SwitchMode(Vector3 worldPosition, GameObject darkTile, int originX, int originY)
@@ -188,7 +188,7 @@ public class Grid2
         }
     }
 
-    public void UseBasicCrystal(Vector3 worldPosition, int value, GameObject lightPrefabBasic, GameObject lightPrefabTower,GameObject lightPrefabBilateral ,int originX, int originY )
+    public void UseBasicCrystal(Vector3 worldPosition, int value, GameObject lightPrefabBasic, GameObject lightPrefabTower,GameObject lightPrefabBilateral ,int originX, int originY, AudioSource audioSource)
     {
         int x, y;
         GetXY(worldPosition, out x, out y);
@@ -397,7 +397,7 @@ public class Grid2
         return GetValue(x, y);
     }
 
-    public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform, bool isWaiting, int lvlID, Animator luoAnim)
+    public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform, bool isWaiting, int lvlID, Animator luoAnim, AudioSource audioSource)
     {
 
         bool foundGoal = false;
@@ -409,7 +409,7 @@ public class Grid2
                 {
                     Debug.Log("Niveau terminé");
                     PlayerPrefs.SetInt("LevelsAvailable", lvlID);
-                    SceneManager.LoadScene(lvlID + 1);
+                    SceneManager.LoadScene(lvlID + 2);
                 }
 
                 if (gridArray[i, j].hasLuo == true && direction == directionFaced.UP && gridArray[i, j].isGoal == false && foundGoal == false)
