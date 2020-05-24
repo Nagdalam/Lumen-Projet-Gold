@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -351,6 +351,7 @@ MonoBehaviour:
     type: 3}
   lvlID: 3
   luoAnim: {fileID: 900554819}
+  audioSource: {fileID: 0}
 --- !u!4 &366543782
 Transform:
   m_ObjectHideFlags: 0
@@ -10787,12 +10788,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d7296d07ef3626d4499c5538b73d874c,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3955325565066051716, guid: 99478d68d4ec3544b9000d81d9cb1660,
         type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3955325565066051717, guid: 99478d68d4ec3544b9000d81d9cb1660,
         type: 3}
