@@ -5,7 +5,13 @@ using UnityEngine;
 public class DragAndDrop : MonoBehaviour
 {
     private bool selected;
+    SpriteRenderer m_SpriteRenderer;
+    Color m_NewColor;
 
+    private void Start()
+    {
+        m_SpriteRenderer = GetComponent<SpriteRenderer>();
+    }
     void Update()
     {
         if (selected == true)
@@ -25,6 +31,15 @@ public class DragAndDrop : MonoBehaviour
             StartCoroutine(WaitASecond());
             
         }
+        if(GameManager.inDarkMode == true)
+        {
+            m_SpriteRenderer.color = Color.grey;
+        }
+        if (GameManager.inDarkMode == false)
+        {
+            m_SpriteRenderer.color = Color.white;
+        }
+
     }
 
     void OnMouseOver()
@@ -41,6 +56,10 @@ public class DragAndDrop : MonoBehaviour
         
         yield return new WaitForSeconds(.1f);
         GameManager.isDropped = false;
+        if (GameManager.numberOfLights > 0)
+        {
+            GameManager.canSpawn = true;
+        }
         Destroy(gameObject);
 
     }

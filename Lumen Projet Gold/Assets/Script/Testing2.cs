@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //Fait par Benjamin
 public class Testing2 : MonoBehaviour
@@ -30,11 +31,15 @@ public class Testing2 : MonoBehaviour
     public int luoDirection;
     public GameObject lightPrefabBasic, lightPrefabBilateral, lightPrefabTower, darkTile;
     public int lvlID;
-    
+    public Animator luoAnim, lumenAnim;
+    public AudioSource audioSource;
+    bool shouldWait = false;
+    public Text lightCompteur, displayChapter, displayLevel;
 
     // Start is called before the first frame update
     void Start()
     {
+        lumenAnim.SetBool("faceUp", true);
         movePoint.parent = null;
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, 8f * Time.deltaTime);
         grid = new Grid2(gridLength, gridHeight, cellSize, new Vector3(originX, originY, 0)) ;
@@ -62,34 +67,42 @@ public class Testing2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        lightCompteur.text = (GameManager.numberOfLights).ToString();
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (GameManager.numberOfLights > 0) {
-                grid.UseBasicCrystal(GameManager.GetMouseWorldPosition(), 56, lightPrefabBasic, lightPrefabTower, lightPrefabBilateral, originX, originY);
-                if (GameManager.isDarkTilesAllowed) { 
-                grid.ActivateDark(GameManager.GetMouseWorldPosition(), darkTile, originX, originY);
-                }
-            }
-            
-        }
+
 
         if (GameManager.isDropped == true)
         {
             if (GameManager.numberOfLights > 0)
             {
-                grid.UseBasicCrystal(GameManager.GetMouseWorldPosition(), 56, lightPrefabBasic, lightPrefabTower, lightPrefabBilateral, originX, originY);
+                if (GameManager.inDarkMode == false && shouldWait == false)
+                {
+                    grid.UseBasicCrystal(GameManager.GetMouseWorldPosition(), 56, lightPrefabBasic, lightPrefabTower, lightPrefabBilateral, originX, originY, audioSource);
+                    StartCoroutine(WaitASecond(1f));
+                }
+                
+                else if(GameManager.inDarkMode == true)
+                {
+                    grid.ActivateDark(GameManager.GetMouseWorldPosition(), darkTile, originX, originY, audioSource);
+                }
             }
+            
+        }
 
+        if (Input.GetMouseButtonDown(0))
+        {
+            if(GameManager.isDarkTilesAllowed == true)
+            {
+                grid.SwitchMode(GameManager.GetMouseWorldPosition(), darkTile, originX, originY);
+            }
         }
 
         if (GameManager.numberOfLights <=0)
         {
             
             if(isWaiting == false) {
-                
-                grid.Pathfinder(gridHeight, gridLength, movePoint, isWaiting, lvlID);
+
+            grid.Pathfinder(gridHeight, gridLength, movePoint, isWaiting, lvlID, luoAnim, audioSource, lumenAnim) ;
             StartCoroutine(WaitASecond(1f));
             }
 
@@ -97,11 +110,12 @@ public class Testing2 : MonoBehaviour
 
         IEnumerator WaitASecond(float waitTime)
         {
+            shouldWait = true;
             isWaiting = true;
             yield return new WaitForSeconds(waitTime);
             isWaiting = false;
             LerpManager.startLerping = false;
-
+            shouldWait = false;
         }
 
         //if (Input.GetMouseButtonDown(1))

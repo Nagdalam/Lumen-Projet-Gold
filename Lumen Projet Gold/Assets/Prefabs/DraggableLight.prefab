@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2865994613763481109}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 107, y: 46.4, z: -5}
-  m_LocalScale: {x: 0.3679964, y: 0.3679964, z: 0.3679964}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 2273105632947270406}
   m_Father: {fileID: 0}
@@ -108,8 +108,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 17.15625, y: 15.952795, z: 0.2}
-  m_Center: {x: 0.075476415, y: -0.0000051830634, z: 0}
+  m_Size: {x: 2.4289455, y: 2.3716688, z: 0.20000002}
+  m_Center: {x: 0.05339074, y: -0.022117775, z: 0}
 --- !u!1 &3808443856520400306
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 1
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}

@@ -74,7 +74,7 @@ public class Grid2
     {
         if (x >= 0 && y >= 0 && x < width && y < height)
         {
-            if (gridArray[x, y].isCrystal == false)
+            if (gridArray[x, y].isCrystal == false && gridArray[x,y].isDark == false)
             {
                 gridArray[x, y].value = value;
                 gridArray[x, y].isIlluminated = true;
@@ -110,6 +110,11 @@ public class Grid2
                 {
                     gridArray[x, y].value = 304;
                 }
+                debugTextArray[x, y].text = gridArray[x, y].value.ToString();
+            }
+            else if (gridArray[x, y].isDark == true)
+            {
+                gridArray[x, y].value = 888;
                 debugTextArray[x, y].text = gridArray[x, y].value.ToString();
             }
         }
@@ -148,24 +153,33 @@ public class Grid2
         SetValue(x, y, 000);
     }
 
-    public void ActivateDark(int x, int y, GameObject darkTile, int originX, int originY)
+    public void ActivateDark(int x, int y, GameObject darkTile, int originX, int originY, AudioSource audioSource)
     {
         if (x >= 0 && y >= 0)
         {
-            if (gridArray[x, y].isIlluminated == true && gridArray[x, y].isCrystal == false && gridArray[x, y].hasLuo == false)
+            
+            if (gridArray[x, y].isIlluminated == true && gridArray[x, y].isCrystal == false && gridArray[x, y].hasLuo == false && GameManager.inDarkMode == true)
             {
                 gridArray[x, y].value = 00;
                 gridArray[x, y].isIlluminated = false;
                 debugTextArray[x, y].text = gridArray[x, y].value.ToString();
                 GameManager.numberOfLights--;
+                
                 GameObject instancedObj1 = GameObject.Instantiate(darkTile, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
-                Debug.Log(GameManager.numberOfLights);
 
             }
         }
     }
 
-    public void ActivateDark(Vector3 worldPosition, GameObject darkTile, int originX, int originY)
+    public void ActivateDark(Vector3 worldPosition, GameObject darkTile, int originX, int originY, AudioSource audioSource)
+    {
+        int x, y;
+        GetXY(worldPosition, out x, out y);
+        
+        ActivateDark(x, y, darkTile, originX, originY, audioSource);
+    }
+
+    public void SwitchMode(Vector3 worldPosition, GameObject darkTile, int originX, int originY)
     {
         int x, y;
         GetXY(worldPosition, out x, out y);
@@ -177,10 +191,9 @@ public class Grid2
         {
             GameManager.inDarkMode = false;
         }
-        ActivateDark(x, y, darkTile, originX, originY);
     }
 
-    public void UseBasicCrystal(Vector3 worldPosition, int value, GameObject lightPrefabBasic, GameObject lightPrefabTower,GameObject lightPrefabBilateral ,int originX, int originY )
+    public void UseBasicCrystal(Vector3 worldPosition, int value, GameObject lightPrefabBasic, GameObject lightPrefabTower,GameObject lightPrefabBilateral ,int originX, int originY, AudioSource audioSource)
     {
         int x, y;
         GetXY(worldPosition, out x, out y);
@@ -204,6 +217,7 @@ public class Grid2
                 }
                 else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
                 {
+                    Debug.Log(gridArray[x, y].usageCount);
                     SetValue(x + 2, y, value);
                     GameObject instancedObj1 = GameObject.Instantiate(lightPrefabBasic, new Vector3((originX - (cellSize / 2)) + ((x + 1) + 2) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x - 2, y, value);
@@ -238,6 +252,7 @@ public class Grid2
             {
                 if (gridArray[x, y].usageCount == 0)
                 {
+                    
                     SetValue(x, y - 1, value);
                     GameObject instancedObj1 = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 1) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x, y - 2, value);
@@ -249,6 +264,7 @@ public class Grid2
                 {
                     SetValue(x, y - 4, value);
                     GameObject instancedObj4 = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 4) * cellSize), -2), Quaternion.identity) as GameObject;
+                    Debug.Log(gridArray[x, y].usageCount);
                 }
             }
 
@@ -292,6 +308,7 @@ public class Grid2
 
             else if (gridArray[x, y].isCrystal == true && gridArray[x, y].typeCrystal == crystalType.BILATERALHORIZONTAL)
             {
+                
                 if (gridArray[x, y].usageCount == 0)
                 {
                     SetValue(x + 1, y, value);
@@ -335,9 +352,12 @@ public class Grid2
                     GameObject instancedObj6 = GameObject.Instantiate(lightPrefabBilateral, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 3) * cellSize), -2), Quaternion.identity) as GameObject;
                 }
             }
-            gridArray[x, y].usageCount++;
+            
             GameManager.objectGrabbed = false;
+            gridArray[x, y].usageCount++;
         }
+        
+
 
     }
 
@@ -389,7 +409,7 @@ public class Grid2
         return GetValue(x, y);
     }
 
-    public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform, bool isWaiting, int lvlID)
+    public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform, bool isWaiting, int lvlID, Animator luoAnim, AudioSource audioSource, Animator lumenAnim)
     {
 
         bool foundGoal = false;
@@ -409,6 +429,14 @@ public class Grid2
                     if (gridArray[i, j + 1].isIlluminated == true && i < GameManager.width && j < GameManager.height && gridArray[i, j + 1].isDark == false)
                     {
                         //Debug.Log("Haut");
+                        luoAnim.SetBool("faceDown", false);
+                        luoAnim.SetBool("faceLeft", false);
+                        luoAnim.SetBool("faceRight", false);
+                        luoAnim.SetBool("faceUp", true);
+                        lumenAnim.SetBool("faceDown", false);
+                        lumenAnim.SetBool("faceLeft", false);
+                        lumenAnim.SetBool("faceRight", false);
+                        lumenAnim.SetBool("faceUp", true);
                         LerpManager.startLerping = true;
                         direction = directionFaced.UP;
                         gridArray[i, j + 1].value = 12;
@@ -426,6 +454,14 @@ public class Grid2
                     else if (gridArray[i + 1, j].isIlluminated == true && gridArray[i + 1, j].isDark == false)
                     {
                         //Debug.Log("Droite");
+                        luoAnim.SetBool("faceDown", false);
+                        luoAnim.SetBool("faceLeft", false);
+                        luoAnim.SetBool("faceUp", false);
+                        luoAnim.SetBool("faceRight", true);
+                        lumenAnim.SetBool("faceDown", false);
+                        lumenAnim.SetBool("faceLeft", false);
+                        lumenAnim.SetBool("faceRight", true);
+                        lumenAnim.SetBool("faceUp", false);
                         LerpManager.startLerping = true;
                         direction = directionFaced.RIGHT;
                         gridArray[i + 1, j].value = 12;
@@ -440,6 +476,14 @@ public class Grid2
                     {
                         LerpManager.startLerping = true;
                         //Debug.Log("Gauche");
+                        luoAnim.SetBool("faceDown", false);
+                        luoAnim.SetBool("faceRight", false);
+                        luoAnim.SetBool("faceUp", false);
+                        luoAnim.SetBool("faceLeft", true);
+                        lumenAnim.SetBool("faceDown", false);
+                        lumenAnim.SetBool("faceLeft", true);
+                        lumenAnim.SetBool("faceRight", false);
+                        lumenAnim.SetBool("faceUp", false);
                         direction = directionFaced.LEFT;
                         gridArray[i - 1, j].value = 12;
                         gridArray[i, j].hasLuo = false;
@@ -457,11 +501,17 @@ public class Grid2
 
                 if (gridArray[i, j].hasLuo == true && direction == directionFaced.DOWN && gridArray[i, j].isGoal == false && foundGoal == false)
                 {
-                    Debug.Log("Luo descend");
                     if (gridArray[i, j - 1].isIlluminated == true && gridArray[i, j - 1].isDark == false)
                     {
                         LerpManager.startLerping = true;
-
+                        luoAnim.SetBool("faceRight", false);
+                        luoAnim.SetBool("faceLeft", false);
+                        luoAnim.SetBool("faceUp", false);
+                        luoAnim.SetBool("faceDown", true);
+                        lumenAnim.SetBool("faceDown", true);
+                        lumenAnim.SetBool("faceLeft", false);
+                        lumenAnim.SetBool("faceRight", false);
+                        lumenAnim.SetBool("faceUp", false);
                         direction = directionFaced.DOWN;
                         gridArray[i, j - 1].value = 12;
                         gridArray[i, j].hasLuo = false;
@@ -474,7 +524,15 @@ public class Grid2
                     else if (gridArray[i + 1, j].isIlluminated == true)
                     {
                         LerpManager.startLerping = true;
-                        Debug.Log("Droite");
+                        //Debug.Log("Droite");
+                        luoAnim.SetBool("faceDown", false);
+                        luoAnim.SetBool("faceLeft", false);
+                        luoAnim.SetBool("faceUp", false);
+                        luoAnim.SetBool("faceRight", true);
+                        lumenAnim.SetBool("faceDown", false);
+                        lumenAnim.SetBool("faceLeft", false);
+                        lumenAnim.SetBool("faceRight", true);
+                        lumenAnim.SetBool("faceUp", false);
                         direction = directionFaced.RIGHT;
                         gridArray[i + 1, j].value = 12;
                         gridArray[i, j].hasLuo = false;
@@ -488,6 +546,14 @@ public class Grid2
                     {
                         LerpManager.startLerping = true;
                         //Debug.Log("Gauche");
+                        luoAnim.SetBool("faceDown", false);
+                        luoAnim.SetBool("faceRight", false);
+                        luoAnim.SetBool("faceUp", false);
+                        luoAnim.SetBool("faceLeft", true);
+                        lumenAnim.SetBool("faceDown", false);
+                        lumenAnim.SetBool("faceLeft", true);
+                        lumenAnim.SetBool("faceRight", false);
+                        lumenAnim.SetBool("faceUp", false);
                         direction = directionFaced.LEFT;
                         gridArray[i - 1, j].value = 12;
                         gridArray[i, j].hasLuo = false;
@@ -509,6 +575,14 @@ public class Grid2
                     if (gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false)
                     {
                         LerpManager.startLerping = true;
+                        luoAnim.SetBool("faceDown", false);
+                        luoAnim.SetBool("faceRight", false);
+                        luoAnim.SetBool("faceUp", false);
+                        luoAnim.SetBool("faceLeft", true);
+                        lumenAnim.SetBool("faceDown", false);
+                        lumenAnim.SetBool("faceLeft", true);
+                        lumenAnim.SetBool("faceRight", false);
+                        lumenAnim.SetBool("faceUp", false);
                         direction = directionFaced.LEFT;
                         gridArray[i - 1, j].value = 12;
                         gridArray[i, j].hasLuo = false;
@@ -522,6 +596,15 @@ public class Grid2
                     {
                         LerpManager.startLerping = true;
                         //Debug.Log("Haut");
+                        
+                        luoAnim.SetBool("faceLeft", false);
+                        luoAnim.SetBool("faceUp", true);
+                        luoAnim.SetBool("faceRight", false);
+                        luoAnim.SetBool("faceDown", false);
+                        lumenAnim.SetBool("faceDown", false);
+                        lumenAnim.SetBool("faceLeft", false);
+                        lumenAnim.SetBool("faceRight", false);
+                        lumenAnim.SetBool("faceUp", true);
                         direction = directionFaced.UP;
                         gridArray[i, j + 1].value = 12;
                         gridArray[i, j].hasLuo = false;
@@ -535,6 +618,14 @@ public class Grid2
                     {
                         LerpManager.startLerping = true;
                         //Debug.Log("Bas");
+                        luoAnim.SetBool("faceRight", false);
+                        luoAnim.SetBool("faceLeft", false);
+                        luoAnim.SetBool("faceUp", false);
+                        luoAnim.SetBool("faceDown", true);
+                        lumenAnim.SetBool("faceDown", true);
+                        lumenAnim.SetBool("faceLeft", false);
+                        lumenAnim.SetBool("faceRight", false);
+                        lumenAnim.SetBool("faceUp", false);
                         direction = directionFaced.DOWN;
                         gridArray[i, j - 1].value = 12;
                         gridArray[i, j].hasLuo = false;
@@ -555,10 +646,18 @@ public class Grid2
                 {
 
                     GameManager.canLuoMove = false;
-                    if (gridArray[i + 1, j].isIlluminated == true)
+                    if (gridArray[i + 1, j].isIlluminated == true && gridArray[i, j + 1].isDark == false)
                     {
                         LerpManager.startLerping = true;
                         //Debug.Log("Droite");
+                        luoAnim.SetBool("faceDown", false);
+                        luoAnim.SetBool("faceLeft", false);
+                        luoAnim.SetBool("faceUp", false);
+                        luoAnim.SetBool("faceRight", true);
+                        lumenAnim.SetBool("faceDown", false);
+                        lumenAnim.SetBool("faceLeft", false);
+                        lumenAnim.SetBool("faceRight", true);
+                        lumenAnim.SetBool("faceUp", false);
                         direction = directionFaced.RIGHT;
                         gridArray[i + 1, j].value = 12;
                         gridArray[i, j].hasLuo = false;
@@ -572,6 +671,14 @@ public class Grid2
                     {
                         LerpManager.startLerping = true;
                         //Debug.Log("Haut");
+                        luoAnim.SetBool("faceDown", false);
+                        luoAnim.SetBool("faceLeft", false);
+                        luoAnim.SetBool("faceRight", false);
+                        luoAnim.SetBool("faceUp", true);
+                        lumenAnim.SetBool("faceDown", false);
+                        lumenAnim.SetBool("faceLeft", false);
+                        lumenAnim.SetBool("faceRight", false);
+                        lumenAnim.SetBool("faceUp", true);
                         direction = directionFaced.UP;
                         gridArray[i, j + 1].value = 12;
                         gridArray[i, j].hasLuo = false;
@@ -585,6 +692,14 @@ public class Grid2
                     {
                         LerpManager.startLerping = true;
                         //Debug.Log("Bas");
+                        luoAnim.SetBool("faceRight", false);
+                        luoAnim.SetBool("faceLeft", false);
+                        luoAnim.SetBool("faceUp", false);
+                        luoAnim.SetBool("faceDown", true);
+                        lumenAnim.SetBool("faceDown", true);
+                        lumenAnim.SetBool("faceLeft", false);
+                        lumenAnim.SetBool("faceRight", false);
+                        lumenAnim.SetBool("faceUp", false);
                         direction = directionFaced.DOWN;
                         gridArray[i, j - 1].value = 12;
                         gridArray[i, j].hasLuo = false;
