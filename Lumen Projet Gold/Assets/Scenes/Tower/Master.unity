@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -888,7 +888,7 @@ PrefabInstance:
     - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
         type: 3}
       propertyPath: crystalTypeArray.Array.data[8]
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
         type: 3}
@@ -1043,7 +1043,7 @@ PrefabInstance:
     - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
         type: 3}
       propertyPath: luoDirection
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
         type: 3}
@@ -1751,7 +1751,7 @@ PrefabInstance:
     - target: {fileID: 2865994613763481108, guid: dc3983950b7f149439178247d7d24eb0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.8
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 2865994613763481108, guid: dc3983950b7f149439178247d7d24eb0,
         type: 3}
@@ -1802,6 +1802,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2865994613763481108, guid: dc3983950b7f149439178247d7d24eb0,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2865994613763481108, guid: dc3983950b7f149439178247d7d24eb0,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2865994613763481108, guid: dc3983950b7f149439178247d7d24eb0,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2865994613763481109, guid: dc3983950b7f149439178247d7d24eb0,
         type: 3}

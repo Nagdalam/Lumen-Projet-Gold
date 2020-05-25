@@ -81,11 +81,17 @@ public class Testing2 : MonoBehaviour
                 else if(GameManager.inDarkMode == true)
                 {
                     grid.ActivateDark(GameManager.GetMouseWorldPosition(), darkTile, originX, originY, audioSource);
-                    
                 }
             }
             
+        }
 
+        if (Input.GetMouseButtonDown(0))
+        {
+            if(GameManager.isDarkTilesAllowed == true)
+            {
+                grid.SwitchMode(GameManager.GetMouseWorldPosition(), darkTile, originX, originY);
+            }
         }
 
         if (GameManager.numberOfLights <=0)
