@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 123163888b05ca444b83618f2834ae73
+guid: fcd167f1af03b904c9eeec9d90197da0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6766012025757725926
-    second: Lumen_Face_0
+      213: 8339507564144547686
+    second: Lumen_Droite_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -102,12 +102,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lumen_Face_0
+      name: Lumen_Droite_0
       rect:
         serializedVersion: 2
-        x: 8
+        x: 76
         y: 68
-        width: 52
+        width: 40
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -116,8 +116,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e47f4de614b5ed50800000000000000
-      internalID: 6766012025757725926
+      spriteID: 667d48ae1f1ebb370800000000000000
+      internalID: 8339507564144547686
       vertices: []
       indices: 
       edges: []

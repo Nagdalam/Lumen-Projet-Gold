@@ -48,7 +48,7 @@ public class Grid2
         {
             for (int j = 0; j < gridArray.GetLength(1); j++)
             {
-                debugTextArray[i, j] = GameManager.CreateWorldText(gridArray[i, j].value.ToString(), null, GetWorldPosition(i, j) + new Vector3(cellSize, cellSize) * 0.5f, 25, Color.grey, TextAnchor.MiddleCenter);
+                debugTextArray[i, j] = GameManager.CreateWorldText(gridArray[i, j].value.ToString(), null, GetWorldPosition(i, j) + new Vector3(cellSize, cellSize) * 0.5f, 1, Color.grey, TextAnchor.MiddleCenter);
                 //Debug.DrawLine(GetWorldPosition(i, j), GetWorldPosition(i, j + 1), Color.white, 100f);
                 //Debug.DrawLine(GetWorldPosition(i, j), GetWorldPosition(i + 1, j), Color.white, 100f);
             }
@@ -409,7 +409,7 @@ public class Grid2
         return GetValue(x, y);
     }
 
-    public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform, bool isWaiting, int lvlID, Animator luoAnim, AudioSource audioSource)
+    public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform, bool isWaiting, int lvlID, Animator luoAnim, AudioSource audioSource, Animator lumenAnim)
     {
 
         bool foundGoal = false;
@@ -433,6 +433,10 @@ public class Grid2
                         luoAnim.SetBool("faceLeft", false);
                         luoAnim.SetBool("faceRight", false);
                         luoAnim.SetBool("faceUp", true);
+                        lumenAnim.SetBool("faceDown", false);
+                        lumenAnim.SetBool("faceLeft", false);
+                        lumenAnim.SetBool("faceRight", false);
+                        lumenAnim.SetBool("faceUp", true);
                         LerpManager.startLerping = true;
                         direction = directionFaced.UP;
                         gridArray[i, j + 1].value = 12;
@@ -454,6 +458,10 @@ public class Grid2
                         luoAnim.SetBool("faceLeft", false);
                         luoAnim.SetBool("faceUp", false);
                         luoAnim.SetBool("faceRight", true);
+                        lumenAnim.SetBool("faceDown", false);
+                        lumenAnim.SetBool("faceLeft", false);
+                        lumenAnim.SetBool("faceRight", true);
+                        lumenAnim.SetBool("faceUp", false);
                         LerpManager.startLerping = true;
                         direction = directionFaced.RIGHT;
                         gridArray[i + 1, j].value = 12;
@@ -472,6 +480,10 @@ public class Grid2
                         luoAnim.SetBool("faceRight", false);
                         luoAnim.SetBool("faceUp", false);
                         luoAnim.SetBool("faceLeft", true);
+                        lumenAnim.SetBool("faceDown", false);
+                        lumenAnim.SetBool("faceLeft", true);
+                        lumenAnim.SetBool("faceRight", false);
+                        lumenAnim.SetBool("faceUp", false);
                         direction = directionFaced.LEFT;
                         gridArray[i - 1, j].value = 12;
                         gridArray[i, j].hasLuo = false;
@@ -496,6 +508,10 @@ public class Grid2
                         luoAnim.SetBool("faceLeft", false);
                         luoAnim.SetBool("faceUp", false);
                         luoAnim.SetBool("faceDown", true);
+                        lumenAnim.SetBool("faceDown", true);
+                        lumenAnim.SetBool("faceLeft", false);
+                        lumenAnim.SetBool("faceRight", false);
+                        lumenAnim.SetBool("faceUp", false);
                         direction = directionFaced.DOWN;
                         gridArray[i, j - 1].value = 12;
                         gridArray[i, j].hasLuo = false;
@@ -513,6 +529,10 @@ public class Grid2
                         luoAnim.SetBool("faceLeft", false);
                         luoAnim.SetBool("faceUp", false);
                         luoAnim.SetBool("faceRight", true);
+                        lumenAnim.SetBool("faceDown", false);
+                        lumenAnim.SetBool("faceLeft", false);
+                        lumenAnim.SetBool("faceRight", true);
+                        lumenAnim.SetBool("faceUp", false);
                         direction = directionFaced.RIGHT;
                         gridArray[i + 1, j].value = 12;
                         gridArray[i, j].hasLuo = false;
@@ -530,6 +550,10 @@ public class Grid2
                         luoAnim.SetBool("faceRight", false);
                         luoAnim.SetBool("faceUp", false);
                         luoAnim.SetBool("faceLeft", true);
+                        lumenAnim.SetBool("faceDown", false);
+                        lumenAnim.SetBool("faceLeft", true);
+                        lumenAnim.SetBool("faceRight", false);
+                        lumenAnim.SetBool("faceUp", false);
                         direction = directionFaced.LEFT;
                         gridArray[i - 1, j].value = 12;
                         gridArray[i, j].hasLuo = false;
@@ -555,6 +579,10 @@ public class Grid2
                         luoAnim.SetBool("faceRight", false);
                         luoAnim.SetBool("faceUp", false);
                         luoAnim.SetBool("faceLeft", true);
+                        lumenAnim.SetBool("faceDown", false);
+                        lumenAnim.SetBool("faceLeft", true);
+                        lumenAnim.SetBool("faceRight", false);
+                        lumenAnim.SetBool("faceUp", false);
                         direction = directionFaced.LEFT;
                         gridArray[i - 1, j].value = 12;
                         gridArray[i, j].hasLuo = false;
@@ -568,10 +596,15 @@ public class Grid2
                     {
                         LerpManager.startLerping = true;
                         //Debug.Log("Haut");
-                        luoAnim.SetBool("faceDown", false);
+                        
                         luoAnim.SetBool("faceLeft", false);
-                        luoAnim.SetBool("faceRight", false);
                         luoAnim.SetBool("faceUp", true);
+                        luoAnim.SetBool("faceRight", false);
+                        luoAnim.SetBool("faceDown", false);
+                        lumenAnim.SetBool("faceDown", false);
+                        lumenAnim.SetBool("faceLeft", false);
+                        lumenAnim.SetBool("faceRight", false);
+                        lumenAnim.SetBool("faceUp", true);
                         direction = directionFaced.UP;
                         gridArray[i, j + 1].value = 12;
                         gridArray[i, j].hasLuo = false;
@@ -589,6 +622,10 @@ public class Grid2
                         luoAnim.SetBool("faceLeft", false);
                         luoAnim.SetBool("faceUp", false);
                         luoAnim.SetBool("faceDown", true);
+                        lumenAnim.SetBool("faceDown", true);
+                        lumenAnim.SetBool("faceLeft", false);
+                        lumenAnim.SetBool("faceRight", false);
+                        lumenAnim.SetBool("faceUp", false);
                         direction = directionFaced.DOWN;
                         gridArray[i, j - 1].value = 12;
                         gridArray[i, j].hasLuo = false;
@@ -617,6 +654,10 @@ public class Grid2
                         luoAnim.SetBool("faceLeft", false);
                         luoAnim.SetBool("faceUp", false);
                         luoAnim.SetBool("faceRight", true);
+                        lumenAnim.SetBool("faceDown", false);
+                        lumenAnim.SetBool("faceLeft", false);
+                        lumenAnim.SetBool("faceRight", true);
+                        lumenAnim.SetBool("faceUp", false);
                         direction = directionFaced.RIGHT;
                         gridArray[i + 1, j].value = 12;
                         gridArray[i, j].hasLuo = false;
@@ -634,6 +675,10 @@ public class Grid2
                         luoAnim.SetBool("faceLeft", false);
                         luoAnim.SetBool("faceRight", false);
                         luoAnim.SetBool("faceUp", true);
+                        lumenAnim.SetBool("faceDown", false);
+                        lumenAnim.SetBool("faceLeft", false);
+                        lumenAnim.SetBool("faceRight", false);
+                        lumenAnim.SetBool("faceUp", true);
                         direction = directionFaced.UP;
                         gridArray[i, j + 1].value = 12;
                         gridArray[i, j].hasLuo = false;
@@ -651,6 +696,10 @@ public class Grid2
                         luoAnim.SetBool("faceLeft", false);
                         luoAnim.SetBool("faceUp", false);
                         luoAnim.SetBool("faceDown", true);
+                        lumenAnim.SetBool("faceDown", true);
+                        lumenAnim.SetBool("faceLeft", false);
+                        lumenAnim.SetBool("faceRight", false);
+                        lumenAnim.SetBool("faceUp", false);
                         direction = directionFaced.DOWN;
                         gridArray[i, j - 1].value = 12;
                         gridArray[i, j].hasLuo = false;
