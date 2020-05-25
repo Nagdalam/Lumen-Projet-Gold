@@ -74,7 +74,7 @@ public class Grid2
     {
         if (x >= 0 && y >= 0 && x < width && y < height)
         {
-            if (gridArray[x, y].isCrystal == false)
+            if (gridArray[x, y].isCrystal == false && gridArray[x,y].isDark == false)
             {
                 gridArray[x, y].value = value;
                 gridArray[x, y].isIlluminated = true;
@@ -110,6 +110,11 @@ public class Grid2
                 {
                     gridArray[x, y].value = 304;
                 }
+                debugTextArray[x, y].text = gridArray[x, y].value.ToString();
+            }
+            else if (gridArray[x, y].isDark == true)
+            {
+                gridArray[x, y].value = 888;
                 debugTextArray[x, y].text = gridArray[x, y].value.ToString();
             }
         }
@@ -212,6 +217,7 @@ public class Grid2
                 }
                 else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
                 {
+                    Debug.Log(gridArray[x, y].usageCount);
                     SetValue(x + 2, y, value);
                     GameObject instancedObj1 = GameObject.Instantiate(lightPrefabBasic, new Vector3((originX - (cellSize / 2)) + ((x + 1) + 2) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x - 2, y, value);
@@ -246,6 +252,7 @@ public class Grid2
             {
                 if (gridArray[x, y].usageCount == 0)
                 {
+                    
                     SetValue(x, y - 1, value);
                     GameObject instancedObj1 = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 1) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x, y - 2, value);
@@ -257,6 +264,7 @@ public class Grid2
                 {
                     SetValue(x, y - 4, value);
                     GameObject instancedObj4 = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 4) * cellSize), -2), Quaternion.identity) as GameObject;
+                    Debug.Log(gridArray[x, y].usageCount);
                 }
             }
 
@@ -300,6 +308,7 @@ public class Grid2
 
             else if (gridArray[x, y].isCrystal == true && gridArray[x, y].typeCrystal == crystalType.BILATERALHORIZONTAL)
             {
+                
                 if (gridArray[x, y].usageCount == 0)
                 {
                     SetValue(x + 1, y, value);
@@ -343,9 +352,12 @@ public class Grid2
                     GameObject instancedObj6 = GameObject.Instantiate(lightPrefabBilateral, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 3) * cellSize), -2), Quaternion.identity) as GameObject;
                 }
             }
-            gridArray[x, y].usageCount++;
+            
             GameManager.objectGrabbed = false;
+            gridArray[x, y].usageCount++;
         }
+        
+
 
     }
 
@@ -409,7 +421,7 @@ public class Grid2
                 {
                     Debug.Log("Niveau terminé");
                     PlayerPrefs.SetInt("LevelsAvailable", lvlID);
-                    SceneManager.LoadScene(lvlID + 2);
+                    SceneManager.LoadScene(lvlID + 1);
                 }
 
                 if (gridArray[i, j].hasLuo == true && direction == directionFaced.UP && gridArray[i, j].isGoal == false && foundGoal == false)
@@ -597,7 +609,7 @@ public class Grid2
                 {
 
                     GameManager.canLuoMove = false;
-                    if (gridArray[i + 1, j].isIlluminated == true)
+                    if (gridArray[i + 1, j].isIlluminated == true && gridArray[i, j + 1].isDark == false)
                     {
                         LerpManager.startLerping = true;
                         //Debug.Log("Droite");

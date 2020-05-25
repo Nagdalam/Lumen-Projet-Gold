@@ -32,7 +32,7 @@ public class Testing2 : MonoBehaviour
     public int lvlID;
     public Animator luoAnim;
     public AudioSource audioSource;
-    
+    bool shouldWait = false;
 
     // Start is called before the first frame update
     void Start()
@@ -66,25 +66,16 @@ public class Testing2 : MonoBehaviour
     {
         
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            //if (GameManager.numberOfLights > 0) {
-            //    grid.UseBasicCrystal(GameManager.GetMouseWorldPosition(), 56, lightPrefabBasic, lightPrefabTower, lightPrefabBilateral, originX, originY);
-                //if (GameManager.isDarkTilesAllowed) {
-                //    grid.SwitchMode(GameManager.GetMouseWorldPosition(), darkTile, originX, originY);
-                //}
-            //}
-            
-        }
+        
 
         if (GameManager.isDropped == true)
         {
             if (GameManager.numberOfLights > 0)
             {
-                if (GameManager.inDarkMode == false)
+                if (GameManager.inDarkMode == false && shouldWait == false)
                 {
                     grid.UseBasicCrystal(GameManager.GetMouseWorldPosition(), 56, lightPrefabBasic, lightPrefabTower, lightPrefabBilateral, originX, originY, audioSource);
-
+                    StartCoroutine(WaitASecond(1f));
                 }
                 
                 else if(GameManager.inDarkMode == true)
@@ -110,11 +101,12 @@ public class Testing2 : MonoBehaviour
 
         IEnumerator WaitASecond(float waitTime)
         {
+            shouldWait = true;
             isWaiting = true;
             yield return new WaitForSeconds(waitTime);
             isWaiting = false;
             LerpManager.startLerping = false;
-
+            shouldWait = false;
         }
 
         //if (Input.GetMouseButtonDown(1))

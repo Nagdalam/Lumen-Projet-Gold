@@ -5772,7 +5772,7 @@ MonoBehaviour:
     type: 3}
   darkTile: {fileID: 2218594554418905248, guid: a60b6229654407445a97bc7e585a35a1,
     type: 3}
-  lvlID: 1
+  lvlID: 2
   luoAnim: {fileID: 584989734}
   audioSource: {fileID: 6375956289577455159}
 --- !u!4 &366543782
