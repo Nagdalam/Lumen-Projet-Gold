@@ -14,6 +14,7 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
     Vector2 originPosition;
     public Sprite regularLight, darkLight;
     public Image image;
+    public Transform target;
     private void Start()
     {
         originPosition = transform.position;
@@ -99,7 +100,7 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
     {
         GameManager.isDropped = true;
         
-        transform.localPosition = originPosition;
+        transform.localPosition = target.localPosition;
 
 
         //if (selected == true)

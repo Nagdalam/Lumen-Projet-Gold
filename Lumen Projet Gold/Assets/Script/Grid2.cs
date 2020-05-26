@@ -374,7 +374,7 @@ public class Grid2
 
     }
 
-    public void SetLuo(int x, int y, int initialDirection)
+    public void SetLuo(int x, int y, int initialDirection, Animator luoAnim, Animator lumenAnim)
     {
         if (x >= 0 && y >= 0 && x < width && y < height)
         {
@@ -382,18 +382,26 @@ public class Grid2
             gridArray[x, y].isIlluminated = true;
             if (initialDirection == 1)
             {
+                luoAnim.SetBool("idleUp", true);
+                lumenAnim.SetBool("faceUp", true);
                 direction = directionFaced.UP;
             }
             else if (initialDirection == 2)
             {
+                luoAnim.SetBool("idleRight", true);
+                lumenAnim.SetBool("faceRight", true);
                 direction = directionFaced.RIGHT;
             }
             else if (initialDirection == 3)
             {
+                luoAnim.SetBool("idleDown", true);
+                lumenAnim.SetBool("faceDown", true);
                 direction = directionFaced.DOWN;
             }
             else if (initialDirection == 4)
             {
+                luoAnim.SetBool("idleLeft", true);
+                lumenAnim.SetBool("faceLeft", true);
                 direction = directionFaced.LEFT;
             }
             SetValue(x, y, 12);
@@ -421,7 +429,10 @@ public class Grid2
 
     public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform, bool isWaiting, int lvlID, Animator luoAnim, AudioSource audioSource, Animator lumenAnim, GameObject victoryUI, GameObject defeatUI, GameObject inGameUI)
     {
-
+        luoAnim.SetBool("idleLeft", false);
+        luoAnim.SetBool("idleRight", false);
+        luoAnim.SetBool("idleUp", false);
+        luoAnim.SetBool("idleDown", false);
         bool foundGoal = false;
         for (int j = 0; j < gridHeight; j++)
         {
@@ -508,7 +519,7 @@ public class Grid2
                     }
                     else
                     {
-                        
+                        luoAnim.SetBool("idleActivated", true);
                         inGameUI.SetActive(false);
                         defeatUI.SetActive(true);
                     }
@@ -583,7 +594,7 @@ public class Grid2
                     }
                     else
                     {
-                        
+                        luoAnim.SetBool("idleActivated", true);
                         inGameUI.SetActive(false);
                         defeatUI.SetActive(true);
                     }
@@ -657,6 +668,7 @@ public class Grid2
                     }
                     else
                     {
+                        luoAnim.SetBool("idleActivated", true);
                         inGameUI.SetActive(false);
                         defeatUI.SetActive(true);
        
@@ -731,6 +743,7 @@ public class Grid2
                     }
                     else
                     {
+                        luoAnim.SetBool("idleActivated", true);
                         inGameUI.SetActive(false);
                         defeatUI.SetActive(true);
                     }

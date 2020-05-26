@@ -46,7 +46,7 @@ public class Testing2 : MonoBehaviour
         grid = new Grid2(gridLength, gridHeight, cellSize, new Vector3(originX, originY, 0)) ;
         grid.numberSize = numberSize;
         grid.originPosition = new Vector3(originX, originY, 0);
-        grid.SetLuo(luoXPosition, luoYPosition, luoDirection);
+        grid.SetLuo(luoXPosition, luoYPosition, luoDirection, luoAnim, lumenAnim);
         grid.SetGoal(goalXPosition, goalYPosition);
         GameManager.width = gridLength;
         GameManager.height = gridHeight;
