@@ -11,9 +11,11 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
     Color m_NewColor;
     public GraphicRaycaster grphRaycast;
     PointerEventData ptData = new PointerEventData(null);
+    Vector2 originPosition;
 
     private void Start()
     {
+        originPosition = transform.position;
         ptData = new PointerEventData(EventSystem.current);
         //m_SpriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -86,6 +88,6 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        transform.localPosition = Vector2.zero;
+        transform.localPosition = originPosition;
     }
 }
