@@ -85,12 +85,13 @@ public class GameManager : MonoBehaviour
             canSpawn = false;
         }
     }
-
     public void SpawnLight()
     {
         Instantiate(lightPrefab, transform.position, Quaternion.identity);
     }
-    
+
+
+
 
 
 }

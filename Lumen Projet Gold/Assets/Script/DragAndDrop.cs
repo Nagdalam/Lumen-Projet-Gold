@@ -1,27 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class DragAndDrop : MonoBehaviour
+public class DragAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
 {
     private bool selected;
     SpriteRenderer m_SpriteRenderer;
     Color m_NewColor;
+    public GraphicRaycaster grphRaycast;
+    PointerEventData ptData = new PointerEventData(null);
 
     private void Start()
     {
-        m_SpriteRenderer = GetComponent<SpriteRenderer>();
+        ptData = new PointerEventData(EventSystem.current);
+        //m_SpriteRenderer = GetComponent<SpriteRenderer>();
     }
     void Update()
     {
+        Vector3 cursorPos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+        cursorPos.z = 0;
+        RaycastHit2D hit2D = Physics2D.Raycast(cursorPos, Vector3.back);
+        if(hit2D.collider != null)
+        {
+            Debug.Log(hit2D.collider.name);
+        }
+        //Debug.Log(EventSystem.current.currentSelectedGameObject);
+        Debug.Log(ptData.pointerEnter);
         if (selected == true)
         {
-            Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            
             transform.position = new Vector2(cursorPos.x, cursorPos.y);
             if(GameManager.objectGrabbed == false)
             {
                 Destroy(gameObject);
             }
+            
         }
 
         if (Input.GetMouseButtonUp(0) && selected == true)
@@ -33,11 +48,11 @@ public class DragAndDrop : MonoBehaviour
         }
         if(GameManager.inDarkMode == true)
         {
-            m_SpriteRenderer.color = Color.grey;
+            //m_SpriteRenderer.color = Color.grey;
         }
         if (GameManager.inDarkMode == false)
         {
-            m_SpriteRenderer.color = Color.white;
+            //m_SpriteRenderer.color = Color.white;
         }
 
     }
@@ -64,4 +79,13 @@ public class DragAndDrop : MonoBehaviour
 
     }
 
+    public void OnDrag(PointerEventData eventData)
+    {
+        transform.position = Input.mousePosition;
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        transform.localPosition = Vector2.zero;
+    }
 }
