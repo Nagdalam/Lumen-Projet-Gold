@@ -68,7 +68,7 @@ public class Testing2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        lightCompteur.text = (GameManager.numberOfLights).ToString();
+        lightCompteur.text = "Lights : " + (GameManager.numberOfLights).ToString();
 
 
 
