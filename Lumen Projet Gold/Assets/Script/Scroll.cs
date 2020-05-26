@@ -7,6 +7,14 @@ public class Scroll : MonoBehaviour
     Vector3 touchStart;
     public float zoomOutMin = 8;
     public float zoomOutMax = 30;
+    [SerializeField]
+    float leftLimit;
+    [SerializeField]
+    float rightLimit;
+    [SerializeField]
+    float bottomLimit;
+    [SerializeField]
+    float topLimit;
 
     // Update is called once per frame
     void Update()
@@ -37,6 +45,14 @@ public class Scroll : MonoBehaviour
                 Camera.main.transform.position += direction;
             }
             zoom(Input.GetAxis("Mouse ScrollWheel"));
+
+            transform.position = new Vector3
+                (
+                Mathf.Clamp(transform.position.x, leftLimit, rightLimit),
+                Mathf.Clamp(transform.position.y, bottomLimit, topLimit),
+                transform.position.z
+
+                );
         }
     }
 
