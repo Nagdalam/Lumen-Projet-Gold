@@ -6384,7 +6384,7 @@ GameObject:
   - component: {fileID: 563703666}
   - component: {fileID: 563703665}
   m_Layer: 0
-  m_Name: "carr\xE9 bleu"
+  m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
