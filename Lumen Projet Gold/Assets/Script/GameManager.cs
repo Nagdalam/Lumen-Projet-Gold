@@ -11,14 +11,14 @@ public class GameManager : MonoBehaviour
 {
     public static bool isDropped = false;
     public static bool canSpawn = false;
+    public static bool levelFinished = false;
+    public static bool gameOver = false;
     void Start()
     {
         if (PlayerPrefs.GetInt("LevelsAvailable") == 0)
         {
             PlayerPrefs.SetInt("LevelsAvailable", 1);
             Debug.Log(PlayerPrefs.GetInt("LevelsAvailable"));
-            
-            
         }
         
 

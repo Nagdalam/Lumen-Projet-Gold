@@ -399,10 +399,6 @@ public class Grid2
         }
     }
 
-
-
-
-
     public int GetValue(int x, int y)
     {
         if (x >= 0 && y >= 0 && x < width && y < height)
@@ -422,7 +418,7 @@ public class Grid2
         return GetValue(x, y);
     }
 
-    public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform, bool isWaiting, int lvlID, Animator luoAnim, AudioSource audioSource, Animator lumenAnim)
+    public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform, bool isWaiting, int lvlID, Animator luoAnim, AudioSource audioSource, Animator lumenAnim, GameObject victoryUI, GameObject defeatUI, GameObject inGameUI)
     {
 
         bool foundGoal = false;
@@ -434,7 +430,10 @@ public class Grid2
                 {
                     Debug.Log("Niveau terminé");
                     PlayerPrefs.SetInt("LevelsAvailable", lvlID);
-                    SceneManager.LoadScene(lvlID + 1);
+                    
+                    inGameUI.SetActive(false);
+                    victoryUI.SetActive(true);
+                    //SceneManager.LoadScene(lvlID + 1);
                 }
 
                 if (gridArray[i, j].hasLuo == true && direction == directionFaced.UP && gridArray[i, j].isGoal == false && foundGoal == false)
@@ -508,7 +507,9 @@ public class Grid2
                     }
                     else
                     {
-                        SceneManager.LoadScene(lvlID);
+                        
+                        inGameUI.SetActive(false);
+                        defeatUI.SetActive(true);
                     }
                 }
 
@@ -578,7 +579,9 @@ public class Grid2
                     }
                     else
                     {
-                        SceneManager.LoadScene(lvlID);
+                        
+                        inGameUI.SetActive(false);
+                        defeatUI.SetActive(true);
                     }
                 }
 
@@ -650,7 +653,9 @@ public class Grid2
                     }
                     else
                     {
-                        SceneManager.LoadScene(lvlID);
+                        inGameUI.SetActive(false);
+                        defeatUI.SetActive(true);
+       
                     }
 
                 }
@@ -725,6 +730,8 @@ public class Grid2
                     else
                     {
                         SceneManager.LoadScene(lvlID);
+                        inGameUI.SetActive(false);
+                        defeatUI.SetActive(true);
                     }
 
                 }
