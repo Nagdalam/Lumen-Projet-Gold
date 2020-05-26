@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Testing2 : MonoBehaviour
 {
     private Grid2 grid;
+    public GameObject menuInGame, menuVictoire, menuDéfaite;
     public bool intensificationAllowed;
     public bool isDarkTilesAllowed;
     public int gridLength;
@@ -102,7 +103,7 @@ public class Testing2 : MonoBehaviour
             
             if(isWaiting == false) {
 
-            grid.Pathfinder(gridHeight, gridLength, movePoint, isWaiting, lvlID, luoAnim, audioSource, lumenAnim) ;
+            grid.Pathfinder(gridHeight, gridLength, movePoint, isWaiting, lvlID, luoAnim, audioSource, lumenAnim, menuVictoire, menuDéfaite, menuInGame) ;
             StartCoroutine(WaitASecond(1f));
             }
 

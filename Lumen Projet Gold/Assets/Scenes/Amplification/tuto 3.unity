@@ -937,6 +937,21 @@ PrefabInstance:
       propertyPath: lumenAnim
       value: 
       objectReference: {fileID: 1009576836}
+    - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
+        type: 3}
+      propertyPath: menuInGame
+      value: 
+      objectReference: {fileID: 1746580002}
+    - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
+        type: 3}
+      propertyPath: menuVictoire
+      value: 
+      objectReference: {fileID: 1746580001}
+    - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
+        type: 3}
+      propertyPath: "menuD\xE9faite"
+      value: 
+      objectReference: {fileID: 1746580003}
     - target: {fileID: 5322200794696748918, guid: 271c5c146d285e54aa02f45a9695fd05,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1926,6 +1941,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1746580001 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4503567309878759234, guid: ef0033be885310946a909a2a3f9b0b2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1746579999}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1746580002 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2035132034620026335, guid: ef0033be885310946a909a2a3f9b0b2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1746579999}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1746580003 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2798933217892181843, guid: ef0033be885310946a909a2a3f9b0b2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1746579999}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1753035416
 PrefabInstance:
   m_ObjectHideFlags: 0
