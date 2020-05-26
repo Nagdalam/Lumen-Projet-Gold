@@ -10,7 +10,7 @@ public class DragAndDrop : MonoBehaviour
 
     private void Start()
     {
-        m_SpriteRenderer = GetComponent<SpriteRenderer>();
+       // m_SpriteRenderer = GetComponent<SpriteRenderer>();
     }
     void Update()
     {
@@ -33,11 +33,11 @@ public class DragAndDrop : MonoBehaviour
         }
         if(GameManager.inDarkMode == true)
         {
-            m_SpriteRenderer.color = Color.grey;
+           // m_SpriteRenderer.color = Color.grey;
         }
         if (GameManager.inDarkMode == false)
         {
-            m_SpriteRenderer.color = Color.white;
+         //   m_SpriteRenderer.color = Color.white;
         }
 
     }
