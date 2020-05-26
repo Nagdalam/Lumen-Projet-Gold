@@ -13,8 +13,12 @@ public class GameManager : MonoBehaviour
     public static bool canSpawn = false;
     public static bool levelFinished = false;
     public static bool gameOver = false;
+    public static bool menuOpen = false;
     void Start()
     {
+        menuOpen = false;
+        gameOver = false;
+        levelFinished = false;
         if (PlayerPrefs.GetInt("LevelsAvailable") == 0)
         {
             PlayerPrefs.SetInt("LevelsAvailable", 1);

@@ -33,6 +33,14 @@ public class mainMenu : MonoBehaviour
         }
     }
 
+    public void OpenTab(GameObject tab)
+    {
+        if (GameManager.menuOpen == false)
+        {
+            tab.SetActive(true);
+        }
+    }
+
     public void Reload()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -47,6 +55,11 @@ public class mainMenu : MonoBehaviour
     {
         Debug.Log("QUIT");
         Application.Quit();
+    }
+
+    public void Exit()
+    {
+        GameManager.menuOpen = false;
     }
 
 
