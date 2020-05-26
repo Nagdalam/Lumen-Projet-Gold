@@ -68,9 +68,10 @@ public class Testing2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        lightCompteur.text = "Lights : " + (GameManager.numberOfLights).ToString();
+        string myTextLights =  (GameManager.numberOfLights).ToString();
+        string myText = "Lights : ";
 
-
+        lightCompteur.text = myText + myTextLights;
 
         if (GameManager.isDropped == true)
         {
@@ -79,12 +80,18 @@ public class Testing2 : MonoBehaviour
                 if (GameManager.inDarkMode == false && shouldWait == false)
                 {
                     grid.UseBasicCrystal(GameManager.GetMouseWorldPosition(), 56, lightPrefabBasic, lightPrefabTower, lightPrefabBilateral, originX, originY, audioSource);
+                    GameManager.isDropped = false;
+                    GameManager.objectGrabbed = false;
                     StartCoroutine(WaitASecond(1f));
                 }
                 
                 else if(GameManager.inDarkMode == true)
                 {
                     grid.ActivateDark(GameManager.GetMouseWorldPosition(), darkTile, originX, originY, audioSource);
+                    GameManager.inDarkMode = false;
+                    GameManager.isDropped = false;
+                    GameManager.objectGrabbed = false;
+                    StartCoroutine(WaitASecond(1f));
                 }
             }
             
@@ -101,9 +108,9 @@ public class Testing2 : MonoBehaviour
         if (GameManager.numberOfLights <=0)
         {
             
-            if(isWaiting == false) {
+            if(shouldWait == false) {
 
-            grid.Pathfinder(gridHeight, gridLength, movePoint, isWaiting, lvlID, luoAnim, audioSource, lumenAnim, menuVictoire, menuDéfaite, menuInGame) ;
+            grid.Pathfinder(gridHeight, gridLength, movePoint, shouldWait, lvlID, luoAnim, audioSource, lumenAnim, menuVictoire, menuDéfaite, menuInGame) ;
             StartCoroutine(WaitASecond(1f));
             }
 
@@ -112,11 +119,9 @@ public class Testing2 : MonoBehaviour
         IEnumerator WaitASecond(float waitTime)
         {
             shouldWait = true;
-            isWaiting = true;
-            yield return new WaitForSeconds(waitTime);
-            isWaiting = false;
-            LerpManager.startLerping = false;
+            yield return new WaitForSeconds(1f);
             shouldWait = false;
+            GameManager.isDropped = false;
         }
 
         //if (Input.GetMouseButtonDown(1))

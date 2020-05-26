@@ -8,7 +8,6 @@ public class mainMenu : MonoBehaviour
     bool isMenuOpen;
     Scene sceneLoaded;
     int mySceneID;
-    public GameObject lightPrefab;
     public void PlayGame (int Id)
     {
         sceneLoaded = SceneManager.GetActiveScene();
@@ -50,10 +49,6 @@ public class mainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void SpawnLight()
-    {
-        Instantiate(lightPrefab, transform.position, Quaternion.identity);
-    }
 
 
 }

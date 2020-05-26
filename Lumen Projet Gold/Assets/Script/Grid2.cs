@@ -48,7 +48,7 @@ public class Grid2
         {
             for (int j = 0; j < gridArray.GetLength(1); j++)
             {
-                debugTextArray[i, j] = GameManager.CreateWorldText(gridArray[i, j].value.ToString(), null, GetWorldPosition(i, j) + new Vector3(cellSize, cellSize) * 0.5f, 1, Color.grey, TextAnchor.MiddleCenter);
+                debugTextArray[i, j] = GameManager.CreateWorldText(gridArray[i, j].value.ToString(), null, GetWorldPosition(i, j) + new Vector3(cellSize, cellSize) * 0.5f, 25, Color.grey, TextAnchor.MiddleCenter);
                 //Debug.DrawLine(GetWorldPosition(i, j), GetWorldPosition(i, j + 1), Color.white, 100f);
                 //Debug.DrawLine(GetWorldPosition(i, j), GetWorldPosition(i + 1, j), Color.white, 100f);
             }
@@ -379,6 +379,7 @@ public class Grid2
         if (x >= 0 && y >= 0 && x < width && y < height)
         {
             gridArray[x, y].hasLuo = true;
+            gridArray[x, y].isIlluminated = true;
             if (initialDirection == 1)
             {
                 direction = directionFaced.UP;
@@ -438,7 +439,7 @@ public class Grid2
 
                 if (gridArray[i, j].hasLuo == true && direction == directionFaced.UP && gridArray[i, j].isGoal == false && foundGoal == false)
                 {
-                    if (gridArray[i, j + 1].isIlluminated == true && i < GameManager.width && j < GameManager.height && gridArray[i, j + 1].isDark == false)
+                    if (j!= height && gridArray[i, j + 1].isIlluminated == true && i < GameManager.width && j < GameManager.height && gridArray[i, j + 1].isDark == false && gridArray[i,j+1].value==56)
                     {
                         //Debug.Log("Haut");
                         luoAnim.SetBool("faceDown", false);
@@ -463,7 +464,7 @@ public class Grid2
 
                     }
 
-                    else if (gridArray[i + 1, j].isIlluminated == true && gridArray[i + 1, j].isDark == false)
+                    else if (i!= width && gridArray[i + 1, j].isIlluminated == true && gridArray[i + 1, j].isDark == false)
                     {
                         //Debug.Log("Droite");
                         luoAnim.SetBool("faceDown", false);
@@ -484,7 +485,7 @@ public class Grid2
                         foundGoal = true;
                         SetValue(i + 1, j, 12);
                     }
-                    else if (gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false)
+                    else if (i!=0 && gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false)
                     {
                         LerpManager.startLerping = true;
                         //Debug.Log("Gauche");
@@ -515,7 +516,7 @@ public class Grid2
 
                 if (gridArray[i, j].hasLuo == true && direction == directionFaced.DOWN && gridArray[i, j].isGoal == false && foundGoal == false)
                 {
-                    if (gridArray[i, j - 1].isIlluminated == true && gridArray[i, j - 1].isDark == false)
+                    if (j!=0 && gridArray[i, j - 1].isIlluminated == true && gridArray[i, j - 1].isDark == false)
                     {
                         LerpManager.startLerping = true;
                         luoAnim.SetBool("faceRight", false);
@@ -534,11 +535,14 @@ public class Grid2
                         playerTransform.position += new Vector3(0f, -8.9f, 0f);
                         foundGoal = true;
                         SetValue(i, j - 1, 12);
+                        
                     }
-                    else if (gridArray[i + 1, j].isIlluminated == true)
+
+                    
+
+                    else if (i!= width &&gridArray[i + 1, j].isIlluminated == true && gridArray[i + 1, j].isDark == false)
                     {
                         LerpManager.startLerping = true;
-                        //Debug.Log("Droite");
                         luoAnim.SetBool("faceDown", false);
                         luoAnim.SetBool("faceLeft", false);
                         luoAnim.SetBool("faceUp", false);
@@ -556,7 +560,7 @@ public class Grid2
                         foundGoal = true;
                         SetValue(i + 1, j, 12);
                     }
-                    else if (gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false)
+                    else if (i!=0 && gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false)
                     {
                         LerpManager.startLerping = true;
                         //Debug.Log("Gauche");
@@ -588,7 +592,7 @@ public class Grid2
                 if (gridArray[i, j].hasLuo == true && direction == directionFaced.LEFT && gridArray[i, j].isGoal == false && foundGoal == false)
                 {
 
-                    if (gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false)
+                    if (i != 0 && gridArray[i - 1, j].isIlluminated == true  && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false)
                     {
                         LerpManager.startLerping = true;
                         luoAnim.SetBool("faceDown", false);
@@ -608,7 +612,7 @@ public class Grid2
                         foundGoal = true;
                         SetValue(i - 1, j, 12);
                     }
-                    else if (gridArray[i, j + 1].isIlluminated == true && gridArray[i, j + 1].isDark == false)
+                    else if (j!= height && gridArray[i, j + 1].isIlluminated == true && gridArray[i, j + 1].isDark == false)
                     {
                         LerpManager.startLerping = true;
                         //Debug.Log("Haut");
@@ -630,7 +634,7 @@ public class Grid2
                         foundGoal = true;
                         SetValue(i, j + 1, 12);
                     }
-                    else if (gridArray[i, j - 1].isIlluminated == true)
+                    else if (j !=0 && gridArray[i, j - 1].isIlluminated == true && gridArray[i, j - 1].isDark == false)
                     {
                         LerpManager.startLerping = true;
                         //Debug.Log("Bas");
@@ -660,14 +664,12 @@ public class Grid2
 
                 }
 
-                if (gridArray[i, j].value == 12 && direction == directionFaced.RIGHT && gridArray[i, j].isGoal == false && foundGoal == false)
+                if (gridArray[i, j].hasLuo == true && direction == directionFaced.RIGHT && gridArray[i, j].isGoal == false && foundGoal == false)
                 {
-
-                    GameManager.canLuoMove = false;
-                    if (gridArray[i + 1, j].isIlluminated == true && gridArray[i, j + 1].isDark == false)
+                    if (i!= width && gridArray[i + 1, j].isIlluminated == true && gridArray[i, j + 1].isDark == false)
                     {
                         LerpManager.startLerping = true;
-                        //Debug.Log("Droite");
+                        Debug.Log("Droite");
                         luoAnim.SetBool("faceDown", false);
                         luoAnim.SetBool("faceLeft", false);
                         luoAnim.SetBool("faceUp", false);
@@ -685,7 +687,7 @@ public class Grid2
                         foundGoal = true;
                         SetValue(i + 1, j, 12);
                     }
-                    else if (gridArray[i, j + 1].isIlluminated == true)
+                    else if (j != height && gridArray[i, j + 1].isIlluminated == true && gridArray[i, j + 1].isDark == false)
                     {
                         LerpManager.startLerping = true;
                         //Debug.Log("Haut");
@@ -706,7 +708,7 @@ public class Grid2
                         foundGoal = true;
                         SetValue(i, j + 1, 12);
                     }
-                    else if (gridArray[i, j - 1].isIlluminated == true)
+                    else if (j!= 0 && gridArray[i, j - 1].isIlluminated == true && gridArray[i, j - 1].isDark == false)
                     {
                         LerpManager.startLerping = true;
                         //Debug.Log("Bas");
@@ -729,7 +731,6 @@ public class Grid2
                     }
                     else
                     {
-                        SceneManager.LoadScene(lvlID);
                         inGameUI.SetActive(false);
                         defeatUI.SetActive(true);
                     }

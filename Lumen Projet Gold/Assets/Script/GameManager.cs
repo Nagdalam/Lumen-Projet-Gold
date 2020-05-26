@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("LevelsAvailable", 1);
             Debug.Log(PlayerPrefs.GetInt("LevelsAvailable"));
         }
+        inDarkMode = false;
         
 
     }

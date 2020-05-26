@@ -12,7 +12,8 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
     public GraphicRaycaster grphRaycast;
     PointerEventData ptData = new PointerEventData(null);
     Vector2 originPosition;
-
+    public Sprite regularLight, darkLight;
+    public Image image;
     private void Start()
     {
         originPosition = transform.position;
@@ -21,6 +22,10 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
     }
     void Update()
     {
+        if (GameManager.numberOfLights <= 0)
+        {
+            Destroy(gameObject);
+        }
         Vector3 cursorPos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
         cursorPos.z = 0;
         RaycastHit2D hit2D = Physics2D.Raycast(cursorPos, Vector3.back);
@@ -33,7 +38,7 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
         if (selected == true)
         {
             
-            transform.position = new Vector2(cursorPos.x, cursorPos.y);
+            //transform.position = new Vector2(cursorPos.x, cursorPos.y);
             if(GameManager.objectGrabbed == false)
             {
                 Destroy(gameObject);
@@ -50,11 +55,12 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
         }
         if(GameManager.inDarkMode == true)
         {
-            //m_SpriteRenderer.color = Color.grey;
+            
+            image.sprite = darkLight;
         }
         if (GameManager.inDarkMode == false)
         {
-            //m_SpriteRenderer.color = Color.white;
+            image.sprite = regularLight;
         }
 
     }
@@ -83,11 +89,24 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
+        //selected = true;
+        //GameManager.objectGrabbed = true;
+        GameManager.objectGrabbed = true;
         transform.position = Input.mousePosition;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        GameManager.isDropped = true;
+        
         transform.localPosition = originPosition;
+
+
+        //if (selected == true)
+        //{
+        //    selected = false;
+        //    GameManager.isDropped = true;
+        //    StartCoroutine(WaitASecond());
+        //}
     }
 }
