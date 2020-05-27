@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6430,6 +6430,11 @@ PrefabInstance:
       propertyPath: m_ChunkCullingBounds.y
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2552881764669815636, guid: b24c74040f9cda74e8245ef7590f797c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e56daa6b444dd364d87142deb059ab6d, type: 2}
     - target: {fileID: 3424297153127178051, guid: b24c74040f9cda74e8245ef7590f797c,
         type: 3}
       propertyPath: m_ChunkCullingBounds.x
@@ -7351,6 +7356,11 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[19].second.m_TileSpriteIndex
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4509506425250863926, guid: b24c74040f9cda74e8245ef7590f797c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e56daa6b444dd364d87142deb059ab6d, type: 2}
     - target: {fileID: 6790293133774459907, guid: b24c74040f9cda74e8245ef7590f797c,
         type: 3}
       propertyPath: m_Tiles.Array.size
