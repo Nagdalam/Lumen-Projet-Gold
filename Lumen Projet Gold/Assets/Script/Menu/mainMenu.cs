@@ -8,12 +8,11 @@ public class mainMenu : MonoBehaviour
     bool isMenuOpen;
     Scene sceneLoaded;
     int mySceneID;
-    public void PlayGame (int Id)
-    {
-        sceneLoaded = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(Id);
-        mySceneID = sceneLoaded.buildIndex;
-    } 
+      public void PlayGame(int Id)
+        {
+            SceneManager.LoadScene(Id-1);
+        }
+     
     //public void PlaySelector ()
     //{
     //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
@@ -49,8 +48,10 @@ public class mainMenu : MonoBehaviour
     }
 
     public void LoadNextScene()
+    
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        Debug.Log(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex)+1);
     }
 
     public void QuitGame ()

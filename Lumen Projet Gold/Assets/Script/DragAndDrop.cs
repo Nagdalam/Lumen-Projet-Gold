@@ -15,6 +15,7 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
     public Sprite regularLight, darkLight;
     public Image image;
     public Transform target;
+    public Animator myAnim;
     private void Start()
     {
         originPosition = transform.position;
@@ -56,12 +57,11 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
         }
         if(GameManager.inDarkMode == true)
         {
-            
-            image.sprite = darkLight;
+            myAnim.SetBool("isDark", true);
         }
         if (GameManager.inDarkMode == false)
         {
-            image.sprite = regularLight;
+            myAnim.SetBool("isDark", false);
         }
 
     }
