@@ -48,7 +48,7 @@ public class Grid2
         {
             for (int j = 0; j < gridArray.GetLength(1); j++)
             {
-                debugTextArray[i, j] = GameManager.CreateWorldText(gridArray[i, j].value.ToString(), null, GetWorldPosition(i, j) + new Vector3(cellSize, cellSize) * 0.5f, 1, Color.grey, TextAnchor.MiddleCenter);
+                debugTextArray[i, j] = GameManager.CreateWorldText(gridArray[i, j].value.ToString(), null, GetWorldPosition(i, j) + new Vector3(cellSize, cellSize) * 0.5f, 25, Color.grey, TextAnchor.MiddleCenter);
                 //Debug.DrawLine(GetWorldPosition(i, j), GetWorldPosition(i, j + 1), Color.white, 100f);
                 //Debug.DrawLine(GetWorldPosition(i, j), GetWorldPosition(i + 1, j), Color.white, 100f);
             }
@@ -603,7 +603,7 @@ public class Grid2
                 if (gridArray[i, j].hasLuo == true && direction == directionFaced.LEFT && gridArray[i, j].isGoal == false && foundGoal == false)
                 {
 
-                    if (i != 0 && gridArray[i - 1, j].isIlluminated == true  && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false)
+                    if (i != 0 && gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].value==56 && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false)
                     {
                         LerpManager.startLerping = true;
                         luoAnim.SetBool("faceDown", false);
