@@ -48,7 +48,7 @@ public class Grid2
         {
             for (int j = 0; j < gridArray.GetLength(1); j++)
             {
-                debugTextArray[i, j] = GameManager.CreateWorldText(gridArray[i, j].value.ToString(), null, GetWorldPosition(i, j) + new Vector3(cellSize, cellSize) * 0.5f, 25, Color.grey, TextAnchor.MiddleCenter);
+                debugTextArray[i, j] = GameManager.CreateWorldText(gridArray[i, j].value.ToString(), null, GetWorldPosition(i, j) + new Vector3(cellSize, cellSize) * 0.5f, 1, Color.grey, TextAnchor.MiddleCenter);
                 //Debug.DrawLine(GetWorldPosition(i, j), GetWorldPosition(i, j + 1), Color.white, 100f);
                 //Debug.DrawLine(GetWorldPosition(i, j), GetWorldPosition(i + 1, j), Color.white, 100f);
             }
@@ -74,7 +74,7 @@ public class Grid2
     {
         if (x >= 0 && y >= 0 && x < width && y < height)
         {
-            if (gridArray[x, y].isCrystal == false && gridArray[x,y].isDark == false)
+            if (gridArray[x, y].isCrystal == false && gridArray[x, y].isDark == false)
             {
                 gridArray[x, y].value = value;
                 gridArray[x, y].isIlluminated = true;
@@ -157,14 +157,15 @@ public class Grid2
     {
         if (x >= 0 && y >= 0)
         {
-            
+
             if (gridArray[x, y].isIlluminated == true && gridArray[x, y].isCrystal == false && gridArray[x, y].hasLuo == false && GameManager.inDarkMode == true)
             {
+
                 gridArray[x, y].value = 00;
                 gridArray[x, y].isIlluminated = false;
                 debugTextArray[x, y].text = gridArray[x, y].value.ToString();
                 GameManager.numberOfLights--;
-                
+                GameManager.playDarkSound = true;
                 GameObject instancedObj1 = GameObject.Instantiate(darkTile, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
 
             }
@@ -175,7 +176,7 @@ public class Grid2
     {
         int x, y;
         GetXY(worldPosition, out x, out y);
-        
+
         ActivateDark(x, y, darkTile, originX, originY, audioSource);
     }
 
@@ -193,7 +194,7 @@ public class Grid2
         }
     }
 
-    public void UseBasicCrystal(Vector3 worldPosition, int value, GameObject lightPrefabBasic, GameObject lightPrefabTower,GameObject lightPrefabBilateral ,int originX, int originY, AudioSource audioSource)
+    public void UseBasicCrystal(Vector3 worldPosition, int value, GameObject lightPrefabBasic, GameObject lightPrefabTower, GameObject lightPrefabBilateral, int originX, int originY, AudioSource audioSource)
     {
         int x, y;
         GetXY(worldPosition, out x, out y);
@@ -203,9 +204,10 @@ public class Grid2
             if (gridArray[x, y].isCrystal == true && gridArray[x, y].typeCrystal == crystalType.BASIC)
             {
 
+
                 if (gridArray[x, y].usageCount == 0)
                 {
-
+                    GameManager.playCrystalSound = true;
                     SetValue(x + 1, y, value);
                     GameObject instancedObj1 = GameObject.Instantiate(lightPrefabBasic, new Vector3((originX - (cellSize / 2)) + ((x + 1) + 1) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
                     GameObject instancedObj = GameObject.Instantiate(lightPrefabBasic, new Vector3((originX - (cellSize / 2)) + (x + 1) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
@@ -218,6 +220,7 @@ public class Grid2
                 }
                 else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
                 {
+                    GameManager.playIntensificationSound = true;
                     Debug.Log(gridArray[x, y].usageCount);
                     SetValue(x + 2, y, value);
                     GameObject instancedObj1 = GameObject.Instantiate(lightPrefabBasic, new Vector3((originX - (cellSize / 2)) + ((x + 1) + 2) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), -2), Quaternion.identity) as GameObject;
@@ -234,6 +237,8 @@ public class Grid2
             {
                 if (gridArray[x, y].usageCount == 0)
                 {
+                    GameManager.playCrystalSound = true;
+
                     SetValue(x, y + 1, value);
                     GameObject instancedObj = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + (x + 1) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
 
@@ -246,6 +251,7 @@ public class Grid2
                 }
                 else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
                 {
+                    GameManager.playIntensificationSound = true;
                     SetValue(x, y + 4, value);
                     GameObject instancedObj4 = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) + 4) * cellSize), -2), Quaternion.identity) as GameObject;
 
@@ -255,6 +261,7 @@ public class Grid2
             {
                 if (gridArray[x, y].usageCount == 0)
                 {
+                    GameManager.playCrystalSound = true;
 
                     GameObject instancedObj = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + (x + 1) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
 
@@ -267,6 +274,7 @@ public class Grid2
                 }
                 else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
                 {
+                    GameManager.playIntensificationSound = true;
                     SetValue(x, y - 4, value);
                     GameObject instancedObj4 = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 4) * cellSize), -2), Quaternion.identity) as GameObject;
                     Debug.Log(gridArray[x, y].usageCount);
@@ -277,6 +285,7 @@ public class Grid2
             {
                 if (gridArray[x, y].usageCount == 0)
                 {
+                    GameManager.playCrystalSound = true;
                     GameObject instancedObj = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + (x + 1) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
 
                     SetValue(x - 1, y, value);
@@ -288,6 +297,7 @@ public class Grid2
                 }
                 else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
                 {
+                    GameManager.playIntensificationSound = true;
                     GameObject instancedObj4 = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + ((x + 1) - 4) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x - 4, y, value);
                 }
@@ -297,6 +307,7 @@ public class Grid2
             {
                 if (gridArray[x, y].usageCount == 0)
                 {
+                    GameManager.playCrystalSound = true;
                     GameObject instancedObj = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + (x + 1) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
 
                     SetValue(x + 1, y, value);
@@ -308,6 +319,7 @@ public class Grid2
                 }
                 else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
                 {
+                    GameManager.playIntensificationSound = true;
                     SetValue(x + 4, y, value);
                     GameObject instancedObj4 = GameObject.Instantiate(lightPrefabTower, new Vector3((originX - (cellSize / 2)) + ((x + 1) + 4) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
                 }
@@ -317,9 +329,9 @@ public class Grid2
 
             else if (gridArray[x, y].isCrystal == true && gridArray[x, y].typeCrystal == crystalType.BILATERALHORIZONTAL)
             {
-                
                 if (gridArray[x, y].usageCount == 0)
                 {
+                    GameManager.playCrystalSound = true;
                     GameObject instancedObj = GameObject.Instantiate(lightPrefabBilateral, new Vector3((originX - (cellSize / 2)) + (x + 1) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
 
                     SetValue(x + 1, y, value);
@@ -334,6 +346,7 @@ public class Grid2
 
                 else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
                 {
+                    GameManager.playIntensificationSound = true;
                     SetValue(x + 3, y, value);
                     GameObject instancedObj5 = GameObject.Instantiate(lightPrefabBilateral, new Vector3((originX - (cellSize / 2)) + ((x + 1) + 3) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
                     SetValue(x - 3, y, value);
@@ -345,6 +358,8 @@ public class Grid2
             {
                 if (gridArray[x, y].usageCount == 0)
                 {
+                    GameManager.playCrystalSound = true;
+
                     GameObject instancedObj = GameObject.Instantiate(lightPrefabBilateral, new Vector3((originX - (cellSize / 2)) + (x + 1) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), 0), Quaternion.identity) as GameObject;
 
                     SetValue(x, y + 1, value);
@@ -359,17 +374,18 @@ public class Grid2
 
                 else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
                 {
+                    GameManager.playIntensificationSound = true;
                     SetValue(x, y + 3, value);
                     GameObject instancedObj5 = GameObject.Instantiate(lightPrefabBilateral, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) + 3) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x, y - 3, value);
                     GameObject instancedObj6 = GameObject.Instantiate(lightPrefabBilateral, new Vector3((originX - (cellSize / 2)) + ((x + 1)) * cellSize, ((originY - (cellSize / 2)) + ((y + 1) - 3) * cellSize), -2), Quaternion.identity) as GameObject;
                 }
             }
-            
+
             GameManager.objectGrabbed = false;
             gridArray[x, y].usageCount++;
         }
-        
+
 
 
     }
@@ -440,9 +456,9 @@ public class Grid2
             {
                 if (gridArray[i, j].isGoal == true && gridArray[i, j].hasLuo == true)
                 {
-                    Debug.Log("Niveau terminé");
                     PlayerPrefs.SetInt("LevelsAvailable", lvlID);
-                    
+                    GameManager.playVictorySound = true;
+
                     inGameUI.SetActive(false);
                     victoryUI.SetActive(true);
                     //SceneManager.LoadScene(lvlID + 1);
@@ -450,8 +466,10 @@ public class Grid2
 
                 if (gridArray[i, j].hasLuo == true && direction == directionFaced.UP && gridArray[i, j].isGoal == false && foundGoal == false)
                 {
-                    if (j!= height && gridArray[i, j + 1].isIlluminated == true && i < GameManager.width && j < GameManager.height && gridArray[i, j + 1].isDark == false && gridArray[i,j+1].value==56)
+
+                    if (j != height && gridArray[i, j + 1].isIlluminated == true && i < GameManager.width && j < GameManager.height && gridArray[i, j + 1].isDark == false && gridArray[i, j + 1].value == 56)
                     {
+                        GameManager.playStepSound = true;
                         //Debug.Log("Haut");
                         luoAnim.SetBool("faceDown", false);
                         luoAnim.SetBool("faceLeft", false);
@@ -475,8 +493,9 @@ public class Grid2
 
                     }
 
-                    else if (i!= width && gridArray[i + 1, j].isIlluminated == true && gridArray[i + 1, j].isDark == false)
+                    else if (i != width && gridArray[i + 1, j].isIlluminated == true && gridArray[i + 1, j].isDark == false)
                     {
+                        GameManager.playStepSound = true;
                         //Debug.Log("Droite");
                         luoAnim.SetBool("faceDown", false);
                         luoAnim.SetBool("faceLeft", false);
@@ -496,8 +515,9 @@ public class Grid2
                         foundGoal = true;
                         SetValue(i + 1, j, 12);
                     }
-                    else if (i!=0 && gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false)
+                    else if (i != 0 && gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false)
                     {
+                        GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
                         //Debug.Log("Gauche");
                         luoAnim.SetBool("faceDown", false);
@@ -527,8 +547,9 @@ public class Grid2
 
                 if (gridArray[i, j].hasLuo == true && direction == directionFaced.DOWN && gridArray[i, j].isGoal == false && foundGoal == false)
                 {
-                    if (j!=0 && gridArray[i, j - 1].isIlluminated == true && gridArray[i, j - 1].isDark == false)
+                    if (j != 0 && gridArray[i, j - 1].isIlluminated == true && gridArray[i, j - 1].isDark == false)
                     {
+                        GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
                         luoAnim.SetBool("faceRight", false);
                         luoAnim.SetBool("faceLeft", false);
@@ -546,13 +567,14 @@ public class Grid2
                         playerTransform.position += new Vector3(0f, -8.9f, 0f);
                         foundGoal = true;
                         SetValue(i, j - 1, 12);
-                        
+
                     }
 
-                    
 
-                    else if (i!= width &&gridArray[i + 1, j].isIlluminated == true && gridArray[i + 1, j].isDark == false)
+
+                    else if (i != width && gridArray[i + 1, j].isIlluminated == true && gridArray[i + 1, j].isDark == false)
                     {
+                        GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
                         luoAnim.SetBool("faceDown", false);
                         luoAnim.SetBool("faceLeft", false);
@@ -571,8 +593,9 @@ public class Grid2
                         foundGoal = true;
                         SetValue(i + 1, j, 12);
                     }
-                    else if (i!=0 && gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false)
+                    else if (i != 0 && gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false)
                     {
+                        GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
                         //Debug.Log("Gauche");
                         luoAnim.SetBool("faceDown", false);
@@ -603,8 +626,9 @@ public class Grid2
                 if (gridArray[i, j].hasLuo == true && direction == directionFaced.LEFT && gridArray[i, j].isGoal == false && foundGoal == false)
                 {
 
-                    if (i != 0 && gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].value==56 && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false)
+                    if (i != 0 && gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].value == 56 && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false)
                     {
+                        GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
                         luoAnim.SetBool("faceDown", false);
                         luoAnim.SetBool("faceRight", false);
@@ -623,11 +647,12 @@ public class Grid2
                         foundGoal = true;
                         SetValue(i - 1, j, 12);
                     }
-                    else if (j!= height && gridArray[i, j + 1].isIlluminated == true && gridArray[i, j + 1].isDark == false)
+                    else if (j != height && gridArray[i, j + 1].isIlluminated == true && gridArray[i, j + 1].isDark == false)
                     {
+                        GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
                         //Debug.Log("Haut");
-                        
+
                         luoAnim.SetBool("faceLeft", false);
                         luoAnim.SetBool("faceUp", true);
                         luoAnim.SetBool("faceRight", false);
@@ -645,8 +670,9 @@ public class Grid2
                         foundGoal = true;
                         SetValue(i, j + 1, 12);
                     }
-                    else if (j !=0 && gridArray[i, j - 1].isIlluminated == true && gridArray[i, j - 1].isDark == false)
+                    else if (j != 0 && gridArray[i, j - 1].isIlluminated == true && gridArray[i, j - 1].isDark == false)
                     {
+                        GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
                         //Debug.Log("Bas");
                         luoAnim.SetBool("faceRight", false);
@@ -671,15 +697,16 @@ public class Grid2
                         luoAnim.SetBool("idleActivated", true);
                         inGameUI.SetActive(false);
                         defeatUI.SetActive(true);
-       
+
                     }
 
                 }
 
                 if (gridArray[i, j].hasLuo == true && direction == directionFaced.RIGHT && gridArray[i, j].isGoal == false && foundGoal == false)
                 {
-                    if (i!= width && gridArray[i + 1, j].isIlluminated == true && gridArray[i, j + 1].isDark == false)
+                    if (i != width && gridArray[i + 1, j].isIlluminated == true && gridArray[i, j + 1].isDark == false)
                     {
+                        GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
                         Debug.Log("Droite");
                         luoAnim.SetBool("faceDown", false);
@@ -701,6 +728,7 @@ public class Grid2
                     }
                     else if (j != height && gridArray[i, j + 1].isIlluminated == true && gridArray[i, j + 1].isDark == false)
                     {
+                        GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
                         //Debug.Log("Haut");
                         luoAnim.SetBool("faceDown", false);
@@ -720,8 +748,9 @@ public class Grid2
                         foundGoal = true;
                         SetValue(i, j + 1, 12);
                     }
-                    else if (j!= 0 && gridArray[i, j - 1].isIlluminated == true && gridArray[i, j - 1].isDark == false)
+                    else if (j != 0 && gridArray[i, j - 1].isIlluminated == true && gridArray[i, j - 1].isDark == false)
                     {
+                        GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
                         //Debug.Log("Bas");
                         luoAnim.SetBool("faceRight", false);
@@ -744,7 +773,7 @@ public class Grid2
                     else
                     {
                         luoAnim.SetBool("idleActivated", true);
-                        
+
                         inGameUI.SetActive(false);
                         defeatUI.SetActive(true);
                     }

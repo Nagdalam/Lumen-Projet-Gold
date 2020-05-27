@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 45938290769271045}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.957333, y: -0.3715952, z: -172.97824}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -44,7 +44,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.331
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -140,20 +140,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4210a8757d862a943ae184d14736b6de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SeList:
-  - SE: {fileID: 8300000, guid: 567988b4949ed054ebe8df6f5d4f6d51, type: 3}
-    Volume: 1
-    Pitch: 1
-    Index: 0
-  - SE: {fileID: 8300000, guid: 4d01760a4aa7ed840b90d04c895ecd2d, type: 3}
-    Volume: 1
-    Pitch: 1
-    Index: 1
-  - SE: {fileID: 8300000, guid: c434ea0dee5071c4b9a3e149a1301c5d, type: 3}
-    Volume: 1
-    Pitch: 1
-    Index: 2
-  - SE: {fileID: 8300000, guid: 5b4865ce46a5ddc449098f4c0fb47a83, type: 3}
-    Volume: 1
-    Pitch: 1
-    Index: 3
+  myAudioSource: {fileID: 7606537355801774441}
+  audioClips:
+  - {fileID: 8300000, guid: d7371eb60ffbf1e4a92375e9cbb5ab06, type: 3}
+  - {fileID: 8300000, guid: d1115b95d66056f42a08b38b84c039bf, type: 3}
+  - {fileID: 8300000, guid: e805d5baae3e3f647a6b9d8c9ac691cc, type: 3}
+  - {fileID: 8300000, guid: 926d5b3a17267344bb47e3a5cba24923, type: 3}
+  - {fileID: 8300000, guid: 37818fde67d1c784fa297ad5caff5db1, type: 3}
+  - {fileID: 8300000, guid: 00a130e428c04dc48956e5bbeb795805, type: 3}
+  - {fileID: 8300000, guid: a6c3ac55c4b3c2e4686c07b117ec38e7, type: 3}
+  - {fileID: 8300000, guid: 35949b19cce45b24ab672e35fc145ab5, type: 3}
+  - {fileID: 8300000, guid: 13ad140d9999f454da33ae0575ba222b, type: 3}
+  - {fileID: 8300000, guid: 93a1c23c422bafb4bb8b3b6dc3e9f7df, type: 3}
+  - {fileID: 8300000, guid: befc1f8f37e793c4ab5d0fc6c899bfb2, type: 3}

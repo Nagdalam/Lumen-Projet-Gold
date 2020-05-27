@@ -4,34 +4,51 @@ using UnityEngine;
 
 public class SoundEffectmanager : MonoBehaviour
 {
-    public List<SoundElement> SeList;
+    public AudioSource myAudioSource;
+    public AudioClip[] audioClips;
     
     void Start()
     {
-        var Audiosource = gameObject.GetComponent<AudioSource>();
-        for (int i = 0; i < SeList.Count; i++)
-        {
-            SeList[i].Index = i;
-           Audiosource.pitch = SeList[i].Pitch ;
-           Audiosource.volume = SeList[i].Volume;
-        } 
+       
     }
 
-    public void PlaySound (int Index, AudioSource source)
+    private void FixedUpdate()
     {
-        SeList[Index].SE = source.clip;
-        source.Play();
+        if(GameManager.playCrystalSound == true)
+        {
+            GameManager.playCrystalSound = false;
+            myAudioSource.clip = audioClips[0];
+            myAudioSource.Play();
+        }
+        else if (GameManager.playStepSound == true)
+        {
+            GameManager.playStepSound = false;
+            myAudioSource.clip = audioClips[1];
+            myAudioSource.Play();
+        }
+        else if (GameManager.playIntensificationSound == true)
+        {
+            GameManager.playIntensificationSound = false;
+            myAudioSource.clip = audioClips[2];
+            myAudioSource.Play();
+        }
+        else if (GameManager.playDarkSound == true)
+        {
+            GameManager.playDarkSound = false;
+            myAudioSource.clip = audioClips[3];
+            myAudioSource.Play();
+        }
+        else if (GameManager.playVictorySound == true)
+        {
+            GameManager.playVictorySound = false;
+            myAudioSource.clip = audioClips[4];
+            myAudioSource.Play();
+        }
+
     }
+   
     void Update()
     {
         
     }
-}
-[System.Serializable]
-public class SoundElement 
-{
-    public AudioClip SE;
-    public float Volume;
-    public float Pitch;
-    public int Index;
 }

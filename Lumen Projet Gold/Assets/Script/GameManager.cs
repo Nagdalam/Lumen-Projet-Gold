@@ -14,6 +14,12 @@ public class GameManager : MonoBehaviour
     public static bool levelFinished = false;
     public static bool gameOver = false;
     public static bool menuOpen = false;
+    public static bool playCrystalSound = false;
+    public static bool playStepSound = false;
+    public static bool playIntensificationSound = false;
+    public static bool playDarkSound = false;
+    public static bool playVictorySound = false;
+
     void Start()
     {
         menuOpen = false;
