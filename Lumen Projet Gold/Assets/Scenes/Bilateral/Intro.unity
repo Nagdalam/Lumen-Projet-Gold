@@ -604,10 +604,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: "LightArriv\xE9e"
       objectReference: {fileID: 0}
+    - target: {fileID: 4053391127888251133, guid: 19e6f9fac4d66254d86f62b6fe1d2e97,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053391127888251133, guid: 19e6f9fac4d66254d86f62b6fe1d2e97,
+        type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 2.05
+      objectReference: {fileID: 0}
     - target: {fileID: 4596443314923508143, guid: 19e6f9fac4d66254d86f62b6fe1d2e97,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19
+      value: -21.35
       objectReference: {fileID: 0}
     - target: {fileID: 4596443314923508143, guid: 19e6f9fac4d66254d86f62b6fe1d2e97,
         type: 3}
@@ -6353,6 +6363,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: "LightD\xE9part"
       objectReference: {fileID: 0}
+    - target: {fileID: 6531004028991298126, guid: 6105b91f5796bf2439f2dfd8c8085312,
+        type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 8.5208
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531004028991298126, guid: 6105b91f5796bf2439f2dfd8c8085312,
+        type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 5.21
+      objectReference: {fileID: 0}
     - target: {fileID: 6531004028991298127, guid: 6105b91f5796bf2439f2dfd8c8085312,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6361,7 +6381,7 @@ PrefabInstance:
     - target: {fileID: 6531004028991298127, guid: 6105b91f5796bf2439f2dfd8c8085312,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -21.070139
+      value: -27.8
       objectReference: {fileID: 0}
     - target: {fileID: 6531004028991298127, guid: 6105b91f5796bf2439f2dfd8c8085312,
         type: 3}
@@ -6381,12 +6401,12 @@ PrefabInstance:
     - target: {fileID: 6531004028991298127, guid: 6105b91f5796bf2439f2dfd8c8085312,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.030658126
       objectReference: {fileID: 0}
     - target: {fileID: 6531004028991298127, guid: 6105b91f5796bf2439f2dfd8c8085312,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.99952996
       objectReference: {fileID: 0}
     - target: {fileID: 6531004028991298127, guid: 6105b91f5796bf2439f2dfd8c8085312,
         type: 3}
