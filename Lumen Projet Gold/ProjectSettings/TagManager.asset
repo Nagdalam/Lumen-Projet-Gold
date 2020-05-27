@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Socle
+    uniqueID: 463125355
+    locked: 0
+  - name: Cristaux
+    uniqueID: 133932015
+    locked: 0
+  - name: Cristauxanim
+    uniqueID: 2276195773
+    locked: 0
