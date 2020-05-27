@@ -5,8 +5,9 @@ using UnityEngine;
 public class Scroll : MonoBehaviour
 {
     Vector3 touchStart;
-    public float zoomOutMin = 8;
-    public float zoomOutMax = 30;
+    public float zoomOutMin;
+    public float zoomOutMax;
+   
     [SerializeField]
     float leftLimit;
     [SerializeField]
@@ -17,6 +18,8 @@ public class Scroll : MonoBehaviour
     float topLimit;
 
     // Update is called once per frame
+
+
     void Update()
     {
         if (GameManager.objectGrabbed == false) {
@@ -44,15 +47,15 @@ public class Scroll : MonoBehaviour
                 Vector3 direction = touchStart - Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 Camera.main.transform.position += direction;
             }
-            zoom(Input.GetAxis("Mouse ScrollWheel"));
+            //zoom(Input.GetAxis("Mouse ScrollWheel"));
 
-            transform.position = new Vector3
-                (
-                Mathf.Clamp(transform.position.x, leftLimit, rightLimit),
-                Mathf.Clamp(transform.position.y, bottomLimit, topLimit),
-                transform.position.z
+            //transform.position = new Vector3
+            //    (
+            //    Mathf.Clamp(transform.position.x, leftLimit, rightLimit),
+            //    Mathf.Clamp(transform.position.y, bottomLimit, topLimit),
+            //    transform.position.z
 
-                );
+                //);
         }
     }
 
