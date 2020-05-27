@@ -6,7 +6,7 @@ public class SoundEffectmanager : MonoBehaviour
 {
     public AudioSource myAudioSource;
     public AudioClip[] audioClips;
-    
+    bool victoryPlayed = false;
     void Start()
     {
        
@@ -38,8 +38,9 @@ public class SoundEffectmanager : MonoBehaviour
             myAudioSource.clip = audioClips[3];
             myAudioSource.Play();
         }
-        else if (GameManager.playVictorySound == true)
+        else if (GameManager.playVictorySound == true && victoryPlayed == false)
         {
+            victoryPlayed = true;
             GameManager.playVictorySound = false;
             myAudioSource.clip = audioClips[4];
             myAudioSource.Play();

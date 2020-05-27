@@ -443,7 +443,7 @@ public class Grid2
         return GetValue(x, y);
     }
 
-    public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform, bool isWaiting, int lvlID, Animator luoAnim, AudioSource audioSource, Animator lumenAnim, GameObject victoryUI, GameObject defeatUI, GameObject inGameUI)
+    public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform, bool isWaiting, int lvlID, Animator luoAnim, AudioSource audioSource, Animator lumenAnim, GameObject victoryUI, GameObject defeatUI, GameObject inGameUI, bool stopPathfinding)
     {
         luoAnim.SetBool("idleLeft", false);
         luoAnim.SetBool("idleRight", false);
@@ -458,7 +458,7 @@ public class Grid2
                 {
                     PlayerPrefs.SetInt("LevelsAvailable", lvlID);
                     GameManager.playVictorySound = true;
-
+                    stopPathfinding = true;
                     inGameUI.SetActive(false);
                     victoryUI.SetActive(true);
                     //SceneManager.LoadScene(lvlID + 1);
@@ -493,7 +493,7 @@ public class Grid2
 
                     }
 
-                    else if (i != width && gridArray[i + 1, j].isIlluminated == true && gridArray[i + 1, j].isDark == false)
+                    else if (i != width && gridArray[i + 1, j].isIlluminated == true && gridArray[i + 1, j].isDark == false && gridArray[i + 1, j].isCrystal == false)
                     {
                         GameManager.playStepSound = true;
                         //Debug.Log("Droite");
@@ -539,6 +539,7 @@ public class Grid2
                     }
                     else
                     {
+                        stopPathfinding = true;
                         luoAnim.SetBool("idleActivated", true);
                         inGameUI.SetActive(false);
                         defeatUI.SetActive(true);
@@ -547,7 +548,7 @@ public class Grid2
 
                 if (gridArray[i, j].hasLuo == true && direction == directionFaced.DOWN && gridArray[i, j].isGoal == false && foundGoal == false)
                 {
-                    if (j != 0 && gridArray[i, j - 1].isIlluminated == true && gridArray[i, j - 1].isDark == false)
+                    if (j != 0 && gridArray[i, j - 1].isIlluminated == true && gridArray[i, j - 1].isDark == false && gridArray[i, j - 1].isCrystal == false)
                     {
                         GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
@@ -572,7 +573,7 @@ public class Grid2
 
 
 
-                    else if (i != width && gridArray[i + 1, j].isIlluminated == true && gridArray[i + 1, j].isDark == false)
+                    else if (i != width && gridArray[i + 1, j].isIlluminated == true && gridArray[i + 1, j].isDark == false && gridArray[i + 1, j].isCrystal == false)
                     {
                         GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
@@ -617,6 +618,7 @@ public class Grid2
                     }
                     else
                     {
+                        stopPathfinding = true;
                         luoAnim.SetBool("idleActivated", true);
                         inGameUI.SetActive(false);
                         defeatUI.SetActive(true);
@@ -647,7 +649,7 @@ public class Grid2
                         foundGoal = true;
                         SetValue(i - 1, j, 12);
                     }
-                    else if (j != height && gridArray[i, j + 1].isIlluminated == true && gridArray[i, j + 1].isDark == false)
+                    else if (j != height && gridArray[i, j + 1].isIlluminated == true && gridArray[i, j + 1].isDark == false && gridArray[i, j + 1].isCrystal == false)
                     {
                         GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
@@ -670,7 +672,7 @@ public class Grid2
                         foundGoal = true;
                         SetValue(i, j + 1, 12);
                     }
-                    else if (j != 0 && gridArray[i, j - 1].isIlluminated == true && gridArray[i, j - 1].isDark == false)
+                    else if (j != 0 && gridArray[i, j - 1].isIlluminated == true && gridArray[i, j - 1].isDark == false && gridArray[i, j - 1].isCrystal == false)
                     {
                         GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
@@ -694,6 +696,7 @@ public class Grid2
                     }
                     else
                     {
+                        stopPathfinding = true;
                         luoAnim.SetBool("idleActivated", true);
                         inGameUI.SetActive(false);
                         defeatUI.SetActive(true);
@@ -704,7 +707,7 @@ public class Grid2
 
                 if (gridArray[i, j].hasLuo == true && direction == directionFaced.RIGHT && gridArray[i, j].isGoal == false && foundGoal == false)
                 {
-                    if (i != width && gridArray[i + 1, j].isIlluminated == true && gridArray[i, j + 1].isDark == false)
+                    if (i != width && gridArray[i + 1, j].isIlluminated == true && gridArray[i + 1, j].isDark == false && gridArray[i + 1, j].isCrystal == false)
                     {
                         GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
@@ -726,7 +729,7 @@ public class Grid2
                         foundGoal = true;
                         SetValue(i + 1, j, 12);
                     }
-                    else if (j != height && gridArray[i, j + 1].isIlluminated == true && gridArray[i, j + 1].isDark == false)
+                    else if (j != height && gridArray[i, j + 1].isIlluminated == true && gridArray[i, j + 1].isDark == false && gridArray[i, j + 1].isCrystal == false)
                     {
                         GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
@@ -748,7 +751,7 @@ public class Grid2
                         foundGoal = true;
                         SetValue(i, j + 1, 12);
                     }
-                    else if (j != 0 && gridArray[i, j - 1].isIlluminated == true && gridArray[i, j - 1].isDark == false)
+                    else if (j != 0 && gridArray[i, j - 1].isIlluminated == true && gridArray[i, j - 1].isDark == false && gridArray[i, j - 1].isCrystal == false)
                     {
                         GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
@@ -773,7 +776,7 @@ public class Grid2
                     else
                     {
                         luoAnim.SetBool("idleActivated", true);
-
+                        stopPathfinding = true;
                         inGameUI.SetActive(false);
                         defeatUI.SetActive(true);
                     }

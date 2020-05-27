@@ -36,6 +36,9 @@ public class Testing2 : MonoBehaviour
     public AudioSource audioSource;
     bool shouldWait = false;
     public Text lightCompteur, displayChapter, displayLevel;
+    bool stopPathfinding = false;
+    public GameObject tutorialToActivate;
+    public bool activatetutorial;
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +65,10 @@ public class Testing2 : MonoBehaviour
         GameManager.numberOfLights = numberOfLights;
         GameManager.intensificationAllowed = intensificationAllowed;
         GameManager.isDarkTilesAllowed = isDarkTilesAllowed;
+        if(activatetutorial == true)
+        {
+            tutorialToActivate.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -107,9 +114,9 @@ public class Testing2 : MonoBehaviour
         if (GameManager.numberOfLights <=0)
         {
             
-            if(shouldWait == false) {
+            if(shouldWait == false && stopPathfinding == false) {
 
-            grid.Pathfinder(gridHeight, gridLength, movePoint, shouldWait, lvlID, luoAnim, audioSource, lumenAnim, menuVictoire, menuDéfaite, menuInGame) ;
+            grid.Pathfinder(gridHeight, gridLength, movePoint, shouldWait, lvlID, luoAnim, audioSource, lumenAnim, menuVictoire, menuDéfaite, menuInGame, stopPathfinding) ;
             StartCoroutine(WaitASecond(1f));
             }
 

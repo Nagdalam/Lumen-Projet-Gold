@@ -19,6 +19,12 @@ public class GameManager : MonoBehaviour
     public static bool playIntensificationSound = false;
     public static bool playDarkSound = false;
     public static bool playVictorySound = false;
+    //public static bool playVictorySound = false;
+    //public static bool playVictorySound = false;
+    //public static bool playVictorySound = false;
+    //public static bool playVictorySound = false;
+    //public static bool playVictorySound = false;
+    //public static bool playVictorySound = false;
 
     void Start()
     {
