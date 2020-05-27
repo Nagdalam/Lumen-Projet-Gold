@@ -1342,6 +1342,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoomOutMin: 20
   zoomOutMax: 30
+  leftLimit: 0
+  rightLimit: 0
+  bottomLimit: 0
+  topLimit: 0
 --- !u!1001 &563858426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1506,7 +1510,7 @@ PrefabInstance:
     - target: {fileID: 8415649875470288522, guid: 09aed9755fd881448859ae1146d3f0eb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.8
+      value: 18.2
       objectReference: {fileID: 0}
     - target: {fileID: 8415649875470288522, guid: 09aed9755fd881448859ae1146d3f0eb,
         type: 3}
@@ -1761,7 +1765,7 @@ PrefabInstance:
     - target: {fileID: 8415649875470288522, guid: 09aed9755fd881448859ae1146d3f0eb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3411114
+      value: 0.74111295
       objectReference: {fileID: 0}
     - target: {fileID: 8415649875470288522, guid: 09aed9755fd881448859ae1146d3f0eb,
         type: 3}
@@ -1977,15 +1981,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: "LightD\xE9part"
       objectReference: {fileID: 0}
+    - target: {fileID: 6531004028991298126, guid: 6105b91f5796bf2439f2dfd8c8085312,
+        type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 9.246409
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531004028991298126, guid: 6105b91f5796bf2439f2dfd8c8085312,
+        type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 4.382766
+      objectReference: {fileID: 0}
     - target: {fileID: 6531004028991298127, guid: 6105b91f5796bf2439f2dfd8c8085312,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.956572
+      value: 5.12
       objectReference: {fileID: 0}
     - target: {fileID: 6531004028991298127, guid: 6105b91f5796bf2439f2dfd8c8085312,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -21
+      value: -28.06
       objectReference: {fileID: 0}
     - target: {fileID: 6531004028991298127, guid: 6105b91f5796bf2439f2dfd8c8085312,
         type: 3}
@@ -2005,12 +2019,12 @@ PrefabInstance:
     - target: {fileID: 6531004028991298127, guid: 6105b91f5796bf2439f2dfd8c8085312,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.012211405
       objectReference: {fileID: 0}
     - target: {fileID: 6531004028991298127, guid: 6105b91f5796bf2439f2dfd8c8085312,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.99992543
       objectReference: {fileID: 0}
     - target: {fileID: 6531004028991298127, guid: 6105b91f5796bf2439f2dfd8c8085312,
         type: 3}
