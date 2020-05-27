@@ -37,7 +37,9 @@ public class mainMenu : MonoBehaviour
     {
         if (GameManager.menuOpen == false)
         {
+            GameManager.menuOpen = true;
             tab.SetActive(true);
+            
         }
     }
 
