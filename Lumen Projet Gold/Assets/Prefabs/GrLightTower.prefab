@@ -47,7 +47,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.5529412, g: 1, b: 0.8844981, a: 1}
-  m_Intensity: 0.38
+  m_Intensity: 1
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
@@ -56,8 +56,9 @@ MonoBehaviour:
   m_AlphaBlendOnOverlap: 0
   m_ShadowIntensity: 0
   m_ShadowVolumeIntensity: 0
-  m_PointLightInnerAngle: 221.56
+  m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
+<<<<<<< HEAD
   m_PointLightInnerRadius: 3.0882053
   m_PointLightOuterRadius: 5
   m_PointLightDistance: 3
@@ -204,6 +205,10 @@ MonoBehaviour:
   m_PointLightOuterAngle: 90
   m_PointLightInnerRadius: 6.81
   m_PointLightOuterRadius: 8.338882
+=======
+  m_PointLightInnerRadius: 2
+  m_PointLightOuterRadius: 9
+>>>>>>> origin/pierre
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -247,10 +252,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2962717003299837965}
+<<<<<<< HEAD
   - {fileID: 4970727490539628516}
   - {fileID: 8818913584780186683}
   - {fileID: 6149039373530844552}
   - {fileID: 7642184603278522157}
+=======
+>>>>>>> origin/pierre
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -301,6 +309,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+<<<<<<< HEAD
 --- !u!114 &6569715105822037637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,3 +466,5 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+=======
+>>>>>>> origin/pierre

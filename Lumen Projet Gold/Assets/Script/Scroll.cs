@@ -47,15 +47,15 @@ public class Scroll : MonoBehaviour
                 Vector3 direction = touchStart - Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 Camera.main.transform.position += direction;
             }
-            //zoom(Input.GetAxis("Mouse ScrollWheel"));
+            zoom(Input.GetAxis("Mouse ScrollWheel"));
 
-            //transform.position = new Vector3
-            //    (
-            //    Mathf.Clamp(transform.position.x, leftLimit, rightLimit),
-            //    Mathf.Clamp(transform.position.y, bottomLimit, topLimit),
-            //    transform.position.z
+            transform.position = new Vector3
+                (
+                Mathf.Clamp(transform.position.x, leftLimit, rightLimit),
+                Mathf.Clamp(transform.position.y, bottomLimit, topLimit),
+                transform.position.z
 
-                //);
+                );
         }
     }
 

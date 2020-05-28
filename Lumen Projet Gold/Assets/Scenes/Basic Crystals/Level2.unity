@@ -699,7 +699,10 @@ MonoBehaviour:
   displayLevel: {fileID: 0}
   tutorialToActivate: {fileID: 0}
   activatetutorial: 0
+<<<<<<< HEAD
   endChapter: 0
+=======
+>>>>>>> origin/pierre
 --- !u!4 &366543782
 Transform:
   m_ObjectHideFlags: 0
@@ -1072,7 +1075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoomOutMin: 25
   zoomOutMax: 50
-  leftLimit: -30
+  leftLimit: -60
   rightLimit: 30
   bottomLimit: -30
   topLimit: 30

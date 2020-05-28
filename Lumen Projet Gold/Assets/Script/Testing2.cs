@@ -76,7 +76,7 @@ public class Testing2 : MonoBehaviour
     void Update()
     {
         string myTextLights =  (GameManager.numberOfLights).ToString();
-        string myText = "Lights : ";
+        string myText = " x  ";
 
         lightCompteur.text = myText + myTextLights;
 
