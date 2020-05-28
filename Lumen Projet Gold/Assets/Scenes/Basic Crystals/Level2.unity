@@ -697,6 +697,8 @@ MonoBehaviour:
   lightCompteur: {fileID: 336573392}
   displayChapter: {fileID: 0}
   displayLevel: {fileID: 0}
+  tutorialToActivate: {fileID: 0}
+  activatetutorial: 0
 --- !u!4 &366543782
 Transform:
   m_ObjectHideFlags: 0
@@ -1069,7 +1071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoomOutMin: 25
   zoomOutMax: 50
-  leftLimit: -30
+  leftLimit: -60
   rightLimit: 30
   bottomLimit: -30
   topLimit: 30
