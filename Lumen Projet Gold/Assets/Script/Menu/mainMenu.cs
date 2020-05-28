@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using GooglePlayGames;
 
 public class mainMenu : MonoBehaviour
 {
@@ -12,13 +13,18 @@ public class mainMenu : MonoBehaviour
         {
             SceneManager.LoadScene(Id-1);
         }
-     
+
+    public void OpenAchievementPanel()
+    {
+        Social.ShowAchievementsUI();
+    }
+
     //public void PlaySelector ()
     //{
     //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     //}
-  
-  public void OpenMenu(GameObject menu)
+
+    public void OpenMenu(GameObject menu)
     {
         if (isMenuOpen == false)
         {

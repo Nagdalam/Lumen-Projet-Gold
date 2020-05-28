@@ -39,6 +39,7 @@ public class Testing2 : MonoBehaviour
     bool stopPathfinding = false;
     public GameObject tutorialToActivate;
     public bool activatetutorial;
+    public int endChapter = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -116,7 +117,7 @@ public class Testing2 : MonoBehaviour
             
             if(shouldWait == false && stopPathfinding == false) {
 
-            grid.Pathfinder(gridHeight, gridLength, movePoint, shouldWait, lvlID, luoAnim, audioSource, lumenAnim, menuVictoire, menuDéfaite, menuInGame, stopPathfinding) ;
+            grid.Pathfinder(gridHeight, gridLength, movePoint, shouldWait, lvlID, luoAnim, audioSource, lumenAnim, menuVictoire, menuDéfaite, menuInGame, stopPathfinding, endChapter) ;
             StartCoroutine(WaitASecond(1f));
             }
 

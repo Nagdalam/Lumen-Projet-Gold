@@ -74,7 +74,7 @@ MonoBehaviour:
     type: 3}
   lightPrefabTower: {fileID: 5266825931898364668, guid: 795ce36bac30ce64eae03766f2320407,
     type: 3}
-  darkTile: {fileID: 8756050764662380153, guid: 3f0b5301f24c66f429106f6ce328aeb7,
+  darkTile: {fileID: 8756050764662380153, guid: 37fa1b501e1fff74d9a4f11f7edbea83,
     type: 3}
   lvlID: 0
   luoAnim: {fileID: 0}
@@ -86,3 +86,4 @@ MonoBehaviour:
   tutorialToActivate: {fileID: 8756050764662380153, guid: 37fa1b501e1fff74d9a4f11f7edbea83,
     type: 3}
   activatetutorial: 0
+  endChapter: 0

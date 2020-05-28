@@ -3316,7 +3316,7 @@ PrefabInstance:
     - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
         type: 3}
       propertyPath: crystalTypeArray.Array.data[10]
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
         type: 3}
@@ -3381,7 +3381,7 @@ PrefabInstance:
     - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
         type: 3}
       propertyPath: crystalTypeArray.Array.data[23]
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
         type: 3}
@@ -4043,6 +4043,11 @@ PrefabInstance:
       propertyPath: "menuD\xE9faite"
       value: 
       objectReference: {fileID: 972583036}
+    - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
+        type: 3}
+      propertyPath: endChapter
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5322200794696748918, guid: 271c5c146d285e54aa02f45a9695fd05,
         type: 3}
       propertyPath: m_LocalPosition.x

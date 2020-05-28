@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using GooglePlayGames;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 //Fait par Benjamin
 public enum directionFaced { UP, DOWN, LEFT, RIGHT, }
 public enum crystalType { BASIC, TOWERNORTH, TOWERSOUTH, TOWEREAST, TOWERWEST, BILATERALVERTICAL, BILATERALHORIZONTAL }
@@ -443,7 +441,38 @@ public class Grid2
         return GetValue(x, y);
     }
 
-    public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform, bool isWaiting, int lvlID, Animator luoAnim, AudioSource audioSource, Animator lumenAnim, GameObject victoryUI, GameObject defeatUI, GameObject inGameUI, bool stopPathfinding)
+    public void UnlockAchievement(int id)
+    {
+        switch (id)
+        {
+            case 0:
+                break;
+            case 1:
+            PlayGamesPlatform.Instance.IncrementAchievement(LumenGPS.achievement_chapter_1, 100, null);
+                break;
+            case 2:
+                PlayGamesPlatform.Instance.IncrementAchievement(LumenGPS.achievement_chapter_2, 100, null);
+                break;
+            case 3:
+                PlayGamesPlatform.Instance.IncrementAchievement(LumenGPS.achievement_chapter_3, 100, null);
+                break;
+            case 4:
+                PlayGamesPlatform.Instance.IncrementAchievement(LumenGPS.achievement_chapter_4, 100, null);
+                break;
+            case 5:
+                PlayGamesPlatform.Instance.IncrementAchievement(LumenGPS.achievement_chapter_5, 100, null);
+                break;
+            case 6:
+                PlayGamesPlatform.Instance.IncrementAchievement(LumenGPS.achievement_chapter_6, 100, null);
+                break;
+            case 7:
+                PlayGamesPlatform.Instance.IncrementAchievement(LumenGPS.achievement_chapter_7, 100, null);
+                break;
+        }
+        
+    }
+
+public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform, bool isWaiting, int lvlID, Animator luoAnim, AudioSource audioSource, Animator lumenAnim, GameObject victoryUI, GameObject defeatUI, GameObject inGameUI, bool stopPathfinding, int chapterEnd)
     {
         luoAnim.SetBool("idleLeft", false);
         luoAnim.SetBool("idleRight", false);
@@ -458,6 +487,7 @@ public class Grid2
                 {
                     PlayerPrefs.SetInt("LevelsAvailable", lvlID);
                     GameManager.playVictorySound = true;
+                    UnlockAchievement(chapterEnd);
                     stopPathfinding = true;
                     inGameUI.SetActive(false);
                     victoryUI.SetActive(true);
@@ -493,7 +523,7 @@ public class Grid2
 
                     }
 
-                    else if (i != width && gridArray[i + 1, j].isIlluminated == true && gridArray[i + 1, j].isDark == false && gridArray[i + 1, j].isCrystal == false)
+                    else if (i != width && gridArray[i + 1, j].isIlluminated == true && gridArray[i + 1, j].isDark == false && gridArray[i + 1, j].isCrystal == false && gridArray[i + 1, j].value == 56)
                     {
                         GameManager.playStepSound = true;
                         Debug.Log("Droite");
@@ -515,7 +545,7 @@ public class Grid2
                         foundGoal = true;
                         SetValue(i + 1, j, 12);
                     }
-                    else if (i != 0 && gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false)
+                    else if (i != 0 && gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false && gridArray[i - 1, j].value == 56)
                     {
                         GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
@@ -549,7 +579,7 @@ public class Grid2
 
                 if (gridArray[i, j].hasLuo == true && direction == directionFaced.DOWN && gridArray[i, j].isGoal == false && foundGoal == false)
                 {
-                    if (j != 0 && gridArray[i, j - 1].isIlluminated == true && gridArray[i, j - 1].isDark == false && gridArray[i, j - 1].isCrystal == false)
+                    if (j != 0 && gridArray[i, j - 1].isIlluminated == true && gridArray[i, j - 1].isDark == false && gridArray[i, j - 1].isCrystal == false && gridArray[i, j - 1].value == 56)
                     {
                         GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
@@ -574,7 +604,7 @@ public class Grid2
 
 
 
-                    else if (i != width && gridArray[i + 1, j].isIlluminated == true && gridArray[i + 1, j].isDark == false && gridArray[i + 1, j].isCrystal == false)
+                    else if (i != width && gridArray[i + 1, j].isIlluminated == true && gridArray[i + 1, j].isDark == false && gridArray[i + 1, j].isCrystal == false && gridArray[i + 1, j].value == 56)
                     {
                         GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
@@ -595,7 +625,7 @@ public class Grid2
                         foundGoal = true;
                         SetValue(i + 1, j, 12);
                     }
-                    else if (i != 0 && gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false)
+                    else if (i != 0 && gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false && gridArray[i -1 , j].value == 56) 
                     {
                         GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
@@ -629,7 +659,7 @@ public class Grid2
                 if (gridArray[i, j].hasLuo == true && direction == directionFaced.LEFT && gridArray[i, j].isGoal == false && foundGoal == false)
                 {
 
-                    if (i != 0 && gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].value == 56 && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false)
+                    if (i != 0 && gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].value == 56 && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false && gridArray[i -1, j].value == 56)
                     {
                         GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
@@ -650,7 +680,7 @@ public class Grid2
                         foundGoal = true;
                         SetValue(i - 1, j, 12);
                     }
-                    else if (j != height && gridArray[i, j + 1].isIlluminated == true && gridArray[i, j + 1].isDark == false && gridArray[i, j + 1].isCrystal == false)
+                    else if (j != height && gridArray[i, j + 1].isIlluminated == true && gridArray[i, j + 1].isDark == false && gridArray[i, j + 1].isCrystal == false && gridArray[i, j + 1].value == 56)
                     {
                         GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
@@ -673,7 +703,7 @@ public class Grid2
                         foundGoal = true;
                         SetValue(i, j + 1, 12);
                     }
-                    else if (j != 0 && gridArray[i, j - 1].isIlluminated == true && gridArray[i, j - 1].isDark == false && gridArray[i, j - 1].isCrystal == false)
+                    else if (j != 0 && gridArray[i, j - 1].isIlluminated == true && gridArray[i, j - 1].isDark == false && gridArray[i, j - 1].isCrystal == false && gridArray[i, j - 1].value == 56)
                     {
                         GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
@@ -708,7 +738,7 @@ public class Grid2
 
                 if (gridArray[i, j].hasLuo == true && direction == directionFaced.RIGHT && gridArray[i, j].isGoal == false && foundGoal == false)
                 {
-                    if (i != width && gridArray[i + 1, j].isIlluminated == true && gridArray[i + 1, j].isDark == false && gridArray[i + 1, j].value == 56 && gridArray[i + 1, j].isCrystal == false)
+                    if (i != width && gridArray[i + 1, j].isIlluminated == true && gridArray[i + 1, j].isDark == false && gridArray[i + 1, j].value == 56 && gridArray[i + 1, j].isCrystal == false && gridArray[i + 1, j ].value == 56)
                     {
                         GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
@@ -730,7 +760,7 @@ public class Grid2
                         foundGoal = true;
                         SetValue(i + 1, j, 12);
                     }
-                    else if (j != height && gridArray[i, j + 1].isIlluminated == true && gridArray[i, j + 1].isDark == false && gridArray[i, j + 1].isCrystal == false)
+                    else if (j != height && gridArray[i, j + 1].isIlluminated == true && gridArray[i, j + 1].isDark == false && gridArray[i, j + 1].isCrystal == false && gridArray[i, j + 1].value == 56)
                     {
                         GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
@@ -752,7 +782,7 @@ public class Grid2
                         foundGoal = true;
                         SetValue(i, j + 1, 12);
                     }
-                    else if (j != 0 && gridArray[i, j - 1].isIlluminated == true && gridArray[i, j - 1].isDark == false && gridArray[i, j - 1].isCrystal == false)
+                    else if (j != 0 && gridArray[i, j - 1].isIlluminated == true && gridArray[i, j - 1].isDark == false && gridArray[i, j - 1].isCrystal == false && gridArray[i, j - 1].value == 56)
                     {
                         GameManager.playStepSound = true;
                         LerpManager.startLerping = true;

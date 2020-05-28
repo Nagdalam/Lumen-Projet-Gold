@@ -1265,6 +1265,12 @@ PrefabInstance:
       propertyPath: "menuD\xE9faite"
       value: 
       objectReference: {fileID: 1653574727}
+    - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
+        type: 3}
+      propertyPath: darkTile
+      value: 
+      objectReference: {fileID: 8756050764662380153, guid: 37fa1b501e1fff74d9a4f11f7edbea83,
+        type: 3}
     - target: {fileID: 5322200794696748918, guid: 271c5c146d285e54aa02f45a9695fd05,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2277,7 +2283,7 @@ PrefabInstance:
     - target: {fileID: 6531004028991298127, guid: 6105b91f5796bf2439f2dfd8c8085312,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -20.604408
+      value: -24.25
       objectReference: {fileID: 0}
     - target: {fileID: 6531004028991298127, guid: 6105b91f5796bf2439f2dfd8c8085312,
         type: 3}

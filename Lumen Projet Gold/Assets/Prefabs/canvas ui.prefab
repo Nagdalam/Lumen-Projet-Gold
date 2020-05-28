@@ -7783,11 +7783,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2694072035708028133}
-        m_MethodName: OpenTab
-        m_Mode: 2
+        m_MethodName: OpenAchievementPanel
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 4503567309303911731}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

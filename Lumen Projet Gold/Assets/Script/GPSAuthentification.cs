@@ -17,8 +17,19 @@ public class GPSAuthentification : MonoBehaviour
             PlayGamesPlatform.InitializeInstance(config);
             PlayGamesPlatform.DebugLogEnabled = true;
             
-            PlayGamesPlatform.Activate();
+            platform = PlayGamesPlatform.Activate();
         }
+
+        Social.Active.localUser.Authenticate(success => {
+            if (success)
+            {
+                Debug.Log("Logged in successfully");
+            }
+            else
+            {
+                Debug.Log("Failed to log in");
+            }
+        });
     }
 
   
