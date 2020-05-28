@@ -87,3 +87,6 @@ MonoBehaviour:
     type: 3}
   activatetutorial: 0
   endChapter: 0
+  luoTransform: {fileID: 0}
+  deathFog: {fileID: 8756050764662380153, guid: 37fa1b501e1fff74d9a4f11f7edbea83,
+    type: 3}

@@ -388,7 +388,7 @@ public class Grid2
 
     }
 
-    public void SetLuo(int x, int y, int initialDirection, Animator luoAnim, Animator lumenAnim)
+    public void SetLuo(int x, int y, int initialDirection, Animator luoAnim, Animator lumenAnim, Transform luoTransform)
     {
         if (x >= 0 && y >= 0 && x < width && y < height)
         {
@@ -402,6 +402,7 @@ public class Grid2
             }
             else if (initialDirection == 2)
             {
+                luoTransform.localRotation = Quaternion.Euler(0, 180, 0);
                 luoAnim.SetBool("idleRight", true);
                 lumenAnim.SetBool("faceRight", true);
                 direction = directionFaced.RIGHT;
@@ -414,6 +415,7 @@ public class Grid2
             }
             else if (initialDirection == 4)
             {
+                luoTransform.localRotation = Quaternion.Euler(0, 0, 0);
                 luoAnim.SetBool("idleLeft", true);
                 lumenAnim.SetBool("faceLeft", true);
                 direction = directionFaced.LEFT;
@@ -472,7 +474,7 @@ public class Grid2
         
     }
 
-public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform, bool isWaiting, int lvlID, Animator luoAnim, AudioSource audioSource, Animator lumenAnim, GameObject victoryUI, GameObject defeatUI, GameObject inGameUI, bool stopPathfinding, int chapterEnd)
+public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform, bool isWaiting, int lvlID, Animator luoAnim, AudioSource audioSource, Animator lumenAnim, GameObject victoryUI, GameObject defeatUI, GameObject inGameUI, bool stopPathfinding, int chapterEnd, Transform luoTransform, GameObject deathFog, int originX, int originY)
     {
         luoAnim.SetBool("idleLeft", false);
         luoAnim.SetBool("idleRight", false);
@@ -525,6 +527,7 @@ public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform
 
                     else if (i != width && gridArray[i + 1, j].isIlluminated == true && gridArray[i + 1, j].isDark == false && gridArray[i + 1, j].isCrystal == false && gridArray[i + 1, j].value == 56)
                     {
+                        luoTransform.localRotation = Quaternion.Euler(0, 180, 0);
                         GameManager.playStepSound = true;
                         Debug.Log("Droite");
                         luoAnim.SetBool("faceDown", false);
@@ -547,6 +550,8 @@ public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform
                     }
                     else if (i != 0 && gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false && gridArray[i - 1, j].value == 56)
                     {
+                        luoTransform.localRotation = Quaternion.Euler(0, 0, 0);
+
                         GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
                         Debug.Log("Gauche");
@@ -571,9 +576,11 @@ public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform
                     {
                         stopPathfinding = true;
                         Debug.Log("Bite");
+                        GameObject instancedObj6 = GameObject.Instantiate(deathFog, new Vector3((originX - (cellSize / 2)) + ((i + 1)) * cellSize, ((originY - (cellSize / 2)) + ((j + 1)) * cellSize), -2), Quaternion.identity) as GameObject;
                         luoAnim.SetBool("idleActivated", true);
                         inGameUI.SetActive(false);
                         defeatUI.SetActive(true);
+                        
                     }
                 }
 
@@ -606,6 +613,8 @@ public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform
 
                     else if (i != width && gridArray[i + 1, j].isIlluminated == true && gridArray[i + 1, j].isDark == false && gridArray[i + 1, j].isCrystal == false && gridArray[i + 1, j].value == 56)
                     {
+                        luoTransform.localRotation = Quaternion.Euler(0, 180, 0);
+
                         GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
                         luoAnim.SetBool("faceDown", false);
@@ -625,8 +634,10 @@ public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform
                         foundGoal = true;
                         SetValue(i + 1, j, 12);
                     }
-                    else if (i != 0 && gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false && gridArray[i -1 , j].value == 56) 
+                    else if (i != 0 && gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false && gridArray[i -1 , j].value == 56)
                     {
+                        luoTransform.localRotation = Quaternion.Euler(0, 0, 0);
+
                         GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
                         //Debug.Log("Gauche");
@@ -650,6 +661,7 @@ public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform
                     else
                     {
                         stopPathfinding = true;
+                        GameObject instancedObj6 = GameObject.Instantiate(deathFog, new Vector3((originX - (cellSize / 2)) + ((i + 1)) * cellSize, ((originY - (cellSize / 2)) + ((j + 1)) * cellSize), -2), Quaternion.identity) as GameObject;
                         luoAnim.SetBool("idleActivated", true);
                         inGameUI.SetActive(false);
                         defeatUI.SetActive(true);
@@ -661,6 +673,8 @@ public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform
 
                     if (i != 0 && gridArray[i - 1, j].isIlluminated == true && gridArray[i - 1, j].value == 56 && gridArray[i - 1, j].isDark == false && gridArray[i - 1, j].isCrystal == false && gridArray[i -1, j].value == 56)
                     {
+                        luoTransform.localRotation = Quaternion.Euler(0, 0, 0);
+
                         GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
                         luoAnim.SetBool("faceDown", false);
@@ -727,6 +741,7 @@ public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform
                     }
                     else
                     {
+                        GameObject instancedObj6 = GameObject.Instantiate(deathFog, new Vector3((originX - (cellSize / 2)) + ((i + 1)) * cellSize, ((originY - (cellSize / 2)) + ((j + 1) ) * cellSize), -2), Quaternion.identity) as GameObject;
                         stopPathfinding = true;
                         luoAnim.SetBool("idleActivated", true);
                         inGameUI.SetActive(false);
@@ -740,6 +755,8 @@ public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform
                 {
                     if (i != width && gridArray[i + 1, j].isIlluminated == true && gridArray[i + 1, j].isDark == false && gridArray[i + 1, j].value == 56 && gridArray[i + 1, j].isCrystal == false && gridArray[i + 1, j ].value == 56)
                     {
+                        luoTransform.localRotation = Quaternion.Euler(0, 180, 0);
+
                         GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
                         Debug.Log("Droite");
@@ -806,6 +823,7 @@ public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform
                     }
                     else
                     {
+                        GameObject instancedObj6 = GameObject.Instantiate(deathFog, new Vector3((originX - (cellSize / 2)) + ((i + 1)) * cellSize, ((originY - (cellSize / 2)) + ((j + 1)) * cellSize), -2), Quaternion.identity) as GameObject;
                         luoAnim.SetBool("idleActivated", true);
                         stopPathfinding = true;
                         inGameUI.SetActive(false);

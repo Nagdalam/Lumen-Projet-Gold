@@ -6387,6 +6387,7 @@ MonoBehaviour:
   tutorialToActivate: {fileID: 1205335883}
   activatetutorial: 1
   endChapter: 0
+  luoTransform: {fileID: 584989736}
 --- !u!4 &366543782
 Transform:
   m_ObjectHideFlags: 0
@@ -6869,6 +6870,12 @@ Animator:
 --- !u!95 &584989735 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9052767355737992651, guid: 7c80b2e3b4cb625488e67852fa5178e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 584989733}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &584989736 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7614084647018569970, guid: 7c80b2e3b4cb625488e67852fa5178e2,
     type: 3}
   m_PrefabInstance: {fileID: 584989733}
   m_PrefabAsset: {fileID: 0}

@@ -1281,6 +1281,11 @@ PrefabInstance:
       propertyPath: activatetutorial
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
+        type: 3}
+      propertyPath: luoTransform
+      value: 
+      objectReference: {fileID: 1009709692}
     - target: {fileID: 5322200794696748918, guid: 271c5c146d285e54aa02f45a9695fd05,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1934,6 +1939,12 @@ Animator:
 --- !u!95 &1009709691 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9052767355737992651, guid: 7c80b2e3b4cb625488e67852fa5178e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1009709689}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1009709692 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7614084647018569970, guid: 7c80b2e3b4cb625488e67852fa5178e2,
     type: 3}
   m_PrefabInstance: {fileID: 1009709689}
   m_PrefabAsset: {fileID: 0}

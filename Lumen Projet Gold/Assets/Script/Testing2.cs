@@ -40,6 +40,8 @@ public class Testing2 : MonoBehaviour
     public GameObject tutorialToActivate;
     public bool activatetutorial;
     public int endChapter = 0;
+    public Transform luoTransform;
+    public GameObject deathFog;
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +51,7 @@ public class Testing2 : MonoBehaviour
         grid = new Grid2(gridLength, gridHeight, cellSize, new Vector3(originX, originY, 0)) ;
         grid.numberSize = numberSize;
         grid.originPosition = new Vector3(originX, originY, 0);
-        grid.SetLuo(luoXPosition, luoYPosition, luoDirection, luoAnim, lumenAnim);
+        grid.SetLuo(luoXPosition, luoYPosition, luoDirection, luoAnim, lumenAnim, luoTransform);
         grid.SetGoal(goalXPosition, goalYPosition);
         GameManager.width = gridLength;
         GameManager.height = gridHeight;
@@ -116,9 +118,8 @@ public class Testing2 : MonoBehaviour
         {
             
             if(shouldWait == false && stopPathfinding == false) {
-
-            grid.Pathfinder(gridHeight, gridLength, movePoint, shouldWait, lvlID, luoAnim, audioSource, lumenAnim, menuVictoire, menuDéfaite, menuInGame, stopPathfinding, endChapter) ;
-            StartCoroutine(WaitASecond(1f));
+                grid.Pathfinder(gridHeight, gridLength, movePoint, shouldWait, lvlID, luoAnim, audioSource, lumenAnim, menuVictoire, menuDéfaite, menuInGame, stopPathfinding, endChapter, luoTransform, deathFog, originX, originY);
+                StartCoroutine(WaitASecond(1f));
             }
 
         }

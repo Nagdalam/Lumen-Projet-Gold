@@ -48,7 +48,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Amplification/tuto 1.unity
     guid: 4f35bdde601da3e4dba8992a34b35b80
   - enabled: 1
-    path: Assets/Scenes/Amplification/tuto 2.unity
+    path: Assets/Scenes/Amplification/Amplif2.unity
     guid: 818d1aa81c59c134aaa3de3b21077ace
   - enabled: 1
     path: Assets/Scenes/Amplification/tuto 3.unity

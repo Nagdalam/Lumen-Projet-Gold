@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 796781072176620447}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.81, y: -0.91, z: 382.3264}
+  m_LocalPosition: {x: -0.81, y: -0.91, z: 0}
   m_LocalScale: {x: 2.8852599, y: 2.8852599, z: 2.8852599}
   m_Children: []
   m_Father: {fileID: 3101202562218960850}
@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 1037914858846811217}
   - component: {fileID: 2270952610499761290}
   m_Layer: 0
-  m_Name: GrLightTower
+  m_Name: GrLightTower 1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
