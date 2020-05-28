@@ -43,6 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eab256b151028154582bb0440928715b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuInGame: {fileID: 0}
+  menuVictoire: {fileID: 0}
+  "menuD\xE9faite": {fileID: 0}
   intensificationAllowed: 0
   isDarkTilesAllowed: 0
   gridLength: 6
@@ -71,6 +74,15 @@ MonoBehaviour:
     type: 3}
   lightPrefabTower: {fileID: 5266825931898364668, guid: 795ce36bac30ce64eae03766f2320407,
     type: 3}
-  darkTile: {fileID: 2218594554418905248, guid: a60b6229654407445a97bc7e585a35a1,
+  darkTile: {fileID: 8756050764662380153, guid: 3f0b5301f24c66f429106f6ce328aeb7,
     type: 3}
   lvlID: 0
+  luoAnim: {fileID: 0}
+  lumenAnim: {fileID: 0}
+  audioSource: {fileID: 0}
+  lightCompteur: {fileID: 0}
+  displayChapter: {fileID: 0}
+  displayLevel: {fileID: 0}
+  tutorialToActivate: {fileID: 8756050764662380153, guid: 37fa1b501e1fff74d9a4f11f7edbea83,
+    type: 3}
+  activatetutorial: 0

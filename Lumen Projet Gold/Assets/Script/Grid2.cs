@@ -470,7 +470,7 @@ public class Grid2
                     if (j != height && gridArray[i, j + 1].isIlluminated == true && i < GameManager.width && j < GameManager.height && gridArray[i, j + 1].isDark == false && gridArray[i, j + 1].value == 56)
                     {
                         GameManager.playStepSound = true;
-                        //Debug.Log("Haut");
+                        Debug.Log("Haut");
                         luoAnim.SetBool("faceDown", false);
                         luoAnim.SetBool("faceLeft", false);
                         luoAnim.SetBool("faceRight", false);
@@ -496,7 +496,7 @@ public class Grid2
                     else if (i != width && gridArray[i + 1, j].isIlluminated == true && gridArray[i + 1, j].isDark == false && gridArray[i + 1, j].isCrystal == false)
                     {
                         GameManager.playStepSound = true;
-                        //Debug.Log("Droite");
+                        Debug.Log("Droite");
                         luoAnim.SetBool("faceDown", false);
                         luoAnim.SetBool("faceLeft", false);
                         luoAnim.SetBool("faceUp", false);
@@ -519,7 +519,7 @@ public class Grid2
                     {
                         GameManager.playStepSound = true;
                         LerpManager.startLerping = true;
-                        //Debug.Log("Gauche");
+                        Debug.Log("Gauche");
                         luoAnim.SetBool("faceDown", false);
                         luoAnim.SetBool("faceRight", false);
                         luoAnim.SetBool("faceUp", false);
@@ -540,6 +540,7 @@ public class Grid2
                     else
                     {
                         stopPathfinding = true;
+                        Debug.Log("Bite");
                         luoAnim.SetBool("idleActivated", true);
                         inGameUI.SetActive(false);
                         defeatUI.SetActive(true);
@@ -707,7 +708,7 @@ public class Grid2
 
                 if (gridArray[i, j].hasLuo == true && direction == directionFaced.RIGHT && gridArray[i, j].isGoal == false && foundGoal == false)
                 {
-                    if (i != width && gridArray[i + 1, j].isIlluminated == true && gridArray[i + 1, j].isDark == false && gridArray[i + 1, j].isCrystal == false)
+                    if (i != width && gridArray[i + 1, j].isIlluminated == true && gridArray[i + 1, j].isDark == false && gridArray[i + 1, j].value == 56 && gridArray[i + 1, j].isCrystal == false)
                     {
                         GameManager.playStepSound = true;
                         LerpManager.startLerping = true;

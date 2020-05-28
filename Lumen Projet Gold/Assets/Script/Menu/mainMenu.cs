@@ -42,6 +42,10 @@ public class mainMenu : MonoBehaviour
         }
     }
 
+    public void LuoWalk()
+    {
+        GameManager.numberOfLights = 0;
+    }
     public void Reload()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

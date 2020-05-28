@@ -18,6 +18,6 @@ public class GPSAchievements : MonoBehaviour
 
     public void OpenAchievementPanel()
     {
-        Social.ShowAchievementsUI();
+
     }
 }

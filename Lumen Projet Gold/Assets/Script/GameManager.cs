@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using GooglePlayGames;
 
 //Fait par Benjamin
 
@@ -26,6 +27,11 @@ public class GameManager : MonoBehaviour
     //public static bool playVictorySound = false;
     //public static bool playVictorySound = false;
 
+    private void Awake()
+    {
+        //PlayGamesPlatform.Activate();
+        //OnConnectionResponse(PlayGamesPlatform.Instance.localUser.authenticated);
+    }
     void Start()
     {
         menuOpen = false;
