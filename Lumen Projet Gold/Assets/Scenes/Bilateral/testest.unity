@@ -322,7 +322,7 @@ PrefabInstance:
     - target: {fileID: 8756050764662380155, guid: 3f0b5301f24c66f429106f6ce328aeb7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.982955
+      value: 10.02
       objectReference: {fileID: 0}
     - target: {fileID: 8756050764662380155, guid: 3f0b5301f24c66f429106f6ce328aeb7,
         type: 3}
@@ -6787,6 +6787,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Tiles.Array.data[99].second.m_TileSpriteIndex
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 248401394496592315, guid: b24c74040f9cda74e8245ef7590f797c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 248401395076871164, guid: b24c74040f9cda74e8245ef7590f797c,
         type: 3}
@@ -20648,12 +20653,12 @@ PrefabInstance:
     - target: {fileID: 8756050764662380155, guid: 3f0b5301f24c66f429106f6ce328aeb7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.085228
+      value: 15.14
       objectReference: {fileID: 0}
     - target: {fileID: 8756050764662380155, guid: 3f0b5301f24c66f429106f6ce328aeb7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 8756050764662380155, guid: 3f0b5301f24c66f429106f6ce328aeb7,
         type: 3}
@@ -21098,7 +21103,7 @@ PrefabInstance:
     - target: {fileID: 8756050764662380155, guid: 3f0b5301f24c66f429106f6ce328aeb7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.244318
+      value: 20.29
       objectReference: {fileID: 0}
     - target: {fileID: 8756050764662380155, guid: 3f0b5301f24c66f429106f6ce328aeb7,
         type: 3}
