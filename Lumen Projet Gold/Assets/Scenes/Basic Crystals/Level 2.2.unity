@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -684,9 +684,9 @@ MonoBehaviour:
   luoDirection: 1
   lightPrefabBasic: {fileID: 5266825931898364668, guid: b2b975aa0d0a1fd4b90fa314658438a6,
     type: 3}
-  lightPrefabBilateral: {fileID: 5266825931898364668, guid: 8bab418af57d74443be658b60a9c33d1,
+  lightPrefabBilateral: {fileID: 5266825931898364668, guid: a25ba3eadd6b1614b8099e75b81aac4d,
     type: 3}
-  lightPrefabTower: {fileID: 5266825931898364668, guid: 795ce36bac30ce64eae03766f2320407,
+  lightPrefabTower: {fileID: 5266825931898364668, guid: 7b68427704df9344a9c333f52db28909,
     type: 3}
   darkTile: {fileID: 2218594554418905248, guid: a60b6229654407445a97bc7e585a35a1,
     type: 3}
@@ -699,6 +699,7 @@ MonoBehaviour:
   displayLevel: {fileID: 0}
   tutorialToActivate: {fileID: 0}
   activatetutorial: 0
+  endChapter: 0
 --- !u!4 &366543782
 Transform:
   m_ObjectHideFlags: 0
@@ -10142,7 +10143,7 @@ Transform:
   - {fileID: 581797320}
   - {fileID: 342813015}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1433193725
 PrefabInstance:

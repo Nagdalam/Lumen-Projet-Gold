@@ -70,9 +70,9 @@ MonoBehaviour:
   luoDirection: 0
   lightPrefabBasic: {fileID: 5266825931898364668, guid: b2b975aa0d0a1fd4b90fa314658438a6,
     type: 3}
-  lightPrefabBilateral: {fileID: 5266825931898364668, guid: 8bab418af57d74443be658b60a9c33d1,
+  lightPrefabBilateral: {fileID: 5266825931898364668, guid: a25ba3eadd6b1614b8099e75b81aac4d,
     type: 3}
-  lightPrefabTower: {fileID: 5266825931898364668, guid: 795ce36bac30ce64eae03766f2320407,
+  lightPrefabTower: {fileID: 5266825931898364668, guid: 7b68427704df9344a9c333f52db28909,
     type: 3}
   darkTile: {fileID: 8756050764662380153, guid: 37fa1b501e1fff74d9a4f11f7edbea83,
     type: 3}

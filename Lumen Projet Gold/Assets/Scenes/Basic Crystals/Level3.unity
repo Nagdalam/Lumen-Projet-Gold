@@ -703,9 +703,9 @@ MonoBehaviour:
   luoDirection: 4
   lightPrefabBasic: {fileID: 5266825931898364668, guid: b2b975aa0d0a1fd4b90fa314658438a6,
     type: 3}
-  lightPrefabBilateral: {fileID: 5266825931898364668, guid: 8bab418af57d74443be658b60a9c33d1,
+  lightPrefabBilateral: {fileID: 5266825931898364668, guid: a25ba3eadd6b1614b8099e75b81aac4d,
     type: 3}
-  lightPrefabTower: {fileID: 5266825931898364668, guid: 795ce36bac30ce64eae03766f2320407,
+  lightPrefabTower: {fileID: 5266825931898364668, guid: 7b68427704df9344a9c333f52db28909,
     type: 3}
   darkTile: {fileID: 2218594554418905248, guid: a60b6229654407445a97bc7e585a35a1,
     type: 3}
@@ -10084,7 +10084,7 @@ Transform:
   - {fileID: 1468869920}
   - {fileID: 619303688}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &518447724
 PrefabInstance:
