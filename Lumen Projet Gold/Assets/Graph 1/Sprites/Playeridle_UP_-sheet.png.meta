@@ -1,0 +1,317 @@
+fileFormatVersion: 2
+guid: 2f9a7d7989010314bbc71e99efb01108
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8348893223273708788
+    second: Playeridle_UP_-sheet_0
+  - first:
+      213: 8059377003634008327
+    second: Playeridle_UP_-sheet_1
+  - first:
+      213: 5434341824336668723
+    second: Playeridle_UP_-sheet_2
+  - first:
+      213: -8462414885984709331
+    second: Playeridle_UP_-sheet_3
+  - first:
+      213: -2662004879220101165
+    second: Playeridle_UP_-sheet_0
+  - first:
+      213: -6466681220089215785
+    second: Playeridle_UP_-sheet_1
+  - first:
+      213: -3497040850275445622
+    second: Playeridle_UP_-sheet_2
+  - first:
+      213: 7983369203015553028
+    second: Playeridle_UP_-sheet_3
+  - first:
+      213: 595854579889883747
+    second: Playeridle_UP_-sheet_4
+  - first:
+      213: 2411763180097276568
+    second: Playeridle_UP_-sheet_5
+  - first:
+      213: 4572830465563819977
+    second: Playeridle_UP_-sheet_6
+  - first:
+      213: 6879544197837851069
+    second: Playeridle_UP_-sheet_7
+  - first:
+      213: -6372746949014693054
+    second: Playeridle_UP_-sheet_8
+  - first:
+      213: -6256058402891977781
+    second: Playeridle_UP_-sheet_9
+  - first:
+      213: 587242433911694639
+    second: Playeridle_UP_-sheet_10
+  - first:
+      213: 8434321746471937465
+    second: Playeridle_UP_-sheet_11
+  - first:
+      213: -574919443901403099
+    second: Playeridle_UP_-sheet_12
+  - first:
+      213: -6044506053465555697
+    second: Playeridle_UP_-sheet_13
+  - first:
+      213: 1301611719236803604
+    second: Playeridle_UP_-sheet_14
+  - first:
+      213: 3581531586842300066
+    second: Playeridle_UP_-sheet_15
+  - first:
+      213: -8402729900535277105
+    second: Playeridle_UP_-sheet_16
+  - first:
+      213: -8507402867509736283
+    second: Playeridle_UP_-sheet_17
+  - first:
+      213: 1082565600256812763
+    second: Playeridle_UP_-sheet_18
+  - first:
+      213: 4314649398832042316
+    second: Playeridle_UP_-sheet_19
+  - first:
+      213: 476924653571530040
+    second: Playeridle_UP_-sheet_20
+  - first:
+      213: 4563767472386900726
+    second: Playeridle_UP_-sheet_21
+  - first:
+      213: -7108853313394668152
+    second: Playeridle_UP_-sheet_22
+  - first:
+      213: 1015031413407463120
+    second: Playeridle_UP_-sheet_23
+  - first:
+      213: -1131800185073106206
+    second: Playeridle_UP_-sheet_24
+  - first:
+      213: 1481327011569444350
+    second: Playeridle_UP_-sheet_25
+  - first:
+      213: -3524828094280619545
+    second: Playeridle_UP_-sheet_26
+  - first:
+      213: -5053866878938020574
+    second: Playeridle_UP_-sheet_27
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Playeridle_UP_-sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 88
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dfaabf8aa8ae0bd0800000000000000
+      internalID: -2662004879220101165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Playeridle_UP_-sheet_1
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 0
+        width: 88
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d484e831bbb146a0800000000000000
+      internalID: -6466681220089215785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Playeridle_UP_-sheet_2
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 88
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a845d42ffd3087fc0800000000000000
+      internalID: -3497040850275445622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Playeridle_UP_-sheet_3
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 0
+        width: 88
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40019801eff9ace60800000000000000
+      internalID: 7983369203015553028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Playeridle_UP_-sheet_4
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 88
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36a402c5596e44800800000000000000
+      internalID: 595854579889883747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
