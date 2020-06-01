@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6388,6 +6388,8 @@ MonoBehaviour:
   activatetutorial: 1
   endChapter: 0
   luoTransform: {fileID: 584989736}
+  deathFog: {fileID: 8756050764662380153, guid: 37fa1b501e1fff74d9a4f11f7edbea83,
+    type: 3}
 --- !u!4 &366543782
 Transform:
   m_ObjectHideFlags: 0
@@ -8048,7 +8050,7 @@ PrefabInstance:
     - target: {fileID: 2865994613763481109, guid: dc3983950b7f149439178247d7d24eb0,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc3983950b7f149439178247d7d24eb0, type: 3}
@@ -8283,7 +8285,7 @@ PrefabInstance:
     - target: {fileID: 2533013339277400253, guid: 00e70d547339dfc40bfc53466cf4222f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00e70d547339dfc40bfc53466cf4222f, type: 3}

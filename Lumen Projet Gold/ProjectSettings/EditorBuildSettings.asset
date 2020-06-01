@@ -60,7 +60,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Lumiere noir/tuto 1.unity
     guid: 9980afc2ce0d95d46bca831bc57b9619
   - enabled: 1
-    path: Assets/Scenes/Lumiere noir/tuto 2.unity
+    path: Assets/Scenes/Lumiere noir/Dark2.unity
     guid: 8b1b6816c56ceba45b70f5650fb37902
   - enabled: 1
     path: Assets/Scenes/Lumiere noir/Mastering.unity

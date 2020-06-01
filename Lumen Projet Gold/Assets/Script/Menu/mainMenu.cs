@@ -13,7 +13,10 @@ public class mainMenu : MonoBehaviour
         {
             SceneManager.LoadScene(Id-1);
         }
-
+    public void ReloadNul()
+    {
+        SceneManager.LoadScene("Dark2");
+    }
     public void OpenAchievementPanel()
     {
         Social.ShowAchievementsUI();

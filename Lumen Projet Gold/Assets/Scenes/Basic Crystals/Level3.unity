@@ -720,7 +720,8 @@ MonoBehaviour:
   activatetutorial: 0
   endChapter: 1
   luoTransform: {fileID: 775137127}
-  deathFog: {fileID: 0}
+  deathFog: {fileID: 8756050764662380153, guid: 37fa1b501e1fff74d9a4f11f7edbea83,
+    type: 3}
 --- !u!4 &366543782
 Transform:
   m_ObjectHideFlags: 0

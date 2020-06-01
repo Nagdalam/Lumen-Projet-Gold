@@ -499,7 +499,7 @@ public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform
                 if (gridArray[i, j].hasLuo == true && direction == directionFaced.UP && gridArray[i, j].isGoal == false && foundGoal == false)
                 {
 
-                    if (j != height && gridArray[i, j + 1].isIlluminated == true && i < GameManager.width && j < GameManager.height && gridArray[i, j + 1].isDark == false && gridArray[i, j + 1].value == 56)
+                    if (j != gridHeight && gridArray[i, j + 1].isIlluminated == true && i < GameManager.width && j < GameManager.height && gridArray[i, j + 1].isDark == false && gridArray[i, j + 1].value == 56)
                     {
                         GameManager.playStepSound = true;
                         Debug.Log("Haut");
