@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AnimCrystaux : MonoBehaviour
 {
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,10 @@ public class AnimCrystaux : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Animate()
+    {
+        anim.SetBool("isLit", true);
     }
 }

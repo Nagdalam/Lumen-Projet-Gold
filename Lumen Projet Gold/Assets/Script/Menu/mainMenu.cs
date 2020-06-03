@@ -78,6 +78,11 @@ public class mainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void LoadNextSceneName(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
+
     public void Exit()
     {
         GameManager.menuOpen = false;

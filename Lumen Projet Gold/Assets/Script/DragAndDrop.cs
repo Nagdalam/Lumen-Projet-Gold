@@ -20,27 +20,18 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
     {
         originPosition = transform.position;
         ptData = new PointerEventData(EventSystem.current);
-        //m_SpriteRenderer = GetComponent<SpriteRenderer>();
     }
     void Update()
     {
+        
+
         if (GameManager.numberOfLights <= 0)
         {
             Destroy(gameObject);
         }
-        Vector3 cursorPos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
-        cursorPos.z = 0;
-        RaycastHit2D hit2D = Physics2D.Raycast(cursorPos, Vector3.back);
-        if(hit2D.collider != null)
-        {
-            Debug.Log(hit2D.collider.name);
-        }
-        //Debug.Log(EventSystem.current.currentSelectedGameObject);
-        Debug.Log(ptData.pointerEnter);
+       
         if (selected == true)
         {
-            
-            //transform.position = new Vector2(cursorPos.x, cursorPos.y);
             if(GameManager.objectGrabbed == false)
             {
                 Destroy(gameObject);
@@ -90,24 +81,22 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
-        //selected = true;
-        //GameManager.objectGrabbed = true;
         GameManager.objectGrabbed = true;
         transform.position = Input.mousePosition;
+
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         GameManager.isDropped = true;
-        
+        RaycastHit2D hit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
+
+        if (hit.collider != null && hit.transform.tag == "Crystal")
+        {
+            hit.collider.gameObject.GetComponent<AnimCrystaux>().Animate();
+        }
+
         transform.localPosition = target.localPosition;
 
-
-        //if (selected == true)
-        //{
-        //    selected = false;
-        //    GameManager.isDropped = true;
-        //    StartCoroutine(WaitASecond());
-        //}
     }
 }
