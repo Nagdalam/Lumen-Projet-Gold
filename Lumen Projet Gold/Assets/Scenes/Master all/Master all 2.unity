@@ -10014,6 +10014,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8957737359023804293, guid: ef0033be885310946a909a2a3f9b0b2c,
+        type: 3}
+      propertyPath: luoTarget
+      value: 
+      objectReference: {fileID: 1510056705}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef0033be885310946a909a2a3f9b0b2c, type: 3}
 --- !u!114 &972583035 stripped
@@ -14200,6 +14205,12 @@ Animator:
 --- !u!4 &1510056704 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7614084647018569970, guid: 7c80b2e3b4cb625488e67852fa5178e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1510056701}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1510056705 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2017084893197689897, guid: 7c80b2e3b4cb625488e67852fa5178e2,
     type: 3}
   m_PrefabInstance: {fileID: 1510056701}
   m_PrefabAsset: {fileID: 0}

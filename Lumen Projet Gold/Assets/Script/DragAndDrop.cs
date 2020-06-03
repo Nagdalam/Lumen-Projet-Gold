@@ -16,6 +16,7 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
     public Image image;
     public Transform target;
     public Animator myAnim;
+    public Transform luoTarget;
     private void Start()
     {
         originPosition = transform.position;
@@ -95,8 +96,8 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
         {
             hit.collider.gameObject.GetComponent<AnimCrystaux>().Animate();
         }
-
-        transform.localPosition = target.localPosition;
+        transform.position = target.position;
+        luoTarget.position = GameManager.GetMouseWorldPosition();
 
     }
 }

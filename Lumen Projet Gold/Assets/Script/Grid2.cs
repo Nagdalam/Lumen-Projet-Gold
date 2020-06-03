@@ -196,7 +196,7 @@ public class Grid2
     {
         int x, y;
         GetXY(worldPosition, out x, out y);
-        if (gridArray[x, y].usageCount <= 1 && GameManager.intensificationAllowed == true || gridArray[x, y].usageCount == 0 && GameManager.intensificationAllowed == false && gridArray[x, y].isDark == false && gridArray[x, y].isCrystal == true)
+        if (gridArray[x, y].usageCount <= 1 && GameManager.intensificationAllowed == true && gridArray[x, y].isDark == false && gridArray[x, y].isCrystal == true || gridArray[x, y].usageCount == 0 && GameManager.intensificationAllowed == false && gridArray[x, y].isDark == false && gridArray[x, y].isCrystal == true)
         {
             GameManager.numberOfLights--;
             if (gridArray[x, y].isCrystal == true && gridArray[x, y].typeCrystal == crystalType.BASIC)

@@ -2017,6 +2017,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1009709689}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1009709693 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2017084893197689897, guid: 7c80b2e3b4cb625488e67852fa5178e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1009709689}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1024326075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3000,6 +3006,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: canvas ui
       objectReference: {fileID: 0}
+    - target: {fileID: 8957737359023804293, guid: ef0033be885310946a909a2a3f9b0b2c,
+        type: 3}
+      propertyPath: luoTarget
+      value: 
+      objectReference: {fileID: 1009709693}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef0033be885310946a909a2a3f9b0b2c, type: 3}
 --- !u!114 &1653574726 stripped
