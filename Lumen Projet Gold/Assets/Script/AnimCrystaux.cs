@@ -5,6 +5,7 @@ using UnityEngine;
 public class AnimCrystaux : MonoBehaviour
 {
     public Animator anim;
+    int compteur = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,10 @@ public class AnimCrystaux : MonoBehaviour
 
     public void Animate()
     {
+        Debug.Log("Allume");
+        if(compteur==1 && GameManager.intensificationAllowed == true) { 
         anim.SetBool("isLit", true);
+        }
+        compteur++;
     }
 }

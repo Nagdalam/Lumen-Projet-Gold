@@ -219,7 +219,7 @@ public class Grid2
                 else if (gridArray[x, y].usageCount == 1 && GameManager.intensificationAllowed == true)
                 {
                     GameManager.playIntensificationSound = true;
-                    Debug.Log(gridArray[x, y].usageCount);
+
                     SetValue(x + 2, y, value);
                     GameObject instancedObj1 = GameObject.Instantiate(lightPrefabBasic, new Vector3((originX - (cellSize / 2)) + ((x + 1) + 2) * cellSize, ((originY - (cellSize / 2)) + (y + 1) * cellSize), -2), Quaternion.identity) as GameObject;
                     SetValue(x - 2, y, value);

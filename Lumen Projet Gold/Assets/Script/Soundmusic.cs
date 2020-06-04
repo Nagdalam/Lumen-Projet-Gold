@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Soundmusic: MonoBehaviour {
-
+    public AudioSource myAudioSource;
 	// Use this for initialization
 	void Start () {
 		
@@ -23,6 +23,7 @@ public class Soundmusic: MonoBehaviour {
             Destroy(this.gameObject);
             return;
         }
+        
         else
         {
             instance = this;
@@ -34,6 +35,14 @@ public class Soundmusic: MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		
-	}
+        if (GameManager.musicMuted == true)
+        {
+            myAudioSource.volume = 0;
+        }
+        if (GameManager.musicMuted == false)
+        {
+
+            myAudioSource.volume = 0.2f;
+        }
+    }
 }

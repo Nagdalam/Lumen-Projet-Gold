@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -272,6 +272,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Crystal
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139033846078548503, guid: 1c665beb78ebc1341a0c2fc1b3aa0fc4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016971777589562273, guid: 1c665beb78ebc1341a0c2fc1b3aa0fc4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4684726812351370473, guid: 1c665beb78ebc1341a0c2fc1b3aa0fc4,
         type: 3}
@@ -7957,6 +7967,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystal (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4016971777589562273, guid: 1c665beb78ebc1341a0c2fc1b3aa0fc4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4684726812351370473, guid: 1c665beb78ebc1341a0c2fc1b3aa0fc4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8445,6 +8460,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Crystal (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016971777589562273, guid: 1c665beb78ebc1341a0c2fc1b3aa0fc4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4684726812351370473, guid: 1c665beb78ebc1341a0c2fc1b3aa0fc4,
         type: 3}
@@ -8935,6 +8955,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FOG (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 8756050764662380153, guid: 3f0b5301f24c66f429106f6ce328aeb7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8756050764662380155, guid: 3f0b5301f24c66f429106f6ce328aeb7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9291,6 +9316,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FOG (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8756050764662380153, guid: 3f0b5301f24c66f429106f6ce328aeb7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8756050764662380155, guid: 3f0b5301f24c66f429106f6ce328aeb7,
         type: 3}

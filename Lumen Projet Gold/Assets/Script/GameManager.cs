@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     //public static bool playVictorySound = false;
     //public static bool playVictorySound = false;
     //public static bool playVictorySound = false;
+    public static bool audioMuted = false;
+    public static bool musicMuted = false;
 
     private void Awake()
     {

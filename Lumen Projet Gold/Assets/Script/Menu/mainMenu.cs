@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using GooglePlayGames;
+using UnityEngine.UI;
 
 public class mainMenu : MonoBehaviour
 {
     bool isMenuOpen;
     Scene sceneLoaded;
     int mySceneID;
-      public void PlayGame(int Id)
+    public Image soundImage, musicImage;
+    public Sprite audioSprite, audioCrossedSprite, musicSprite, musicCrossedSprite;
+    public void PlayGame(int Id)
         {
             SceneManager.LoadScene(Id-1);
         }
@@ -46,6 +49,26 @@ public class mainMenu : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (GameManager.musicMuted == false)
+        {
+            musicImage.sprite = musicSprite;
+        }
+        if (GameManager.musicMuted == true)
+        {
+            musicImage.sprite = musicCrossedSprite;
+        }
+        if (GameManager.audioMuted == false)
+        {
+            soundImage.sprite = audioSprite;
+        }
+        if (GameManager.audioMuted == true)
+        {
+            soundImage.sprite = audioCrossedSprite;
+        }
+    }
+
     public void OpenTab(GameObject tab)
     {
         if (GameManager.menuOpen == false)
@@ -77,6 +100,33 @@ public class mainMenu : MonoBehaviour
         Debug.Log("QUIT");
         Application.Quit();
     }
+
+    public void MuteAudio()
+    {
+        if(GameManager.audioMuted == false)
+        {
+            GameManager.audioMuted = true;
+        }
+        else if(GameManager.audioMuted == true)
+        {
+            GameManager.audioMuted = false;
+        }
+    }
+
+    public void MuteMusic()
+    {
+        if (GameManager.musicMuted == false)
+        {
+            musicImage.sprite = musicSprite;
+            GameManager.musicMuted = true;
+        }
+        else if (GameManager.musicMuted == true)
+        {
+            musicImage.sprite = musicCrossedSprite;
+            GameManager.musicMuted = false;
+        }
+    }
+
 
     public void LoadNextSceneName(string name)
     {

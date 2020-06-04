@@ -1825,6 +1825,7 @@ MonoBehaviour:
   image: {fileID: 0}
   target: {fileID: 0}
   myAnim: {fileID: 0}
+  luoTarget: {fileID: 0}
 --- !u!1 &2176666197738252038
 GameObject:
   m_ObjectHideFlags: 0
@@ -2086,7 +2087,7 @@ RectTransform:
   m_LocalScale: {x: 1.6347, y: 1.6347, z: 1.6347}
   m_Children: []
   m_Father: {fileID: 8462759431196007608}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3130,7 +3131,7 @@ RectTransform:
   m_LocalScale: {x: 2.22909, y: 2.22909, z: 2.22909}
   m_Children: []
   m_Father: {fileID: 8462759431196007608}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3259,6 +3260,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730c27a611f02434fab3c4009ed7bddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundImage: {fileID: 523270866982457414}
+  musicImage: {fileID: 4150970300215899070}
+  audioSprite: {fileID: 21300000, guid: d7fc1dd3316778f458b4661dbc0f067a, type: 3}
+  audioCrossedSprite: {fileID: 21300000, guid: e1bf7713d2cbf0249b60b37f3ed7e96e, type: 3}
+  musicSprite: {fileID: 21300000, guid: df68a5749c69df942b954586000ede8e, type: 3}
+  musicCrossedSprite: {fileID: 21300000, guid: ccbcac74b75a44945abdf3cea26390b9, type: 3}
 --- !u!1 &3476938685839276984
 GameObject:
   m_ObjectHideFlags: 0
@@ -3404,7 +3411,7 @@ RectTransform:
   m_Children:
   - {fileID: 2402236795085580604}
   m_Father: {fileID: 8462759431196007608}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.007}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3732,8 +3739,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Bilateral crystal introduction : \r\nThe mirrored crystal when lit illuminates
-    two squares on two of its sides \r\n\r\n\n\r\n"
+  m_Text: "\rIntroduction to bilateral crystals : \r\nWhen lit, the mirrored crystal
+    will illuminate two squares on two of its sides, either vertically or horizontally\r.\n"
 --- !u!1 &3817195269290301610
 GameObject:
   m_ObjectHideFlags: 0
@@ -4042,7 +4049,7 @@ MonoBehaviour:
 
     The black lights allow you to turn
     off a square that is lit by a crystal, and thus direct Luo in the direction you
-    want. You lose a light for every use
+    want. You lose a light for every use.
 
 
 '
@@ -4495,7 +4502,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2903513414770285207}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2694072035708028133}
+        m_MethodName: MuteMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4428661257023978826
 GameObject:
   m_ObjectHideFlags: 0
@@ -4740,15 +4758,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '
-
-    In Lumen your goal will be to guide luo through the cave of dreams.
-    His fear of the dark preventing him from moving forward you will first have to
-    light the crystals of light to reassure him. You can place your lights as you
-    wish but be careful, once the light is put on it can''t get any more light. When
-    you place your last light luo begins its departure.
-
-'
+  m_Text: In Lumen, your goal will be to guide luo through the cave of dreams. With
+    his fear of the dark preventing him from moving forward you will first have to
+    light his way with the glow of crystals. Place your lights as you wish but be
+    careful, once used you won't be able to recover it. Luo will begins his march
+    once no lights are remaining.
 --- !u!1 &4503567307745517623
 GameObject:
   m_ObjectHideFlags: 0
@@ -5095,7 +5109,7 @@ RectTransform:
   - {fileID: 4503567309664097717}
   - {fileID: 4503567308716355677}
   m_Father: {fileID: 8462759431196007608}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -6564,7 +6578,7 @@ RectTransform:
   - {fileID: 4503567309746181630}
   - {fileID: 4503567307756700872}
   m_Father: {fileID: 8462759431196007608}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8369,7 +8383,7 @@ RectTransform:
   m_LocalScale: {x: 1.75, y: 1.75, z: 1.3243102}
   m_Children: []
   m_Father: {fileID: 8462759431196007608}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -8780,7 +8794,7 @@ RectTransform:
   - {fileID: 4503567308714870084}
   - {fileID: 4503567308858377580}
   m_Father: {fileID: 8462759431196007608}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10261,54 +10275,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &4503567309878759234
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4503567309878759235}
-  - component: {fileID: 4503567309878759260}
-  m_Layer: 5
-  m_Name: UI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &4503567309878759235
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4503567309878759234}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5953125, y: 0.5953125, z: 0.5953125}
-  m_Children: []
-  m_Father: {fileID: 8462759431196007608}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4503567309878759260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4503567309878759234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 730c27a611f02434fab3c4009ed7bddf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4503567309885143976
 GameObject:
   m_ObjectHideFlags: 0
@@ -11238,8 +11204,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Introduction basic crystal :\r\nThe crossed crystal when it is lit illuminates
-    of a square on each of its sides. \r\n\r\n\n\r\n"
+  m_Text: "Introduction to basic crystals :\r\nWhen lit, the crossed crystal will
+    illuminate a square on each of its sides. \r\n\n\r\n\n\r\n"
 --- !u!1 &4810765607114728223
 GameObject:
   m_ObjectHideFlags: 0
@@ -12836,7 +12802,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6577116511685144033}
-  - {fileID: 4503567309878759235}
   - {fileID: 4503567309145295706}
   - {fileID: 2364361014745949926}
   - {fileID: 4503567308342957392}
@@ -13154,7 +13119,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5000495152378407477}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2694072035708028133}
+        m_MethodName: MuteAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6520597991448810963
 GameObject:
   m_ObjectHideFlags: 0
@@ -13979,9 +13955,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Play button : \r\nSome levels may end with fewer lights available than
-    expected! This button allows you to launch the luo's path, however you must have
-    your path connected between the input and output to launch.\r\n\n"
+  m_Text: "Play button : \r\nYou may end some levels with some lights remaining!
+    This button allows you to make Luo start walking. Be careful however, as you
+    won't be able to modify the path after this.\r\n"
 --- !u!1 &7370725031603387718
 GameObject:
   m_ObjectHideFlags: 0
@@ -14285,7 +14261,7 @@ RectTransform:
   - {fileID: 7843751413686532083}
   - {fileID: 7046098033320897449}
   m_Father: {fileID: 8462759431196007608}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14362,7 +14338,7 @@ RectTransform:
   m_Children:
   - {fileID: 8469345158829025956}
   m_Father: {fileID: 8462759431196007608}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14425,6 +14401,7 @@ MonoBehaviour:
   image: {fileID: 4854920310783566955}
   target: {fileID: 5494222442553819558}
   myAnim: {fileID: 6133687814152798848}
+  luoTarget: {fileID: 0}
 --- !u!61 &3725058298527220702
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14696,8 +14673,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Introduction tower : \r\nThe crystal tower when lit illuminates three
-    squares on one of its sides\r\n\r\n\n\n\r\n"
+  m_Text: "Introduction to towers : \r\nThe crystal tower will illuminate three squares
+    in a straight line, in the direction its facing.\r\n\r\n\r\n\r\n\r\n"
 --- !u!1 &8463867702285083805
 GameObject:
   m_ObjectHideFlags: 0
@@ -15110,8 +15087,11 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Intensification :
 
-    When a crystal is intensified it lights up an extra
-    square. You lose a light for every use
+    Drag a second light to a crystal in order to intensify
+    it.
+
+    When intensified, its range is increased by one extra square. It will
+    however cost you a light to do so.
 
 '
 --- !u!1 &8954268418106449194
