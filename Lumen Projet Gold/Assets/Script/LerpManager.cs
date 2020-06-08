@@ -8,19 +8,27 @@ public class LerpManager : MonoBehaviour
     bool shouldLerp;
     public static bool startLerping;
     public Transform target;
+    public bool startImmediately = false;
+    public Animator lumiAnim, luoAnim;
     
     // Start is called before the first frame update
     void Start()
     {
         startLerping = false;
         shouldLerp = false;
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(startLerping == true)
+        if (startImmediately == true)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target.position, 2 * Time.deltaTime);
+            luoAnim.SetBool("faceUp", true);
+            lumiAnim.SetBool("faceUp", true);
+        }
+        if (startLerping == true)
         {
             shouldLerp = true;
         }

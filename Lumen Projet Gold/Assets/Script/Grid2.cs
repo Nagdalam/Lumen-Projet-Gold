@@ -436,6 +436,13 @@ public class Grid2
         }
     }
 
+    public void LightAppear(int originX, int originY, GameObject lightPrefab)
+    {
+        GameObject instancedObj1 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((2 + 1)) * cellSize, ((originY - (cellSize / 2)) + ((1 + 1)) * cellSize), -2), Quaternion.identity) as GameObject;
+        SetValue(2,1,56);
+        GameObject instancedObj2 = GameObject.Instantiate(lightPrefab, new Vector3((originX - (cellSize / 2)) + ((2 + 1)) * cellSize, ((originY - (cellSize / 2)) + ((2 + 1)) * cellSize), -2), Quaternion.identity) as GameObject;
+        SetValue(2, 2, 56);
+    }
     public int GetValue(Vector3 worldPosition)
     {
         int x, y;
@@ -474,7 +481,7 @@ public class Grid2
         
     }
 
-public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform, bool isWaiting, int lvlID, Animator luoAnim, AudioSource audioSource, Animator lumenAnim, GameObject victoryUI, GameObject defeatUI, GameObject inGameUI, bool stopPathfinding, int chapterEnd, Transform luoTransform, GameObject deathFog, int originX, int originY)
+public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform, bool isWaiting, int lvlID, Animator luoAnim, AudioSource audioSource, Animator lumenAnim, GameObject victoryUI, GameObject defeatUI, GameObject inGameUI, bool stopPathfinding, int chapterEnd, Transform luoTransform, GameObject deathFog, int originX, int originY, bool isGiant)
     {
         luoAnim.SetBool("idleLeft", false);
         luoAnim.SetBool("idleRight", false);
@@ -491,8 +498,11 @@ public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform
                     GameManager.playVictorySound = true;
                     UnlockAchievement(chapterEnd);
                     stopPathfinding = true;
+                    if (isGiant == false) {
+                        Debug.Log("GiantLevelDone");
                     inGameUI.SetActive(false);
                     victoryUI.SetActive(true);
+                    }
                     //SceneManager.LoadScene(lvlID + 1);
                 }
 

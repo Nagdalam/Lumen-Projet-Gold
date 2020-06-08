@@ -31,6 +31,7 @@ public class Testing2 : MonoBehaviour
     bool isWaiting = false;
     public int luoDirection;
     public GameObject lightPrefabBasic, lightPrefabBilateral, lightPrefabTower, darkTile;
+    public GameObject lightGiant, basicLightFogged;
     public int lvlID;
     public Animator luoAnim, lumenAnim;
     public AudioSource audioSource;
@@ -45,6 +46,12 @@ public class Testing2 : MonoBehaviour
     public int endChapter = 0;
     public Transform luoTransform;
     public GameObject deathFog;
+    public bool isGiantLevel = false;
+    public bool giantLevelDone;
+    public Animator camAnim, giantCrystalAnim;
+    
+    //public GameObject giantLvlLights;
+
 
     // Start is called before the first frame update
     void Start()
@@ -127,9 +134,16 @@ public class Testing2 : MonoBehaviour
 
         if (GameManager.numberOfLights <=0)
         {
-            
+            if (isGiantLevel && giantLevelDone == false)
+            {
+                grid.LightAppear(originX, originY, lightGiant);
+                giantLevelDone = true;
+                camAnim.SetBool("shakeCam", true);
+                giantCrystalAnim.SetBool("activateIdle", true);
+                Handheld.Vibrate();
+            }
             if(shouldWait == false && stopPathfinding == false) {
-                grid.Pathfinder(gridHeight, gridLength, movePoint, shouldWait, lvlID, luoAnim, audioSource, lumenAnim, menuVictoire, menuDéfaite, menuInGame, stopPathfinding, endChapter, luoTransform, deathFog, originX, originY);
+                grid.Pathfinder(gridHeight, gridLength, movePoint, shouldWait, lvlID, luoAnim, audioSource, lumenAnim, menuVictoire, menuDéfaite, menuInGame, stopPathfinding, endChapter, luoTransform, deathFog, originX, originY, isGiantLevel);
                 StartCoroutine(WaitASecond(1f));
             }
 
