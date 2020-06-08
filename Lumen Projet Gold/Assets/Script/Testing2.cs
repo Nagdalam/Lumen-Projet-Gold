@@ -38,6 +38,9 @@ public class Testing2 : MonoBehaviour
     public Text lightCompteur, displayChapter, displayLevel;
     bool stopPathfinding = false;
     public GameObject tutorialToActivate;
+    public GameObject[] deactivateForTutorial = new GameObject[1];
+    public int whenTutorialActivate = 45, whenTutorialEnd = 45;
+    public bool tutorialActivated = false;
     public bool activatetutorial;
     public int endChapter = 0;
     public Transform luoTransform;
@@ -68,15 +71,23 @@ public class Testing2 : MonoBehaviour
         GameManager.numberOfLights = numberOfLights;
         GameManager.intensificationAllowed = intensificationAllowed;
         GameManager.isDarkTilesAllowed = isDarkTilesAllowed;
-        if(activatetutorial == true)
-        {
-            tutorialToActivate.SetActive(true);
-        }
+        //if(activatetutorial == true)
+        //{
+        //    tutorialToActivate.SetActive(true);
+        //}
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(whenTutorialActivate == GameManager.numberOfLights && tutorialActivated == false && activatetutorial == true)
+        {
+            SwitchTutorial();
+        }
+        if(whenTutorialEnd == GameManager.numberOfLights && tutorialActivated == true && activatetutorial == true)
+        {
+            SwitchTutorial();
+        }
         string myTextLights =  (GameManager.numberOfLights).ToString();
         string myText = " x  ";
 
@@ -132,6 +143,27 @@ public class Testing2 : MonoBehaviour
             GameManager.isDropped = false;
         }
 
+        void SwitchTutorial()
+        {
+            if(tutorialActivated == false)
+            {
+                tutorialToActivate.SetActive(true);
+                for(int i =0; i<deactivateForTutorial.Length; i++)
+                {
+                    deactivateForTutorial[i].SetActive(false);
+                }
+                tutorialActivated = true;
+            }
+            else if(tutorialActivated == true)
+            {
+                tutorialToActivate.SetActive(false);
+                for (int i = 0; i < deactivateForTutorial.Length; i++)
+                {
+                    deactivateForTutorial[i].SetActive(true);
+                }
+                tutorialActivated = false;
+            }
+        }
         //if (Input.GetMouseButtonDown(1))
         //{
         //    GameManager.canLuoMove = true;
