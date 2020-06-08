@@ -85,6 +85,11 @@ MonoBehaviour:
   displayLevel: {fileID: 0}
   tutorialToActivate: {fileID: 8756050764662380153, guid: 37fa1b501e1fff74d9a4f11f7edbea83,
     type: 3}
+  deactivateForTutorial:
+  - {fileID: 0}
+  whenTutorialActivate: 45
+  whenTutorialEnd: 45
+  tutorialActivated: 0
   activatetutorial: 0
   endChapter: 0
   luoTransform: {fileID: 0}
