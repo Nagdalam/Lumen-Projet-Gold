@@ -1,5 +1,6 @@
 ﻿using GooglePlayGames;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 //Fait par Benjamin
 public enum directionFaced { UP, DOWN, LEFT, RIGHT, }
 public enum crystalType { BASIC, TOWERNORTH, TOWERSOUTH, TOWEREAST, TOWERWEST, BILATERALVERTICAL, BILATERALHORIZONTAL }
@@ -14,6 +15,9 @@ public class Grid2
     public Vector3 originPosition;
     public int numberSize;
     int move = 0;
+    public int nextSceneLoad;
+
+
 
 
     void Start()
@@ -494,7 +498,7 @@ public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform
             {
                 if (gridArray[i, j].isGoal == true && gridArray[i, j].hasLuo == true)
                 {
-                    PlayerPrefs.SetInt("LevelsAvailable", lvlID);
+                    if(nextSceneLoad > PlayerPrefs.GetInt("levelAT"))
                     GameManager.playVictorySound = true;
                     UnlockAchievement(chapterEnd);
                     stopPathfinding = true;

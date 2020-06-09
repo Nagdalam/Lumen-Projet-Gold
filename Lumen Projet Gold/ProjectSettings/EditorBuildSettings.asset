@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/Menu.unity
     guid: e82676c99b48c654e8fef333dcdb4c33
   - enabled: 1
+    path: Assets/Scenes/Menu/LevelSelector.unity
+    guid: 6c683dc1057f76745babe5bedd8f1ec7
+  - enabled: 1
     path: Assets/Scenes/Basic Crystals/Level1.unity
     guid: 517f993f305d1994dbb16ea8be37d67e
   - enabled: 1
@@ -71,7 +74,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Master all/Master all 2.unity
     guid: fc5300c3e70939045a3960cd22e53104
-  - enabled: 1
-    path: Assets/Scenes/Menu/LevelSelector.unity
-    guid: 6c683dc1057f76745babe5bedd8f1ec7
   m_configObjects: {}
