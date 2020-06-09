@@ -49,6 +49,15 @@ public class DialogueManager : MonoBehaviour {
 	{
 		if (lvlID == 1 && numberOfClicks == 1)
 		{
+			Debug.Log("hey");
+			testingScript.SwitchTutorial();
+			numberOfClicks++;
+
+			return;
+		}
+		if (lvlID == 1 && numberOfClicks == 3)
+		{
+			Debug.Log("hey");
 			testingScript.SwitchTutorial();
 			numberOfClicks++;
 
