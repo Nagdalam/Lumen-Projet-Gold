@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -222,7 +222,7 @@ PrefabInstance:
         type: 3}
       propertyPath: luoTarget
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 393295512}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef0033be885310946a909a2a3f9b0b2c, type: 3}
 --- !u!114 &12875557 stripped
@@ -1643,6 +1643,12 @@ Animator:
 --- !u!4 &393295511 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7614084647018569970, guid: 7c80b2e3b4cb625488e67852fa5178e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 393295508}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &393295512 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2016749048859448767, guid: 7c80b2e3b4cb625488e67852fa5178e2,
     type: 3}
   m_PrefabInstance: {fileID: 393295508}
   m_PrefabAsset: {fileID: 0}

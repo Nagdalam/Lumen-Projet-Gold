@@ -847,6 +847,8 @@ MonoBehaviour:
     type: 3}
   darkTile: {fileID: 2218594554418905248, guid: a60b6229654407445a97bc7e585a35a1,
     type: 3}
+  lightGiant: {fileID: 0}
+  basicLightFogged: {fileID: 0}
   lvlID: 4
   luoAnim: {fileID: 900554819}
   lumenAnim: {fileID: 775137126}
@@ -855,11 +857,20 @@ MonoBehaviour:
   displayChapter: {fileID: 0}
   displayLevel: {fileID: 0}
   tutorialToActivate: {fileID: 0}
-  activatetutorial: 0
+  deactivateForTutorial:
+  - {fileID: 0}
+  whenTutorialActivate: 45
+  whenTutorialEnd: 45
+  tutorialActivated: 0
   endChapter: 1
   luoTransform: {fileID: 775137127}
   deathFog: {fileID: 8756050764662380153, guid: 37fa1b501e1fff74d9a4f11f7edbea83,
     type: 3}
+  isGiantLevel: 0
+  giantLevelDone: 0
+  camAnim: {fileID: 0}
+  giantCrystalAnim: {fileID: 0}
+  dialogueManager: {fileID: 0}
 --- !u!4 &366543782
 Transform:
   m_ObjectHideFlags: 0
@@ -10967,7 +10978,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &775137128 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2017084893197689897, guid: 7c80b2e3b4cb625488e67852fa5178e2,
+  m_CorrespondingSourceObject: {fileID: 2016749048859448767, guid: 7c80b2e3b4cb625488e67852fa5178e2,
     type: 3}
   m_PrefabInstance: {fileID: 775137125}
   m_PrefabAsset: {fileID: 0}

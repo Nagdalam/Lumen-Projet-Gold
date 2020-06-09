@@ -3260,12 +3260,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730c27a611f02434fab3c4009ed7bddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundImage: {fileID: 0}
-  musicImage: {fileID: 0}
-  audioSprite: {fileID: 0}
-  audioCrossedSprite: {fileID: 0}
-  musicSprite: {fileID: 0}
-  musicCrossedSprite: {fileID: 0}
+  soundImage: {fileID: 523270866982457414}
+  musicImage: {fileID: 4150970300215899070}
+  audioSprite: {fileID: 21300000, guid: d7fc1dd3316778f458b4661dbc0f067a, type: 3}
+  audioCrossedSprite: {fileID: 21300000, guid: bd3d983d001500f4caedea601b0917f8, type: 3}
+  musicSprite: {fileID: 21300000, guid: df68a5749c69df942b954586000ede8e, type: 3}
+  musicCrossedSprite: {fileID: 21300000, guid: 4bfda456a1edab4408d27e60fd570925, type: 3}
 --- !u!1 &3476938685839276984
 GameObject:
   m_ObjectHideFlags: 0
@@ -10316,12 +10316,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730c27a611f02434fab3c4009ed7bddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundImage: {fileID: 0}
-  musicImage: {fileID: 0}
-  audioSprite: {fileID: 0}
-  audioCrossedSprite: {fileID: 0}
-  musicSprite: {fileID: 0}
-  musicCrossedSprite: {fileID: 0}
+  soundImage: {fileID: 523270866982457414}
+  musicImage: {fileID: 4150970300215899070}
+  audioSprite: {fileID: 21300000, guid: d7fc1dd3316778f458b4661dbc0f067a, type: 3}
+  audioCrossedSprite: {fileID: 21300000, guid: bd3d983d001500f4caedea601b0917f8, type: 3}
+  musicSprite: {fileID: 21300000, guid: df68a5749c69df942b954586000ede8e, type: 3}
+  musicCrossedSprite: {fileID: 21300000, guid: 4bfda456a1edab4408d27e60fd570925, type: 3}
 --- !u!1 &4503567309885143976
 GameObject:
   m_ObjectHideFlags: 0

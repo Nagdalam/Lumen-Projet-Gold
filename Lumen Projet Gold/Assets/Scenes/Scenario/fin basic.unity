@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -408,7 +408,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: luo
+    name: []
+    sprite: []
     sentences:
     - " Woah !! C\u2019est quoi \xE7a ? Tu brilles et.. et tu parles ??\r\n\n\n"
   imageToChange: {fileID: 7386204369329158232}
@@ -657,7 +658,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: luo
+    name: []
+    sprite: []
     sentences:
     - "Woah trop cool comment t\u2019as fais \xE7a ?\r\n"
   imageToChange: {fileID: 7386204369329158232}
@@ -12781,7 +12783,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: Lumi
+    name: []
+    sprite: []
     sentences:
     - "Je suis un \xEAtre de lumi\xE8re, je peux donc laisser des particules de lumi\xE8re
       sur les cristaux qui peuplent cette caverne.\n\r\n\n\n\r\n"
@@ -25062,7 +25065,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: luo
+    name: []
+    sprite: []
     sentences:
     - "Woah trop cool comment t\u2019as fais \xE7a ?\r\n"
   imageToChange: {fileID: 7386204369329158232}
@@ -25502,7 +25506,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: Lumi
+    name: []
+    sprite: []
     sentences:
     - "Moi c\u2019est Lumi ! Et toi ?\r\n\r\n\n\n\r\n"
   imageToChange: {fileID: 7386204369329158232}
@@ -38308,7 +38313,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: luo
+    name: []
+    sprite: []
     sentences:
     - "O\xF9 suis-je ? Il fait tout noir, j\u2019ai peur\u2026\r\n\n"
   imageToChange: {fileID: 7386204369329158232}
@@ -52745,7 +52751,7 @@ RectTransform:
   m_GameObject: {fileID: 8592995451446840687}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.945, y: 0.945, z: 0.945}
+  m_LocalScale: {x: 1.1564909, y: 1.1564909, z: 1.1564909}
   m_Children:
   - {fileID: 8592995451499339630}
   - {fileID: 8592995451618181854}
@@ -52756,7 +52762,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.00003699398, y: 5.727051}
+  m_AnchoredPosition: {x: 0.00003699398, y: -16}
   m_SizeDelta: {x: 520, y: 139.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8592995451446840685
@@ -52924,7 +52930,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: Lumi
+    name: []
+    sprite: []
     sentences:
     - "Salut p\u2019tit homme !\r\n\n\r\n"
   imageToChange: {fileID: 7386204369329158232}
