@@ -42,13 +42,14 @@ public class Testing2 : MonoBehaviour
     public GameObject[] deactivateForTutorial = new GameObject[1];
     public int whenTutorialActivate = 45, whenTutorialEnd = 45;
     public bool tutorialActivated = false;
-    public bool activatetutorial;
+    public static bool activateTutorial;
     public int endChapter = 0;
     public Transform luoTransform;
     public GameObject deathFog;
     public bool isGiantLevel = false;
     public bool giantLevelDone;
     public Animator camAnim, giantCrystalAnim;
+    public DialogueManager dialogueManager;
     
     //public GameObject giantLvlLights;
 
@@ -56,6 +57,7 @@ public class Testing2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        activateTutorial = false;
         movePoint.parent = null;
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, 8f * Time.deltaTime);
         grid = new Grid2(gridLength, gridHeight, cellSize, new Vector3(originX, originY, 0)) ;
@@ -87,14 +89,12 @@ public class Testing2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(whenTutorialActivate == GameManager.numberOfLights && tutorialActivated == false && activatetutorial == true)
+        if(whenTutorialEnd == GameManager.numberOfLights && tutorialActivated == true)
         {
             SwitchTutorial();
         }
-        if(whenTutorialEnd == GameManager.numberOfLights && tutorialActivated == true && activatetutorial == true)
-        {
-            SwitchTutorial();
-        }
+      
+        
         string myTextLights =  (GameManager.numberOfLights).ToString();
         string myText = " x  ";
 
@@ -157,27 +157,9 @@ public class Testing2 : MonoBehaviour
             GameManager.isDropped = false;
         }
 
-        void SwitchTutorial()
-        {
-            if(tutorialActivated == false)
-            {
-                tutorialToActivate.SetActive(true);
-                for(int i =0; i<deactivateForTutorial.Length; i++)
-                {
-                    deactivateForTutorial[i].SetActive(false);
-                }
-                tutorialActivated = true;
-            }
-            else if(tutorialActivated == true)
-            {
-                tutorialToActivate.SetActive(false);
-                for (int i = 0; i < deactivateForTutorial.Length; i++)
-                {
-                    deactivateForTutorial[i].SetActive(true);
-                }
-                tutorialActivated = false;
-            }
-        }
+        
+
+       
         //if (Input.GetMouseButtonDown(1))
         //{
         //    GameManager.canLuoMove = true;
@@ -188,5 +170,31 @@ public class Testing2 : MonoBehaviour
 
         //}
 
+    }
+    public void SwitchTutorial()
+    {
+        if (tutorialActivated == false)
+        {
+            tutorialToActivate.SetActive(true);
+            for (int i = 0; i < deactivateForTutorial.Length; i++)
+            {
+                deactivateForTutorial[i].SetActive(false);
+            }
+            dialogueManager.EndDialogue();
+            tutorialActivated = true;
+        }
+        else if (tutorialActivated == true)
+        {
+            tutorialToActivate.SetActive(false);
+            for (int i = 0; i < deactivateForTutorial.Length; i++)
+            {
+                deactivateForTutorial[i].SetActive(true);
+            }
+            if (lvlID == 2) {
+            dialogueManager.StartDialogue();
+            dialogueManager.DisplayNextSentence();
+            }
+            tutorialActivated = false;
+        }
     }
 }
