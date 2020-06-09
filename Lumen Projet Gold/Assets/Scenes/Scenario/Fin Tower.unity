@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -220,7 +220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &161273284
 RectTransform:
   m_ObjectHideFlags: 0
@@ -254,7 +254,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: luo
+    name: []
+    sprite: []
     sentences:
     - " Woah !! C\u2019est quoi \xE7a ? Tu brilles et.. et tu parles ??\r\n\n\n"
   imageToChange: {fileID: 7386204369329158232}
@@ -336,7 +337,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 161273283}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -379,6 +380,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}
+      propertyPath: nameArray.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: textArray.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: spriteArray.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
       propertyPath: dialogueText
       value: 
       objectReference: {fileID: 8592995451499339631}
@@ -392,6 +408,145 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 8592995451446840675}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: lvlID
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: nameArray.Array.data[0]
+      value: Luo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: spriteArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 769f160d0d617234b8d7afc2860cd24d,
+        type: 3}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: nameArray.Array.data[1]
+      value: Lumen
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: nameArray.Array.data[2]
+      value: Lumen
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: nameArray.Array.data[3]
+      value: Luo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: nameArray.Array.data[4]
+      value: Lumen
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: nameArray.Array.data[5]
+      value: Luo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: nameArray.Array.data[6]
+      value: Lumen
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: nameArray.Array.data[7]
+      value: Luo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: spriteArray.Array.data[1]
+      value: 
+      objectReference: {fileID: 6766012025757725926, guid: d0e8c540c9751db419995929a8ff6acd,
+        type: 3}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: spriteArray.Array.data[2]
+      value: 
+      objectReference: {fileID: 6766012025757725926, guid: d0e8c540c9751db419995929a8ff6acd,
+        type: 3}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: spriteArray.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 769f160d0d617234b8d7afc2860cd24d,
+        type: 3}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: spriteArray.Array.data[4]
+      value: 
+      objectReference: {fileID: 6766012025757725926, guid: d0e8c540c9751db419995929a8ff6acd,
+        type: 3}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: spriteArray.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 769f160d0d617234b8d7afc2860cd24d,
+        type: 3}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: spriteArray.Array.data[6]
+      value: 
+      objectReference: {fileID: 6766012025757725926, guid: d0e8c540c9751db419995929a8ff6acd,
+        type: 3}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: spriteArray.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 769f160d0d617234b8d7afc2860cd24d,
+        type: 3}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: myImage
+      value: 
+      objectReference: {fileID: 7386204369329158232}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: textArray.Array.data[0]
+      value: Tell me Lumen, why are you so kind to me?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: textArray.Array.data[1]
+      value: 'Oh, I know you were going to ask this. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: textArray.Array.data[2]
+      value: "Well, let\u2019s say that I\u2019m a manifestation of what you desire
+        the most."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: textArray.Array.data[3]
+      value: "What? You\u2019re not making any sense."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: textArray.Array.data[4]
+      value: Hihi. Anyway, is your memory getting better?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: textArray.Array.data[5]
+      value: Mmh well? I do remember some bits, like a fire and a forest.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: textArray.Array.data[6]
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: textArray.Array.data[7]
+      value: Look Lumen, a new room !
+      objectReference: {fileID: 0}
     - target: {fileID: 1366935671956697271, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12428,7 +12583,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &621843952
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12462,7 +12617,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: Lumi
+    name: []
+    sprite: []
     sentences:
     - "Effectivement tu es bien loin de chez toi pt\u2019it homme, \n\r\n\n\n\r\n"
     - "ici nous sommes dans la Caverne de Cristal. \r\n\n\n\n\r\n"
@@ -12545,7 +12701,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621843951}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -25053,7 +25209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1899680823
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25087,7 +25243,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: luo
+    name: []
+    sprite: []
     sentences:
     - 'Euh je suis Luo ! Ma maison est en bas de la montagne,
 
@@ -25173,7 +25330,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1899680822}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -37792,7 +37949,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &617631310822448929
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37826,7 +37983,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: luo
+    name: []
+    sprite: []
     sentences:
     - "O\xF9 suis-je ? Il fait tout noir, j\u2019ai peur\u2026\r\n\n"
   imageToChange: {fileID: 7386204369329158232}
@@ -37908,7 +38066,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 617631310822448928}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -51041,6 +51199,7 @@ MonoBehaviour:
   startImmediately: 1
   lumiAnim: {fileID: 8417747060976441916}
   luoAnim: {fileID: 1391902483}
+  speed: 2
 --- !u!1 &7614084646819882550
 GameObject:
   m_ObjectHideFlags: 0
@@ -52406,7 +52565,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8592995451449182260}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -52440,7 +52599,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: Lumi
+    name: []
+    sprite: []
     sentences:
     - "Salut p\u2019tit homme !\r\n\n\r\n"
   imageToChange: {fileID: 7386204369329158232}
@@ -52466,7 +52626,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8592995451449182261
 RectTransform:
   m_ObjectHideFlags: 0

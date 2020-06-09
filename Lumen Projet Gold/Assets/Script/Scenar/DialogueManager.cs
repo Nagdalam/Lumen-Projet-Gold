@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour {
 
@@ -20,16 +21,19 @@ public class DialogueManager : MonoBehaviour {
 	private Queue<string> names;
 	private Queue<Sprite> sprites;
 	public Testing2 testingScript;
-
+	bool tutorialOpen = false;
 	// Use this for initialization
 	void Start () {
 		numberOfClicks = 0;
 		sentences = new Queue<string>();
 		names = new Queue<string>();
 		sprites = new Queue<Sprite>();
+		if(lvlID != 3) { 
 		animator.SetBool("IsOpen", true);
 		DisplayNextSentence();
+		}
 	}
+
 
 	private void Update()
 	{
@@ -37,12 +41,22 @@ public class DialogueManager : MonoBehaviour {
 		{
 			animator.SetBool("IsOpen", true);
 		}
+
+		if (lvlID == 3 && GameManager.numberOfLights == 1 && tutorialOpen == false)
+		{
+			
+			tutorialOpen = true;
+			animator.SetBool("IsOpen", true);
+			DisplayNextSentence();
+		}
 	}
 	public void StartDialogue ()
 	{
 		animator.SetBool("IsOpen", true);
 		
 	}
+
+	
 
 	public void DisplayNextSentence ()
 
@@ -55,16 +69,22 @@ public class DialogueManager : MonoBehaviour {
 
 			return;
 		}
-		if (lvlID == 1 && numberOfClicks == 3)
-		{
-			Debug.Log("hey");
-			testingScript.SwitchTutorial();
-			numberOfClicks++;
+		
 
-			return;
-		}
 		if (numberOfClicks >= nameArray.Length)
 		{
+			if(lvlID == 2)
+			{
+				testingScript.SwitchTutorial();
+			}
+			if (lvlID == 3)
+			{
+				testingScript.SwitchTutorial();
+			}
+			if (lvlID == 4)
+			{
+				SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex) + 1);
+			}
 			EndDialogue();
 			return;
 		}

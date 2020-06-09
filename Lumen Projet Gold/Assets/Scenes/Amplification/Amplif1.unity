@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -188,6 +188,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: canvas ui (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2259081036809129361, guid: ef0033be885310946a909a2a3f9b0b2c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2762382574558669864, guid: ef0033be885310946a909a2a3f9b0b2c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -202,6 +207,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Amplif1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3600116083430170214, guid: ef0033be885310946a909a2a3f9b0b2c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503567307766067989, guid: ef0033be885310946a909a2a3f9b0b2c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503567309145295705, guid: ef0033be885310946a909a2a3f9b0b2c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5871069114222659636, guid: ef0033be885310946a909a2a3f9b0b2c,
         type: 3}
@@ -231,7 +251,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 12875556}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 12875563}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
@@ -255,9 +275,27 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 12875556}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &12875561 stripped
+--- !u!1 &12875562 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 5373750191894823996, guid: ef0033be885310946a909a2a3f9b0b2c,
+  m_CorrespondingSourceObject: {fileID: 3600116083430170214, guid: ef0033be885310946a909a2a3f9b0b2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 12875556}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &12875563 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2259081036809129361, guid: ef0033be885310946a909a2a3f9b0b2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 12875556}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &12875564 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4503567307766067989, guid: ef0033be885310946a909a2a3f9b0b2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 12875556}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &12875565 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4503567309145295705, guid: ef0033be885310946a909a2a3f9b0b2c,
     type: 3}
   m_PrefabInstance: {fileID: 12875556}
   m_PrefabAsset: {fileID: 0}
@@ -520,6 +558,11 @@ PrefabInstance:
         type: 3}
       propertyPath: crystalTypeArray.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
+        type: 3}
+      propertyPath: deactivateForTutorial.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
         type: 3}
@@ -1255,12 +1298,42 @@ PrefabInstance:
         type: 3}
       propertyPath: tutorialToActivate
       value: 
-      objectReference: {fileID: 12875561}
+      objectReference: {fileID: 6283633974544002620}
     - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
         type: 3}
       propertyPath: luoTransform
       value: 
       objectReference: {fileID: 393295511}
+    - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
+        type: 3}
+      propertyPath: dialogueManager
+      value: 
+      objectReference: {fileID: 749191794}
+    - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
+        type: 3}
+      propertyPath: deactivateForTutorial.Array.data[0]
+      value: 
+      objectReference: {fileID: 12875565}
+    - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
+        type: 3}
+      propertyPath: deactivateForTutorial.Array.data[1]
+      value: 
+      objectReference: {fileID: 12875564}
+    - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
+        type: 3}
+      propertyPath: deactivateForTutorial.Array.data[2]
+      value: 
+      objectReference: {fileID: 12875563}
+    - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
+        type: 3}
+      propertyPath: deactivateForTutorial.Array.data[3]
+      value: 
+      objectReference: {fileID: 12875562}
+    - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
+        type: 3}
+      propertyPath: whenTutorialEnd
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5322200794696748918, guid: 271c5c146d285e54aa02f45a9695fd05,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1318,6 +1391,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 271c5c146d285e54aa02f45a9695fd05, type: 3}
+--- !u!114 &260949633 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
+    type: 3}
+  m_PrefabInstance: {fileID: 260949632}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab256b151028154582bb0440928715b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &310683955
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1818,6 +1903,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697269, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: nameArray.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: textArray.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: spriteArray.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}
       propertyPath: dialogueText
@@ -1833,6 +1938,86 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 137489905}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: testingScript
+      value: 
+      objectReference: {fileID: 260949633}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: lvlID
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: myImage
+      value: 
+      objectReference: {fileID: 1219208463}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: nameArray.Array.data[0]
+      value: Luo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: textArray.Array.data[0]
+      value: What was that? Are you okay Lumen?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: spriteArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 769f160d0d617234b8d7afc2860cd24d,
+        type: 3}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: textArray.Array.data[1]
+      value: "Yes I\u2019m alright. It seems like this crystal contained some sort
+        of mysterious energy. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: nameArray.Array.data[1]
+      value: Lumen
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: nameArray.Array.data[2]
+      value: Lumen
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: textArray.Array.data[2]
+      value: I feel like my powers have grown stronger.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: spriteArray.Array.data[1]
+      value: 
+      objectReference: {fileID: 6766012025757725926, guid: d0e8c540c9751db419995929a8ff6acd,
+        type: 3}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: spriteArray.Array.data[2]
+      value: 
+      objectReference: {fileID: 6766012025757725926, guid: d0e8c540c9751db419995929a8ff6acd,
+        type: 3}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: nameArray.Array.data[3]
+      value: Luo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: textArray.Array.data[3]
+      value: "Really ? Let\u2019s see what you\u2019re capable of then."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: spriteArray.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 769f160d0d617234b8d7afc2860cd24d,
+        type: 3}
     - target: {fileID: 1366935671956697271, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9005,6 +9190,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DisplayNextSentence
       objectReference: {fileID: 0}
+    - target: {fileID: 3466994292401379866, guid: f3ace717292067940b1dccd945096fd5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3466994292401379867, guid: f3ace717292067940b1dccd945096fd5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -9153,13 +9343,35 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 5750827631154171150, guid: f3ace717292067940b1dccd945096fd5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5750827631154171151, guid: f3ace717292067940b1dccd945096fd5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -74
       objectReference: {fileID: 0}
+    - target: {fileID: 5750827631424680848, guid: f3ace717292067940b1dccd945096fd5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3ace717292067940b1dccd945096fd5, type: 3}
+--- !u!114 &1219208463 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2439929106071317110, guid: f3ace717292067940b1dccd945096fd5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1219208462}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1283199741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10443,14 +10655,14 @@ RectTransform:
   m_GameObject: {fileID: 4911011319410402417}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.87, y: 0.87, z: 0.87}
   m_Children: []
   m_Father: {fileID: 4911011317793313083}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -24.999985, y: -79.7}
+  m_AnchoredPosition: {x: -24.999985, y: -60}
   m_SizeDelta: {x: 717.5, y: 91.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4911011319410402417
@@ -10499,20 +10711,21 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 38
+    m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 20
-    m_MaxSize: 95
+    m_MinSize: 1
+    m_MaxSize: 20
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Luo permet \xE0 Lumi de transcender ses pouvoirs lumineux, \nlorsqu\u2019un
-    cristal est intensifi\xE9 il illumine d\u2019une case suppl\xE9mentaire. \nVous
-    perdez une lumi\xE8re \xE0 chaque utilisation. \n"
+  m_Text: 'Thanks to your new powers, crystals can store one more light.
+
+    This
+    will increase their range.'
 --- !u!1 &6283633974544002620
 GameObject:
   m_ObjectHideFlags: 0
@@ -10528,7 +10741,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!331 &7157064038046974807
 SpriteMask:
   m_ObjectHideFlags: 0

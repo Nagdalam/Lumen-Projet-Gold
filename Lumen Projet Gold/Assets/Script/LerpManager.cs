@@ -10,6 +10,7 @@ public class LerpManager : MonoBehaviour
     public Transform target;
     public bool startImmediately = false;
     public Animator lumiAnim, luoAnim;
+    public int speed = 2;
     
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class LerpManager : MonoBehaviour
     {
         if (startImmediately == true)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, 2 * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
             luoAnim.SetBool("faceUp", true);
             lumiAnim.SetBool("faceUp", true);
         }
