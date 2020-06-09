@@ -10326,7 +10326,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7134994260935341112}
-  - component: {fileID: 7134994260935341095}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -10353,24 +10352,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &7134994260935341095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7134994260935341113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 730c27a611f02434fab3c4009ed7bddf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundImage: {fileID: 0}
-  musicImage: {fileID: 0}
-  audioSprite: {fileID: 0}
-  audioCrossedSprite: {fileID: 0}
-  musicSprite: {fileID: 0}
-  musicCrossedSprite: {fileID: 0}
 --- !u!1 &7134994260988151491
 GameObject:
   m_ObjectHideFlags: 0
@@ -14517,12 +14498,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730c27a611f02434fab3c4009ed7bddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundImage: {fileID: 0}
-  musicImage: {fileID: 0}
-  audioSprite: {fileID: 0}
-  audioCrossedSprite: {fileID: 0}
-  musicSprite: {fileID: 0}
-  musicCrossedSprite: {fileID: 0}
+  soundImage: {fileID: 6501084555497057085}
+  musicImage: {fileID: 7268880852559481029}
+  audioSprite: {fileID: 21300000, guid: d7fc1dd3316778f458b4661dbc0f067a, type: 3}
+  audioCrossedSprite: {fileID: 21300000, guid: e1bf7713d2cbf0249b60b37f3ed7e96e, type: 3}
+  musicSprite: {fileID: 21300000, guid: df68a5749c69df942b954586000ede8e, type: 3}
+  musicCrossedSprite: {fileID: 21300000, guid: ccbcac74b75a44945abdf3cea26390b9, type: 3}
 --- !u!1 &8516082358452548963
 GameObject:
   m_ObjectHideFlags: 0

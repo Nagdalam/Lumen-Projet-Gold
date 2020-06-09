@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1300,15 +1300,21 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 490627104}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &490627106 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9052767355737992651, guid: 7c80b2e3b4cb625488e67852fa5178e2,
+--- !u!4 &490627106 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4189575794240410021, guid: 7c80b2e3b4cb625488e67852fa5178e2,
     type: 3}
   m_PrefabInstance: {fileID: 490627104}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &490627107 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7614084647018569970, guid: 7c80b2e3b4cb625488e67852fa5178e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 490627104}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &490627108 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8167151338382362385, guid: 7c80b2e3b4cb625488e67852fa5178e2,
     type: 3}
   m_PrefabInstance: {fileID: 490627104}
   m_PrefabAsset: {fileID: 0}
@@ -1535,12 +1541,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f0b5301f24c66f429106f6ce328aeb7, type: 3}
---- !u!4 &783740212 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2016749048859448767, guid: 7c80b2e3b4cb625488e67852fa5178e2,
-    type: 3}
-  m_PrefabInstance: {fileID: 490627104}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &795104723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8912,6 +8912,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: canvas ui
       objectReference: {fileID: 0}
+    - target: {fileID: 2259081036809129361, guid: ef0033be885310946a909a2a3f9b0b2c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3600116083430170214, guid: ef0033be885310946a909a2a3f9b0b2c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503567307766067989, guid: ef0033be885310946a909a2a3f9b0b2c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503567309145295705, guid: ef0033be885310946a909a2a3f9b0b2c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5384524416735253663, guid: ef0033be885310946a909a2a3f9b0b2c,
         type: 3}
       propertyPath: m_IsActive
@@ -8926,7 +8946,7 @@ PrefabInstance:
         type: 3}
       propertyPath: luoTarget
       value: 
-      objectReference: {fileID: 783740212}
+      objectReference: {fileID: 490627106}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef0033be885310946a909a2a3f9b0b2c, type: 3}
 --- !u!114 &2014097037 stripped
@@ -10158,7 +10178,7 @@ PrefabInstance:
         type: 3}
       propertyPath: lumenAnim
       value: 
-      objectReference: {fileID: 490627106}
+      objectReference: {fileID: 490627108}
     - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
         type: 3}
       propertyPath: menuInGame

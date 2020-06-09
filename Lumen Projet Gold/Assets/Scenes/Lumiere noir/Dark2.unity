@@ -1228,7 +1228,7 @@ PrefabInstance:
         type: 3}
       propertyPath: lumenAnim
       value: 
-      objectReference: {fileID: 1066806288}
+      objectReference: {fileID: 1100962503}
     - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
         type: 3}
       propertyPath: lightCompteur
@@ -2841,12 +2841,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e936a77463625384c8f6ebb89311e894, type: 3}
---- !u!95 &1066806288 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9052767355737992651, guid: 7c80b2e3b4cb625488e67852fa5178e2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1100962501}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1100962501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2921,6 +2915,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c80b2e3b4cb625488e67852fa5178e2, type: 3}
+--- !u!4 &1100962502 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4189575794240410021, guid: 7c80b2e3b4cb625488e67852fa5178e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1100962501}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1100962503 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8167151338382362385, guid: 7c80b2e3b4cb625488e67852fa5178e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1100962501}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1165271096 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6012195273177467751, guid: ef0033be885310946a909a2a3f9b0b2c,
@@ -3762,12 +3768,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e936a77463625384c8f6ebb89311e894, type: 3}
---- !u!4 &1724818303 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2017084893197689897, guid: 7c80b2e3b4cb625488e67852fa5178e2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1100962501}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1763597783
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3923,7 +3923,7 @@ PrefabInstance:
         type: 3}
       propertyPath: luoTarget
       value: 
-      objectReference: {fileID: 1724818303}
+      objectReference: {fileID: 1100962502}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef0033be885310946a909a2a3f9b0b2c, type: 3}
 --- !u!1001 &1821728290

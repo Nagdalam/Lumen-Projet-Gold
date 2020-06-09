@@ -153,7 +153,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1954314879}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &5360701
 BoxCollider2D:
@@ -3732,7 +3732,7 @@ PrefabInstance:
         type: 3}
       propertyPath: lumenAnim
       value: 
-      objectReference: {fileID: 1510056703}
+      objectReference: {fileID: 1510056705}
     - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
         type: 3}
       propertyPath: lightCompteur
@@ -8816,7 +8816,7 @@ PrefabInstance:
         type: 3}
       propertyPath: luoTarget
       value: 
-      objectReference: {fileID: 1510056705}
+      objectReference: {fileID: 1510056703}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef0033be885310946a909a2a3f9b0b2c, type: 3}
 --- !u!114 &972583035 stripped
@@ -12640,9 +12640,9 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 1510056701}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1510056703 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9052767355737992651, guid: 7c80b2e3b4cb625488e67852fa5178e2,
+--- !u!4 &1510056703 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4189575794240410021, guid: 7c80b2e3b4cb625488e67852fa5178e2,
     type: 3}
   m_PrefabInstance: {fileID: 1510056701}
   m_PrefabAsset: {fileID: 0}
@@ -12652,9 +12652,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1510056701}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1510056705 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2017084893197689897, guid: 7c80b2e3b4cb625488e67852fa5178e2,
+--- !u!95 &1510056705 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8167151338382362385, guid: 7c80b2e3b4cb625488e67852fa5178e2,
     type: 3}
   m_PrefabInstance: {fileID: 1510056701}
   m_PrefabAsset: {fileID: 0}

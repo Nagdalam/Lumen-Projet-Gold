@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1949,13 +1949,19 @@ Animator:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1009709691 stripped
 Animator:
-  m_CorrespondingSourceObject: {fileID: 9052767355737992651, guid: 7c80b2e3b4cb625488e67852fa5178e2,
+  m_CorrespondingSourceObject: {fileID: 8167151338382362385, guid: 7c80b2e3b4cb625488e67852fa5178e2,
     type: 3}
   m_PrefabInstance: {fileID: 1009709689}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1009709692 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7614084647018569970, guid: 7c80b2e3b4cb625488e67852fa5178e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1009709689}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1009709693 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4189575794240410021, guid: 7c80b2e3b4cb625488e67852fa5178e2,
     type: 3}
   m_PrefabInstance: {fileID: 1009709689}
   m_PrefabAsset: {fileID: 0}
@@ -3280,7 +3286,7 @@ PrefabInstance:
         type: 3}
       propertyPath: luoTarget
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1009709693}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef0033be885310946a909a2a3f9b0b2c, type: 3}
 --- !u!114 &1653574726 stripped
@@ -3755,7 +3761,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: luo
+    name: []
+    sprite: []
     sentences:
     - "Depuis qu\u2019on a illumin\xE9 ce cristal moi aussi je me sens bizarre. \n"
     - "Je dois trouver un moyen de nous sortir de l\xE0.\n\r\n"
@@ -10460,7 +10467,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: Lumi
+    name: []
+    sprite: []
     sentences:
     - "Malheureusement je fais d\xE9j\xE0 mon maximum, "
     - "tes nouveaux pouvoirs sont gourmands en \xE9nergie. \r\n\n\r\n"
@@ -11748,12 +11756,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: luo
+    name: []
+    sprite: []
     sentences:
     - "Je n'arrive pas \xE0 sortir, je ne sais pas o\xF9 aller.\n\n"
     - ' Aide moi Lumi...
 
-      
+
 
 '
   imageToChange: {fileID: 1866108540900872746}

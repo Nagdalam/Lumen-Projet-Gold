@@ -10683,6 +10683,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
         type: 3}
+      propertyPath: deactivateForTutorial.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
+        type: 3}
       propertyPath: gridLength
       value: 6
       objectReference: {fileID: 0}
@@ -11405,7 +11410,7 @@ PrefabInstance:
         type: 3}
       propertyPath: tutorialToActivate
       value: 
-      objectReference: {fileID: 1877965778}
+      objectReference: {fileID: 6283633974424584416}
     - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
         type: 3}
       propertyPath: activatetutorial
@@ -11416,6 +11421,41 @@ PrefabInstance:
       propertyPath: luoTransform
       value: 
       objectReference: {fileID: 1436160275}
+    - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
+        type: 3}
+      propertyPath: tutorialActivated
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
+        type: 3}
+      propertyPath: whenTutorialEnd
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
+        type: 3}
+      propertyPath: dialogueManager
+      value: 
+      objectReference: {fileID: 1328262807}
+    - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
+        type: 3}
+      propertyPath: deactivateForTutorial.Array.data[0]
+      value: 
+      objectReference: {fileID: 1877965782}
+    - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
+        type: 3}
+      propertyPath: deactivateForTutorial.Array.data[1]
+      value: 
+      objectReference: {fileID: 1873058963}
+    - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
+        type: 3}
+      propertyPath: deactivateForTutorial.Array.data[2]
+      value: 
+      objectReference: {fileID: 1877965780}
+    - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
+        type: 3}
+      propertyPath: deactivateForTutorial.Array.data[3]
+      value: 
+      objectReference: {fileID: 1877965779}
     - target: {fileID: 5322200794696748918, guid: 271c5c146d285e54aa02f45a9695fd05,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11473,6 +11513,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 271c5c146d285e54aa02f45a9695fd05, type: 3}
+--- !u!114 &260949633 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
+    type: 3}
+  m_PrefabInstance: {fileID: 260949632}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab256b151028154582bb0440928715b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &291327181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11861,6 +11913,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DisplayNextSentence
       objectReference: {fileID: 0}
+    - target: {fileID: 3466994292401379866, guid: f3ace717292067940b1dccd945096fd5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3466994292401379872, guid: f3ace717292067940b1dccd945096fd5,
         type: 3}
       propertyPath: dialogue.sentences.Array.size
@@ -11997,6 +12054,16 @@ PrefabInstance:
       value: "celui la aussi \xE0 l'air particulier, allume en un pour voir comment
         il fonctionne.\n"
       objectReference: {fileID: 0}
+    - target: {fileID: 5750827631154171150, guid: f3ace717292067940b1dccd945096fd5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750827631424680848, guid: f3ace717292067940b1dccd945096fd5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5750827631538777524, guid: f3ace717292067940b1dccd945096fd5,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -12009,6 +12076,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3ace717292067940b1dccd945096fd5, type: 3}
+--- !u!114 &534764118 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2439929106071317110, guid: f3ace717292067940b1dccd945096fd5,
+    type: 3}
+  m_PrefabInstance: {fileID: 534764117}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &652514757
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13852,6 +13931,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}
+      propertyPath: nameArray.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: textArray.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: spriteArray.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
       propertyPath: nameText
       value: 
       objectReference: {fileID: 390399441}
@@ -13865,6 +13959,53 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 687784118}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: testingScript
+      value: 
+      objectReference: {fileID: 260949633}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: nameArray.Array.data[0]
+      value: Luo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: textArray.Array.data[0]
+      value: Lumi look, yet another crystal. I wonder how many there is.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: spriteArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 769f160d0d617234b8d7afc2860cd24d,
+        type: 3}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: nameArray.Array.data[1]
+      value: Luo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: textArray.Array.data[1]
+      value: Lumi look, yet another crystal. I wonder how many there is.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: spriteArray.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 769f160d0d617234b8d7afc2860cd24d,
+        type: 3}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: lvlID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
+        type: 3}
+      propertyPath: myImage
+      value: 
+      objectReference: {fileID: 534764118}
     - target: {fileID: 1366935671956697271, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14468,13 +14609,19 @@ Animator:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1436160274 stripped
 Animator:
-  m_CorrespondingSourceObject: {fileID: 9052767355737992651, guid: 7c80b2e3b4cb625488e67852fa5178e2,
+  m_CorrespondingSourceObject: {fileID: 8167151338382362385, guid: 7c80b2e3b4cb625488e67852fa5178e2,
     type: 3}
   m_PrefabInstance: {fileID: 1436160272}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1436160275 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7614084647018569970, guid: 7c80b2e3b4cb625488e67852fa5178e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1436160272}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1436160276 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4189575794240410021, guid: 7c80b2e3b4cb625488e67852fa5178e2,
     type: 3}
   m_PrefabInstance: {fileID: 1436160272}
   m_PrefabAsset: {fileID: 0}
@@ -15315,6 +15462,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1844486355}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1873058963 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4503567307766067989, guid: ef0033be885310946a909a2a3f9b0b2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1877965773}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1877965773
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15387,7 +15540,37 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1985728196124124657, guid: ef0033be885310946a909a2a3f9b0b2c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259081036809129361, guid: ef0033be885310946a909a2a3f9b0b2c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3600116083430170214, guid: ef0033be885310946a909a2a3f9b0b2c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503567307766067989, guid: ef0033be885310946a909a2a3f9b0b2c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503567309145295705, guid: ef0033be885310946a909a2a3f9b0b2c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5384524416735253663, guid: ef0033be885310946a909a2a3f9b0b2c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8027319121646018320, guid: ef0033be885310946a909a2a3f9b0b2c,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -15396,7 +15579,7 @@ PrefabInstance:
         type: 3}
       propertyPath: luoTarget
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1436160276}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef0033be885310946a909a2a3f9b0b2c, type: 3}
 --- !u!114 &1877965774 stripped
@@ -15405,7 +15588,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1877965773}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1877965780}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
@@ -15429,9 +15612,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1877965773}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1877965778 stripped
+--- !u!1 &1877965779 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 4275559921995261631, guid: ef0033be885310946a909a2a3f9b0b2c,
+  m_CorrespondingSourceObject: {fileID: 3600116083430170214, guid: ef0033be885310946a909a2a3f9b0b2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1877965773}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1877965780 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2259081036809129361, guid: ef0033be885310946a909a2a3f9b0b2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1877965773}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1877965782 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4503567309145295705, guid: ef0033be885310946a909a2a3f9b0b2c,
     type: 3}
   m_PrefabInstance: {fileID: 1877965773}
   m_PrefabAsset: {fileID: 0}
@@ -16306,8 +16501,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "La tour de cristal lorsqu'elle est allum\xE9 illumine de trois case sur
-    un de ses c\xF4t\xE9s\r\n"
+  m_Text: If illuminated, the tower of crystal will light up three tiles in the direction
+    it is facing
 --- !u!224 &4911011319353903788
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16360,7 +16555,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!331 &7157064037969259915
 SpriteMask:
   m_ObjectHideFlags: 0

@@ -222,7 +222,7 @@ PrefabInstance:
         type: 3}
       propertyPath: luoTarget
       value: 
-      objectReference: {fileID: 393295512}
+      objectReference: {fileID: 393295510}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef0033be885310946a909a2a3f9b0b2c, type: 3}
 --- !u!114 &12875557 stripped
@@ -1230,7 +1230,7 @@ PrefabInstance:
         type: 3}
       propertyPath: lumenAnim
       value: 
-      objectReference: {fileID: 393295510}
+      objectReference: {fileID: 393295512}
     - target: {fileID: 5322200794696748917, guid: 271c5c146d285e54aa02f45a9695fd05,
         type: 3}
       propertyPath: menuVictoire
@@ -1634,9 +1634,9 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 393295508}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &393295510 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9052767355737992651, guid: 7c80b2e3b4cb625488e67852fa5178e2,
+--- !u!4 &393295510 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4189575794240410021, guid: 7c80b2e3b4cb625488e67852fa5178e2,
     type: 3}
   m_PrefabInstance: {fileID: 393295508}
   m_PrefabAsset: {fileID: 0}
@@ -1646,9 +1646,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 393295508}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &393295512 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2016749048859448767, guid: 7c80b2e3b4cb625488e67852fa5178e2,
+--- !u!95 &393295512 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8167151338382362385, guid: 7c80b2e3b4cb625488e67852fa5178e2,
     type: 3}
   m_PrefabInstance: {fileID: 393295508}
   m_PrefabAsset: {fileID: 0}
