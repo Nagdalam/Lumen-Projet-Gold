@@ -498,7 +498,7 @@ public void Pathfinder(int gridHeight, int gridLength, Transform playerTransform
             {
                 if (gridArray[i, j].isGoal == true && gridArray[i, j].hasLuo == true)
                 {
-                    if(nextSceneLoad > PlayerPrefs.GetInt("levelAT"))
+                    
                     GameManager.playVictorySound = true;
                     UnlockAchievement(chapterEnd);
                     stopPathfinding = true;

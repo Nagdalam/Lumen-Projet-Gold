@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/LevelSelector.unity
     guid: 6c683dc1057f76745babe5bedd8f1ec7
   - enabled: 1
+    path: Assets/Scenes/Scenario/intro.unity
+    guid: 71032eef5086a7142ba118e7e7a7cdc9
+  - enabled: 1
     path: Assets/Scenes/Basic Crystals/Level1.unity
     guid: 517f993f305d1994dbb16ea8be37d67e
   - enabled: 1
@@ -24,17 +27,23 @@ EditorBuildSettings:
     path: Assets/Scenes/Basic Crystals/Level3.unity
     guid: 0145499b22d089944a57b3b183295376
   - enabled: 1
-    path: Assets/Scenes/Bilateral/Croisement.unity
-    guid: e68c59ee8551c294fa5f53165c752ba1
+    path: Assets/Scenes/Scenario/fin basic.unity
+    guid: 632a4e5136a39da41a860a30381b3b20
   - enabled: 1
     path: Assets/Scenes/Bilateral/Intro.unity
     guid: 1a6975c5f6f10184aa01f7bcdc0c6485
+  - enabled: 1
+    path: Assets/Scenes/Bilateral/Croisement.unity
+    guid: e68c59ee8551c294fa5f53165c752ba1
   - enabled: 1
     path: Assets/Scenes/Bilateral/Apprentissage.unity
     guid: 13d9aa6c3b92f4b43864470f4400d661
   - enabled: 1
     path: Assets/Scenes/Bilateral/Master.unity
     guid: be69cf926a845264581b7a91bdb1919c
+  - enabled: 1
+    path: Assets/Scenes/Scenario/fin bilateral.unity
+    guid: 1ce5d6d63b0d1234c9ec012502fe2b7e
   - enabled: 1
     path: Assets/Scenes/Tower/Tuto 1.unity
     guid: 50fbd083c0752cf4a8fb82e837769cd4
@@ -45,8 +54,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Tower/TowerMaster.unity
     guid: 38513a710daa82b4386cc452c097bc6e
   - enabled: 1
+    path: Assets/Scenes/Scenario/Fin Tower.unity
+    guid: 99370135f4f97a5468fc533711a1a39f
+  - enabled: 1
     path: Assets/Scenes/ExamCrystaux/ExamCrystaux 1.unity
     guid: daeddeaffaf2c0d43ae704f2a7b4049f
+  - enabled: 1
+    path: Assets/Scenes/Scenario/Fin Examen.unity
+    guid: 42556b20e980f4e4e8f927d809301a28
+  - enabled: 1
+    path: Assets/Scenes/Basic Crystals/LevelBigCrystal.unity
+    guid: defe048be30057240b4c2dacc870e894
   - enabled: 1
     path: Assets/Scenes/Amplification/Amplif1.unity
     guid: 4f35bdde601da3e4dba8992a34b35b80
@@ -60,6 +78,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Amplification/Master.unity
     guid: f25da74748d5ee04e91c6a99e10f7437
   - enabled: 1
+    path: Assets/Scenes/Scenario/Fin intensification.unity
+    guid: b5abb7a792f2d314a8bcd598fe98576e
+  - enabled: 1
     path: Assets/Scenes/Lumiere noir/Dark1.unity
     guid: 9980afc2ce0d95d46bca831bc57b9619
   - enabled: 1
@@ -68,6 +89,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lumiere noir/Mastering.unity
     guid: 5e8e80227eb8a3d4bb29f78d9d8c075f
+  - enabled: 1
+    path: Assets/Scenes/Scenario/fin lumiere noir.unity
+    guid: 8998f2ea9f3f20648b05b5ff90899e83
   - enabled: 1
     path: Assets/Scenes/Master all/Master all 1.unity
     guid: 453702770bc1c5643b0e48d786bd3bf0
