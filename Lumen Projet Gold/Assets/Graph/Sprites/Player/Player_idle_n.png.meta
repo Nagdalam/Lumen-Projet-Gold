@@ -1,160 +1,157 @@
 fileFormatVersion: 2
-guid: 8578857395f47e348bbef732c40b3e79
+guid: 4510f9c3a8686bb45ab7b97ed2a953a7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -467307283419413426
-    second: Player_Idle_0
+      213: -5318410987309092918
+    second: Player_idle_n_0
   - first:
-      213: -5258030014049578038
-    second: Player_Idle_1
+      213: 7272377378553632707
+    second: Player_idle_n_1
   - first:
-      213: 6236088313408774587
-    second: Player_Idle_2
+      213: -1750090640950368034
+    second: Player_idle_n_2
   - first:
-      213: -1461283530703516926
-    second: Player_Idle_3
+      213: -1406421973626850200
+    second: Player_idle_n_3
   - first:
-      213: 9073950842162242612
-    second: Player_Idle_4
+      213: -2247137276911168801
+    second: Player_idle_n_4
   - first:
-      213: 4245344421344247407
-    second: Player_Idle_5
+      213: -2643654617642004564
+    second: Player_idle_n_5
   - first:
-      213: 3301799781894900959
-    second: Player_Idle_6
+      213: 1353722557879389442
+    second: Player_idle_n_6
   - first:
-      213: 1447435686714733766
-    second: Player_Idle_7
+      213: -8761934063206062084
+    second: Player_idle_n_7
   - first:
-      213: 3583257001652028932
-    second: Player_Idle_8
+      213: 4716165879346925899
+    second: Player_idle_n_8
   - first:
-      213: -8906209229327139148
-    second: Player_Idle_9
+      213: -6311147798782137849
+    second: Player_idle_n_9
   - first:
-      213: -7329941963295623720
-    second: Player_Idle_10
+      213: 1363314724880318301
+    second: Player_idle_n_10
   - first:
-      213: -9163979561930595720
-    second: Player_Idle_11
+      213: 6966385371085393479
+    second: Player_idle_n_11
   - first:
-      213: 3411618600741023033
-    second: Player_Idle_12
+      213: 4557243659887407657
+    second: Player_idle_n_12
   - first:
-      213: 2961958583627581000
-    second: Player_Idle_13
+      213: -776636448726039519
+    second: Player_idle_n_13
   - first:
-      213: 3583460852073375404
-    second: Player_Idle_14
+      213: 3944526943465087562
+    second: Player_idle_n_14
   - first:
-      213: 7622285775488743923
-    second: Player_Idle_15
+      213: 7392899789309135755
+    second: Player_idle_n_15
   - first:
-      213: -3527252924789990094
-    second: Player_Idle_16
+      213: 7845734227070911631
+    second: Player_idle_n_16
   - first:
-      213: -959202738516221532
-    second: Player_Idle_17
+      213: 8166770744380892432
+    second: Player_idle_n_17
   - first:
-      213: 2853091472716360943
-    second: Player_Idle_18
+      213: 5987655631914376728
+    second: Player_idle_n_18
   - first:
-      213: 7573519666649579839
-    second: Player_Idle_19
+      213: -3447861432295889166
+    second: Player_idle_n_19
   - first:
-      213: 5825990803041990097
-    second: Player_Idle_20
+      213: 3011535339738794806
+    second: Player_idle_n_20
   - first:
-      213: -4487083965272166303
-    second: Player_Idle_21
+      213: -1248225987855607188
+    second: Player_idle_n_21
   - first:
-      213: -5119462405732791999
-    second: Player_Idle_22
+      213: 6036803104971161903
+    second: Player_idle_n_22
   - first:
-      213: 2491113230881878216
-    second: Player_Idle_23
+      213: 3283236173764200206
+    second: Player_idle_n_23
   - first:
-      213: -2639292885769779811
-    second: Player_Idle_24
+      213: 5702845109874730945
+    second: Player_idle_n_24
   - first:
-      213: -1514686203638951786
-    second: Player_Idle_25
+      213: -8092848081528772961
+    second: Player_idle_n_25
   - first:
-      213: -6299667776681559452
-    second: Player_Idle_26
+      213: -8436035293926638887
+    second: Player_idle_n_26
   - first:
-      213: 8545514075430162225
-    second: Player_Idle_27
+      213: -7202119033906139206
+    second: Player_idle_n_27
   - first:
-      213: 7170237581815402042
-    second: Player_Idle_28
+      213: 70075959527489781
+    second: Player_idle_n_28
   - first:
-      213: 658643565072315372
-    second: Player_Idle_29
+      213: -6940322382148269398
+    second: Player_idle_n_29
   - first:
-      213: 3344964236929981561
-    second: Player_Idle_30
+      213: -134603859950608688
+    second: Player_idle_n_30
   - first:
-      213: -6947604578549019934
-    second: Player_Idle_31
+      213: -9074617099542868509
+    second: Player_idle_n_31
   - first:
-      213: 7935454607842803219
-    second: Player_Idle_32
+      213: 3524215230747339454
+    second: Player_idle_n_32
   - first:
-      213: -4631095745110091427
-    second: Player_Idle_33
+      213: 2574028829263501828
+    second: Player_idle_n_33
   - first:
-      213: 8201266751903651015
-    second: Player_Idle_34
+      213: -4024823391616813754
+    second: Player_idle_n_34
   - first:
-      213: -3744426878127099754
-    second: Player_Idle_35
+      213: -2408390999165818154
+    second: Player_idle_n_35
   - first:
-      213: 6058602875248174809
-    second: Player_Idle_36
+      213: 8372049571197640586
+    second: Player_idle_n_36
   - first:
-      213: 3964778033517112515
-    second: Player_Idle_37
+      213: 8387891931248499416
+    second: Player_idle_n_37
   - first:
-      213: -9203286370911658617
-    second: Player_Idle_38
+      213: -5618185639940629893
+    second: Player_idle_n_38
   - first:
-      213: -2188947070588783489
-    second: Player_Idle_39
+      213: -6809021202243883565
+    second: Player_idle_n_39
   - first:
-      213: 1775448194489989599
-    second: Player_Idle_40
+      213: -8643864697522595571
+    second: Player_idle_n_40
   - first:
-      213: 8129839929546128699
-    second: Player_Idle_41
+      213: -4921701288446324283
+    second: Player_idle_n_41
   - first:
-      213: -6610005355784667493
-    second: Player_Idle_42
+      213: 962788416498787178
+    second: Player_idle_n_42
   - first:
-      213: -5766572689671994315
-    second: Player_Idle_43
+      213: -4921761815117735928
+    second: Player_idle_n_43
   - first:
-      213: -6568323042569325919
-    second: Player_Idle_44
+      213: -4954064855486801795
+    second: Player_idle_n_44
   - first:
-      213: -3986720114482617436
-    second: Player_Idle_0
+      213: 660497424925074663
+    second: Player_idle_n_0
   - first:
-      213: 5679988653111360040
-    second: Player_Idle_1
+      213: 5307675886369288629
+    second: Player_idle_n_1
   - first:
-      213: 6810125651389637901
-    second: Player_Idle_2
+      213: 9209963820668592072
+    second: Player_idle_n_2
   - first:
-      213: 3627801951837678016
-    second: Player_Idle_3
+      213: -7828753500092770191
+    second: Player_idle_n_3
   - first:
-      213: 18078160824482600
-    second: Player_Idle_4
-  - first:
-      213: 134558110843508807
-    second: Player_Idle_5
+      213: -661731590896037662
+    second: Player_idle_n_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -184,7 +181,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -252,127 +249,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_Idle_0
+      name: Player_idle_n_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 15
-        width: 93
-        height: 105
+        x: 2
+        y: 10
+        width: 94
+        height: 110
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a3eb5dad235ca8c0800000000000000
-      internalID: -3986720114482617436
+      spriteID: 7e428b398ee8a2900800000000000000
+      internalID: 660497424925074663
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_1
+      name: Player_idle_n_1
       rect:
         serializedVersion: 2
-        x: 93
-        y: 15
-        width: 93
-        height: 105
+        x: 95
+        y: 10
+        width: 94
+        height: 110
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82ab3fc069f53de40800000000000000
-      internalID: 5679988653111360040
+      spriteID: 5b1b2fde817a8a940800000000000000
+      internalID: 5307675886369288629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_2
+      name: Player_idle_n_2
       rect:
         serializedVersion: 2
-        x: 186
-        y: 15
-        width: 93
-        height: 105
+        x: 188
+        y: 10
+        width: 94
+        height: 110
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d05ead6c23d628e50800000000000000
-      internalID: 6810125651389637901
+      spriteID: 8cf96256c4d50df70800000000000000
+      internalID: 9209963820668592072
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_3
+      name: Player_idle_n_3
       rect:
         serializedVersion: 2
-        x: 279
-        y: 15
-        width: 93
-        height: 105
+        x: 282
+        y: 10
+        width: 94
+        height: 110
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c9e0ce77aa885230800000000000000
-      internalID: 3627801951837678016
+      spriteID: 178dfd09b2eaa5390800000000000000
+      internalID: -7828753500092770191
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_4
+      name: Player_idle_n_4
       rect:
         serializedVersion: 2
-        x: 372
-        y: 15
-        width: 93
-        height: 105
+        x: 376
+        y: 10
+        width: 94
+        height: 110
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82bb222ddf9304000800000000000000
-      internalID: 18078160824482600
+      spriteID: 2e0dcf3cf9e01d6f0800000000000000
+      internalID: -661731590896037662
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_5
+      name: Player_idle_n_5
       rect:
         serializedVersion: 2
-        x: 459
-        y: 15
-        width: 93
-        height: 105
+        x: 458
+        y: 10
+        width: 94
+        height: 110
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6ef867224e7aea30800000000000000
-      internalID: 4245344421344247407
+      spriteID: caf80a6c12adf4bd0800000000000000
+      internalID: -2643654617642004564
       vertices: []
       indices: 
       edges: []

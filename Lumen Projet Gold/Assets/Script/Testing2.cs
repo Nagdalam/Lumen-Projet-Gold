@@ -93,6 +93,15 @@ public class Testing2 : MonoBehaviour
         {
             SwitchTutorial();
         }
+
+        if(GameManager.inDarkMode == true)
+        {
+            luoAnim.SetBool("inDarkMode", true);
+        }
+      if(GameManager.inDarkMode == false)
+        {
+            luoAnim.SetBool("inDarkMode", false);
+        }
       
         
         string myTextLights =  (GameManager.numberOfLights).ToString();
