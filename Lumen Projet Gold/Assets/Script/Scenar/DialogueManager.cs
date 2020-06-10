@@ -22,6 +22,9 @@ public class DialogueManager : MonoBehaviour {
 	private Queue<Sprite> sprites;
 	public Testing2 testingScript;
 	bool tutorialOpen = false;
+	public Animator panelAnim;
+	bool isFlashing = false;
+	public GameObject button;
 	// Use this for initialization
 	void Start () {
 		numberOfClicks = 0;
@@ -49,6 +52,11 @@ public class DialogueManager : MonoBehaviour {
 			animator.SetBool("IsOpen", true);
 			DisplayNextSentence();
 		}
+		if(lvlID == 5 && GameManager.numberOfLights == 0 && isFlashing == false)
+		{
+			
+			StartCoroutine(WaitASecond());
+		}
 	}
 	public void StartDialogue ()
 	{
@@ -61,6 +69,7 @@ public class DialogueManager : MonoBehaviour {
 	public void DisplayNextSentence ()
 
 	{
+		Debug.Log("Ca a marché");
 		if (lvlID == 1 && numberOfClicks == 1)
 		{
 			Debug.Log("hey");
@@ -84,6 +93,11 @@ public class DialogueManager : MonoBehaviour {
 			if (lvlID == 4)
 			{
 				SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex) + 1);
+			}
+			if(lvlID == 5)
+			{
+				button.SetActive(false);
+
 			}
 			EndDialogue();
 			return;
@@ -117,4 +131,11 @@ public class DialogueManager : MonoBehaviour {
 		animator.SetBool("IsOpen", false);
 	}
 
+	IEnumerator WaitASecond()
+	{
+		yield return new WaitForSeconds(2f);
+		panelAnim.SetBool("isFlashing", true);
+		yield return new WaitForSeconds(1f);
+		SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex) + 1);
+	}
 }
