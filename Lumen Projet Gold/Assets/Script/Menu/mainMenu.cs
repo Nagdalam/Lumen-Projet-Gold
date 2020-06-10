@@ -94,6 +94,19 @@ public class mainMenu : MonoBehaviour
         Debug.Log(SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex)+1);
     }
+    public void OntriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag ("Player"))
+        {
+            Debug.Log("don't touche me");
+            SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex) + 1);
+            if (mySceneID > PlayerPrefs.GetInt("levelAt"))
+            {
+                PlayerPrefs.SetInt("levelAt", mySceneID);
+            }
+
+        }
+    }
 
     public void QuitGame ()
     {

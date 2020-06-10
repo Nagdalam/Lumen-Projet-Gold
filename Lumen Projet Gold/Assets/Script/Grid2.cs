@@ -15,7 +15,7 @@ public class Grid2
     public Vector3 originPosition;
     public int numberSize;
     int move = 0;
-    public int nextSceneLoad;
+    
 
 
 
