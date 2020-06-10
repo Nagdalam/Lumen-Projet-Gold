@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -602,12 +602,12 @@ PrefabInstance:
     - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}
       propertyPath: nameArray.Array.data[1]
-      value: Lumen
+      value: Lumi
       objectReference: {fileID: 0}
     - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}
       propertyPath: nameArray.Array.data[2]
-      value: Lumen
+      value: Lumi
       objectReference: {fileID: 0}
     - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}
@@ -617,7 +617,7 @@ PrefabInstance:
     - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}
       propertyPath: nameArray.Array.data[4]
-      value: Lumen
+      value: Lumi
       objectReference: {fileID: 0}
     - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}
@@ -51658,6 +51658,7 @@ MonoBehaviour:
   startImmediately: 1
   lumiAnim: {fileID: 8417747060976441916}
   luoAnim: {fileID: 1391902483}
+  speed: 2
 --- !u!1 &7614084646819882550
 GameObject:
   m_ObjectHideFlags: 0

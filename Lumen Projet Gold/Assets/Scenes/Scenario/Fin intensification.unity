@@ -432,7 +432,7 @@ PrefabInstance:
     - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}
       propertyPath: nameArray.Array.data[1]
-      value: Lumen
+      value: Lumi
       objectReference: {fileID: 0}
     - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}
@@ -462,12 +462,12 @@ PrefabInstance:
     - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}
       propertyPath: nameArray.Array.data[7]
-      value: Lumen
+      value: Lumi
       objectReference: {fileID: 0}
     - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}
       propertyPath: nameArray.Array.data[8]
-      value: Lumen
+      value: Lumi
       objectReference: {fileID: 0}
     - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}
@@ -537,7 +537,7 @@ PrefabInstance:
     - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}
       propertyPath: nameArray.Array.data[10]
-      value: Lumen
+      value: Lumi
       objectReference: {fileID: 0}
     - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}

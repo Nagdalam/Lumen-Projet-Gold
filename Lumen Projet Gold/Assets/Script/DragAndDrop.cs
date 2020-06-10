@@ -63,6 +63,7 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
     {
         if (Input.GetMouseButtonDown(0))
         {
+            Debug.Log("burrito");
             selected = true;
             GameManager.objectGrabbed = true;
         }

@@ -25,15 +25,51 @@ public class DialogueManager : MonoBehaviour {
 	public Animator panelAnim;
 	bool isFlashing = false;
 	public GameObject button;
+	public Animator lumenAnim;
+	public Animator luoAnim;
+	public GameObject lightCrystals;
+	public GameObject lumen, mother;
+	public LerpManager lerpManager;
+	public GameObject panel;
 	// Use this for initialization
 	void Start () {
 		numberOfClicks = 0;
 		sentences = new Queue<string>();
 		names = new Queue<string>();
 		sprites = new Queue<Sprite>();
-		if(lvlID != 3) { 
+		if(lvlID ==1) { 
 		animator.SetBool("IsOpen", true);
 		DisplayNextSentence();
+		}
+		if (lvlID == 2)
+		{
+			animator.SetBool("IsOpen", true);
+			DisplayNextSentence();
+		}
+		if (lvlID == 4)
+		{
+			animator.SetBool("IsOpen", true);
+			DisplayNextSentence();
+		}
+		if (lvlID == 5)
+		{
+			animator.SetBool("IsOpen", true);
+			DisplayNextSentence();
+		}
+		if (lvlID == 6)
+		{
+			animator.SetBool("IsOpen", true);
+			DisplayNextSentence();
+		}
+		if (lvlID == 7)
+		{
+			animator.SetBool("IsOpen", true);
+			DisplayNextSentence();
+		}
+	
+		if (lvlID == 6)
+		{
+			luoAnim.SetBool("idleDown", true);
 		}
 	}
 
@@ -57,6 +93,12 @@ public class DialogueManager : MonoBehaviour {
 			
 			StartCoroutine(WaitASecond());
 		}
+		if(lvlID == 8 && GameManager.numberOfLights == 1 && tutorialOpen == false)
+		{
+			tutorialOpen = true;
+			animator.SetBool("IsOpen", true);
+			DisplayNextSentence();
+		}
 	}
 	public void StartDialogue ()
 	{
@@ -79,7 +121,39 @@ public class DialogueManager : MonoBehaviour {
 			return;
 		}
 		
+		if(lvlID == 6 && numberOfClicks == 1)
+		{
+			lumenAnim.SetBool("canCome", true);
+		}
+		if (lvlID == 6 && numberOfClicks == 5)
+		{
+			lumenAnim.SetBool("canGoToCrystal", true);
+			
+		}
+		if(lvlID == 6 && numberOfClicks == 6)
+		{
+			lightCrystals.SetActive(true);
+			GameManager.playCrystalSound = true;
+			lumenAnim.SetBool("goBack", true);
+		}
+		if(lvlID == 7 && numberOfClicks == 4)
+		{
+			panelAnim.SetBool("isFlashing", true);
 
+			lerpManager.speed = 0;
+			luoAnim.SetBool("idleActivated", true);
+
+		}
+		if (lvlID == 7 && numberOfClicks == 5)
+		{
+			
+			lumen.SetActive(false);
+			mother.SetActive(true);
+			panelAnim.SetBool("isDisappearing", true);
+		}
+
+
+		
 		if (numberOfClicks >= nameArray.Length)
 		{
 			if(lvlID == 2)
@@ -87,6 +161,10 @@ public class DialogueManager : MonoBehaviour {
 				testingScript.SwitchTutorial();
 			}
 			if (lvlID == 3)
+			{
+				testingScript.SwitchTutorial();
+			}
+			if (lvlID == 8)
 			{
 				testingScript.SwitchTutorial();
 			}
@@ -98,6 +176,14 @@ public class DialogueManager : MonoBehaviour {
 			{
 				button.SetActive(false);
 
+			}
+			if (lvlID == 6)
+			{
+				SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex) + 1);
+			}
+			if(lvlID == 7)
+			{
+				SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex) + 1);
 			}
 			EndDialogue();
 			return;
@@ -133,9 +219,20 @@ public class DialogueManager : MonoBehaviour {
 
 	IEnumerator WaitASecond()
 	{
-		yield return new WaitForSeconds(2f);
-		panelAnim.SetBool("isFlashing", true);
-		yield return new WaitForSeconds(1f);
-		SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex) + 1);
+		if(lvlID == 5) {
+			yield return new WaitForSeconds(2f);
+			panelAnim.SetBool("isFlashing", true);
+			yield return new WaitForSeconds(1f);
+			SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex) + 1);
+		}
+		
 	}
+	IEnumerator IlluminateCrystal()
+	{
+		Debug.Log("Hola");
+		yield return new WaitForSeconds(1f);
+		
+		
+	}
+
 }

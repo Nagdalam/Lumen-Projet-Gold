@@ -427,12 +427,12 @@ PrefabInstance:
     - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}
       propertyPath: nameArray.Array.data[1]
-      value: Lumen
+      value: Lumi
       objectReference: {fileID: 0}
     - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}
       propertyPath: nameArray.Array.data[2]
-      value: Lumen
+      value: Lumi
       objectReference: {fileID: 0}
     - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}
@@ -442,7 +442,7 @@ PrefabInstance:
     - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}
       propertyPath: nameArray.Array.data[4]
-      value: Lumen
+      value: Lumi
       objectReference: {fileID: 0}
     - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}
@@ -452,7 +452,7 @@ PrefabInstance:
     - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}
       propertyPath: nameArray.Array.data[6]
-      value: Lumen
+      value: Lumi
       objectReference: {fileID: 0}
     - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}
@@ -509,7 +509,7 @@ PrefabInstance:
     - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}
       propertyPath: textArray.Array.data[0]
-      value: Tell me Lumen, why are you so kind to me?
+      value: Tell me Lumi, why are you so kind to me?
       objectReference: {fileID: 0}
     - target: {fileID: 1366935671956697270, guid: f1db01f291b8cbc4dacece7bbcd255f4,
         type: 3}

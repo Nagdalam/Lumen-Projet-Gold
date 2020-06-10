@@ -60,9 +60,6 @@ EditorBuildSettings:
     path: Assets/Scenes/ExamCrystaux/ExamCrystaux 1.unity
     guid: daeddeaffaf2c0d43ae704f2a7b4049f
   - enabled: 1
-    path: Assets/Scenes/Scenario/Fin Examen.unity
-    guid: 42556b20e980f4e4e8f927d809301a28
-  - enabled: 1
     path: Assets/Scenes/Basic Crystals/LevelBigCrystal.unity
     guid: defe048be30057240b4c2dacc870e894
   - enabled: 1
@@ -90,12 +87,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Lumiere noir/Mastering.unity
     guid: 5e8e80227eb8a3d4bb29f78d9d8c075f
   - enabled: 1
-    path: Assets/Scenes/Scenario/fin lumiere noir.unity
-    guid: 8998f2ea9f3f20648b05b5ff90899e83
-  - enabled: 1
     path: Assets/Scenes/Master all/Master all 1.unity
     guid: 453702770bc1c5643b0e48d786bd3bf0
   - enabled: 1
     path: Assets/Scenes/Master all/Master all 2.unity
     guid: fc5300c3e70939045a3960cd22e53104
+  - enabled: 1
+    path: Assets/Scenes/Scenario/fin lumiere noir.unity
+    guid: 8998f2ea9f3f20648b05b5ff90899e83
   m_configObjects: {}

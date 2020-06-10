@@ -1,0 +1,371 @@
+fileFormatVersion: 2
+guid: 8578857395f47e348bbef732c40b3e79
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -467307283419413426
+    second: Player_Idle_0
+  - first:
+      213: -5258030014049578038
+    second: Player_Idle_1
+  - first:
+      213: 6236088313408774587
+    second: Player_Idle_2
+  - first:
+      213: -1461283530703516926
+    second: Player_Idle_3
+  - first:
+      213: 9073950842162242612
+    second: Player_Idle_4
+  - first:
+      213: 4245344421344247407
+    second: Player_Idle_5
+  - first:
+      213: 3301799781894900959
+    second: Player_Idle_6
+  - first:
+      213: 1447435686714733766
+    second: Player_Idle_7
+  - first:
+      213: 3583257001652028932
+    second: Player_Idle_8
+  - first:
+      213: -8906209229327139148
+    second: Player_Idle_9
+  - first:
+      213: -7329941963295623720
+    second: Player_Idle_10
+  - first:
+      213: -9163979561930595720
+    second: Player_Idle_11
+  - first:
+      213: 3411618600741023033
+    second: Player_Idle_12
+  - first:
+      213: 2961958583627581000
+    second: Player_Idle_13
+  - first:
+      213: 3583460852073375404
+    second: Player_Idle_14
+  - first:
+      213: 7622285775488743923
+    second: Player_Idle_15
+  - first:
+      213: -3527252924789990094
+    second: Player_Idle_16
+  - first:
+      213: -959202738516221532
+    second: Player_Idle_17
+  - first:
+      213: 2853091472716360943
+    second: Player_Idle_18
+  - first:
+      213: 7573519666649579839
+    second: Player_Idle_19
+  - first:
+      213: 5825990803041990097
+    second: Player_Idle_20
+  - first:
+      213: -4487083965272166303
+    second: Player_Idle_21
+  - first:
+      213: -5119462405732791999
+    second: Player_Idle_22
+  - first:
+      213: 2491113230881878216
+    second: Player_Idle_23
+  - first:
+      213: -2639292885769779811
+    second: Player_Idle_24
+  - first:
+      213: -1514686203638951786
+    second: Player_Idle_25
+  - first:
+      213: -6299667776681559452
+    second: Player_Idle_26
+  - first:
+      213: 8545514075430162225
+    second: Player_Idle_27
+  - first:
+      213: 7170237581815402042
+    second: Player_Idle_28
+  - first:
+      213: 658643565072315372
+    second: Player_Idle_29
+  - first:
+      213: 3344964236929981561
+    second: Player_Idle_30
+  - first:
+      213: -6947604578549019934
+    second: Player_Idle_31
+  - first:
+      213: 7935454607842803219
+    second: Player_Idle_32
+  - first:
+      213: -4631095745110091427
+    second: Player_Idle_33
+  - first:
+      213: 8201266751903651015
+    second: Player_Idle_34
+  - first:
+      213: -3744426878127099754
+    second: Player_Idle_35
+  - first:
+      213: 6058602875248174809
+    second: Player_Idle_36
+  - first:
+      213: 3964778033517112515
+    second: Player_Idle_37
+  - first:
+      213: -9203286370911658617
+    second: Player_Idle_38
+  - first:
+      213: -2188947070588783489
+    second: Player_Idle_39
+  - first:
+      213: 1775448194489989599
+    second: Player_Idle_40
+  - first:
+      213: 8129839929546128699
+    second: Player_Idle_41
+  - first:
+      213: -6610005355784667493
+    second: Player_Idle_42
+  - first:
+      213: -5766572689671994315
+    second: Player_Idle_43
+  - first:
+      213: -6568323042569325919
+    second: Player_Idle_44
+  - first:
+      213: -3986720114482617436
+    second: Player_Idle_0
+  - first:
+      213: 5679988653111360040
+    second: Player_Idle_1
+  - first:
+      213: 6810125651389637901
+    second: Player_Idle_2
+  - first:
+      213: 3627801951837678016
+    second: Player_Idle_3
+  - first:
+      213: 18078160824482600
+    second: Player_Idle_4
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Player_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 15
+        width: 93
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a3eb5dad235ca8c0800000000000000
+      internalID: -3986720114482617436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 15
+        width: 93
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82ab3fc069f53de40800000000000000
+      internalID: 5679988653111360040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 15
+        width: 93
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d05ead6c23d628e50800000000000000
+      internalID: 6810125651389637901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 15
+        width: 93
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c9e0ce77aa885230800000000000000
+      internalID: 3627801951837678016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 15
+        width: 93
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82bb222ddf9304000800000000000000
+      internalID: 18078160824482600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
